@@ -1,8 +1,7 @@
 ---
 layout: page
-title: "shop"
-date: 2013-09-12 16:53
-comments: true
+title: "Shop"
+comments: false
 sharing: true
 footer: true
 ---

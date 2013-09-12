@@ -98,3 +98,10 @@ google_analytics_tracking_id: UA-43965998-1
 
 # Facebook Like
 facebook_like: false
+
+# Category Tree
+category_tree_suffix: "_is_in"
+Claymore_is_in: "Robots"
+The_Unnamed_is_in: "Robots"
+Prusa_i3_is_in: "3D Printers"
+Cupcake-o-Matic_is_in: "3D Printers"
