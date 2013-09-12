@@ -4,6 +4,8 @@ title: "*tock tock* Is this thing on?"
 date: 2013-09-11 20:26
 comments: true
 categories: [Cupcake-o-Matic, Prusa i3, The Unnamed, Powerbridge, Claymore]
+keywords: electronics,blog,hobby,robot,3d printer,hack,wavebubble,makerbot,cupcake,prusa,prusa i3
+description: First post of a new blog with 4 projects to dedicate myself to.
 ---
 
 I've decided to start a blog. I have lots of creative ideas and keep starting projects but never quite finish them. I'm hoping that by writing about them I'll end up finishing more of them, or at least getting them to a finished-ish state. So with out further ado...
