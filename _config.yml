@@ -73,7 +73,7 @@ twitter_user:
 twitter_tweet_button: true
 
 # Google +1
-google_plus_one: false
+google_plus_one: true
 google_plus_one_size: medium
 
 # Google Plus Profile
@@ -91,7 +91,7 @@ delicious_count: 3
 
 # Disqus Comments
 disqus_short_name:
-disqus_show_comment_count: false
+disqus_show_comment_count: true
 
 # Google Analytics
 google_analytics_tracking_id: UA-43965998-1
@@ -99,9 +99,11 @@ google_analytics_tracking_id: UA-43965998-1
 # Facebook Like
 facebook_like: false
 
-# Category Tree
-category_tree_suffix: "_is_in"
-Claymore_is_in: "Robots"
-The_Unnamed_is_in: "Robots"
-Prusa_i3_is_in: "3D Printers"
-Cupcake-o-Matic_is_in: "3D Printers"
+# Category Group
+category_group_suffix: "_group"
+category_group_unused: "Ungrouped"
+Claymore_group: "Robots"
+The_Unnamed_group: "Robots"
+#Powerbridge_group: "Robots"
+Prusa_i3_group: "3D Printers"
+Cupcake-o-Matic_group: "3D Printers"
