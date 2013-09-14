@@ -38,8 +38,10 @@ module Jekyll
         html << "<ul>#{lilink(cat.sort)}</ul>"
       end
 
-      html << "<li>#{group_unused_name}</li>"
-      html << "<ul>#{lilink(not_grouped.sort)}</ul>"
+      if not_grouped.nil? == false
+        html << "<li>#{group_unused_name}</li>"
+        html << "<ul>#{lilink(not_grouped.sort)}</ul>"
+	  end
 
       html
     end
