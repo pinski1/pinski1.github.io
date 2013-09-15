@@ -4,7 +4,7 @@
   <title><![CDATA[My Blog]]></title>
   <link href="http://pinski1.github.io/atom.xml" rel="self"/>
   <link href="http://pinski1.github.io/"/>
-  <updated>2013-09-14T11:57:22+01:00</updated>
+  <updated>2013-09-15T17:38:55+01:00</updated>
   <id>http://pinski1.github.io/</id>
   <author>
     <name><![CDATA[Pinski1]]></name>
@@ -62,7 +62,7 @@
 <h2>The Result</h2>
 
 <p>This is the work of a few nights of playing around in SketchUp:
-<img src="assets/images/The_Unnamed_Featherweight_20-08-2013.png" title="The Unnamed" alt="The first render of The Unnamed"></p>
+<img src="http://pinski1.github.io/assets/images/The_Unnamed_Featherweight_20-08-2013.png" title="The Unnamed" alt="The first render of The Unnamed"></p>
 
 <p>The side armour will consist of 0.5mm of tool steel mounted to a 20mm thick panel of UHMWPE. I&rsquo;m hoping that this composite armour should be capable of surviving spinner attacks because the tool steel should stop the teeth from biting very well and the UHMWPE will flex absorbing some of the spinners impact. Of course it&rsquo;s fairly replaceable and I may redesign it in future as I finalise it.</p>
 
