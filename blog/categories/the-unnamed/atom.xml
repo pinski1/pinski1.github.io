@@ -4,7 +4,7 @@
   <title><![CDATA[Category: The Unnamed | My Blog]]></title>
   <link href="http://pinski1.github.io/blog/categories/the-unnamed/atom.xml" rel="self"/>
   <link href="http://pinski1.github.io/"/>
-  <updated>2013-09-15T17:38:55+01:00</updated>
+  <updated>2013-09-15T17:49:19+01:00</updated>
   <id>http://pinski1.github.io/</id>
   <author>
     <name><![CDATA[Pinski1]]></name>
@@ -12,6 +12,36 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Unnamed Design Revisions]]></title>
+    <link href="http://pinski1.github.io/blog/2013/09/15/unnamed-design-revisions/"/>
+    <updated>2013-09-15T17:40:00+01:00</updated>
+    <id>http://pinski1.github.io/blog/2013/09/15/unnamed-design-revisions</id>
+    <content type="html"><![CDATA[<p>After coming up with the first design I posted it on the Fighting Robot Association (<a href="http://www.fightingrobots.co.uk/">FRA</a>) forums to get some comments and suggestions. One of the worries was that it wouldn&rsquo;t be armoured enough to survive the spinners. Another concern raised was the need for a solid drive-train as the robot would need to be agile and fast to out manoeuvre opponents.</p>
+
+<p>You can visit the forum post <a href="http://www.fightingrobots.co.uk/threads/11705-the-unnamed-(fw)">here</a>.</p>
+
+<h2>What&rsquo;s Changed ?</h2>
+
+<p>All the internal UHMWPE support/structure is being replaced with 2"x1"x0.125" aluminium (6063 T3) channel. I&rsquo;ll be buying it from Aluminium Warehouse and they offer a cutting service which I&rsquo;ll use to get the lengths into ~500mm sections. This massively simplifies the mounting of the motors not to mention improving the rigidity of the robot. I&rsquo;m going to keep the 20mm &amp; 0.5mm tool steel composite armour for the moment however it can be changed out later.</p>
+
+<ul>
+<li>I&rsquo;ll make nut strip using 12mmx12mm aluminium bar with M6 threads and use that to connect the aluminium channel together.</li>
+<li>The front and rear armour has been upgraded to 4mm-6mm Hardox however this will need to be machined by someone with the tools.</li>
+<li>The top and bottom armour/covers will also be upgraded to 5mm polycarbonate however I&rsquo;m not too sure how to mount these.</li>
+<li>The lifter will now be powered by 2 linear actuators from Gimson but the overall design &amp; calculations are still in progress.</li>
+<li>The wheels will be Banebots 2-7/8" Shure 50 tires with &frac34;" hex mounting, I&rsquo;ll then use the &frac12;" to &frac34;" key way mount to affix these to the shafts. The gears will hopefully be attached to the wheels but I may get HPC to put a &frac12;" key way mount on them too.</li>
+</ul>
+
+
+<p>The revised total weight is 8.3kg minus lifting arm and revised total cost is &pound;414.06.</p>
+
+<p><img class="<a" src="href="http://pinski1.github.io/assets/images/The_Unnamed_Featherweight_Iso_28-08-2013.png">http://pinski1.github.io/assets/images/The_Unnamed_Featherweight_Iso_28-08-2013.png</a>" title="&lsquo;The Unnamed after revisions&rsquo; &lsquo;The Unnamed from a front isometric view&rsquo;" ></p>
+
+<p><img class="<a" src="href="http://pinski1.github.io/assets/images/The_Unnamed_Featherweight_Rear_Iso_28-08-2013.png">http://pinski1.github.io/assets/images/The_Unnamed_Featherweight_Rear_Iso_28-08-2013.png</a>" title="&lsquo;The Unnamed after revisions&rsquo; &lsquo;The Unnamed from a rear isometric view&rsquo;" ></p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[The Unnamed]]></title>
