@@ -39,7 +39,7 @@ Pneumatics are something I'm totally unfamiliar with and so I feel for safety I 
 
 ##The Result##
 This is the work of a few nights of playing around in SketchUp:
-{% img assets/images/The_Unnamed_Featherweight_20-08-2013.png 'The Unnamed' 'The first render of The Unnamed' %}
+{% img  http://pinski1.github.io/assets/images/The_Unnamed_Featherweight_20-08-2013.png 'The Unnamed' 'The first render of The Unnamed' %}
 
 The side armour will consist of 0.5mm of tool steel mounted to a 20mm thick panel of UHMWPE. I'm hoping that this composite armour should be capable of surviving spinner attacks because the tool steel should stop the teeth from biting very well and the UHMWPE will flex absorbing some of the spinners impact. Of course it's fairly replaceable and I may redesign it in future as I finalise it.
 
