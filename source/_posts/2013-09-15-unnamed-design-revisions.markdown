@@ -3,7 +3,7 @@ layout: post
 title: "Unnamed Design Revisions"
 date: 2013-09-15 17:40
 comments: true
-categories: [The Unnamed,Powerbridge]
+categories: [The Unnamed]
 ---
 After coming up with the first design I posted it on the Fighting Robot Association ([FRA](http://www.fightingrobots.co.uk/)) forums to get some comments and suggestions. One of the worries was that it wouldn't be armoured enough to survive the spinners. Another concern raised was the need for a solid drive-train as the robot would need to be agile and fast to out manoeuvre opponents.
 
@@ -23,3 +23,4 @@ The revised total weight is 8.3kg minus lifting arm and revised total cost is &p
 {% img http://pinski1.github.io/assets/images/The_Unnamed_Featherweight_Iso_28-08-2013.png 'The Unnamed after revisions' 'The Unnamed from a front isometric view' %} 
 
 {% img http://pinski1.github.io/assets/images/The_Unnamed_Featherweight_Rear_Iso_28-08-2013.png 'The Unnamed after revisions' 'The Unnamed from a rear isometric view' %}
+
