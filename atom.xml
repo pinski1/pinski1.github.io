@@ -4,7 +4,7 @@
   <title><![CDATA[Wires and Bits]]></title>
   <link href="http://pinski1.github.io/atom.xml" rel="self"/>
   <link href="http://pinski1.github.io/"/>
-  <updated>2013-09-20T17:36:59+01:00</updated>
+  <updated>2013-09-20T17:40:10+01:00</updated>
   <id>http://pinski1.github.io/</id>
   <author>
     <name><![CDATA[Pinski1]]></name>
@@ -14,10 +14,10 @@
 
   
   <entry>
-    <title type="html"><![CDATA[3D Printers]]></title>
-    <link href="http://pinski1.github.io/blog/2013/09/20/3d-printers/"/>
+    <title type="html"><![CDATA[Cupcake-o-Matic]]></title>
+    <link href="http://pinski1.github.io/blog/2013/09/20/Cupcake-o-Matic/"/>
     <updated>2013-09-20T13:41:00+01:00</updated>
-    <id>http://pinski1.github.io/blog/2013/09/20/3d-printers</id>
+    <id>http://pinski1.github.io/blog/2013/09/20/Cupcake-o-Matic</id>
     <content type="html"><![CDATA[<p>This post is a copy of a log I wrote up <a href="http://wiki.london.hackspace.org.uk/view/Project:Cupcake-o-Matic">here</a></p>
 
 <p>The Makerbot Cupcake CNC was Makerbot&rsquo;s first foray into the 3D printer kit market, and one of the first 3D printer kits on that market. The Cupcake CNC takes a lot of it&rsquo;s design cues from 2 sources, the initial reprap 3D printer, <a href="http://reprap.org/wiki/Darwin">Darwin</a>, and the other from the need to make it laser cut-able. It was followed by the Thing-o-Matic which fixed many of the problems associated with the Cupcake CNC.</p>
@@ -70,7 +70,7 @@
 
 <p>The Thing-o-Matic had come out for some time ago at this point and I was rather interested in the Z axis which was made up of a cantilevered platform which had 2 smooth rods for stability and a linear stepper motor for positioning. What with the Thing-o-Matic being rather similar to the Cupcake CNC I looked around for a way to add this cantilever in. The first examples I found require the back plate be removed and then the fitting of some large plastic parts to be fitted to accommodate the rods and motors. These struck me as being a little too focused on the need to be 3D printable to actually be usable. However I also found the <a href="http://www.thingiverse.com/thing:14492">Cantilevered Z-Stage for Cupcake</a> which is a laser cut design in 5mm plywood. Unfortunately I&rsquo;ve not been able to find anywhere in the UK that supplies, let alone cuts 5mm plywood, it seems to be a uniquely US thing. With that in mind I had to settle for acrylic which is available in a range of colours with a 5mm thickness.</p>
 
-<p><img src="http://pinski1.github.io/assets/images/cupcake_cantilever_z_axis.jpg" title="'A cantilever Z-axis in laser cut acrylic.'" ></p>
+<p><img src="http://pinski1.github.io/assets/images/cupcake_cantilever_z_axis.png" title="'A cantilever Z-axis in laser cut acrylic.'" ></p>
 
 <h3>A Better Extruder</h3>
 
@@ -82,7 +82,7 @@
 
 <p>I&rsquo;m hoping this bodge will last long enough for me to print an improved extruder, perhaps the latest modified Greg&rsquo;s but with mounting options for the 16mm diameter Cupcake hot end. Alternatively I will have to hope some one will take pity on me and print me a new one. :D</p>
 
-<p><img src="http://pinski1.github.io/assets/images/Gregs_Extruder_mounted_in_cupcake.jpg" title="'The Gregs extruder setup.'" ></p>
+<p><img src="http://pinski1.github.io/assets/images/Gregs_Extruder_mounted_in_cupcake.png" title="'The Gregs extruder setup.'" ></p>
 
 <p>I&rsquo;d also like to alter my hot end, at the moment it consists of the MK4 hotend but instead of nichrome wire wrapped around the brass barrel/nozzle I&rsquo;ve added an aluminium heater block. This is a 20x20x10mm block of milled aluminium with a 5.6 ohm 2 Watt vitreous enamel resistor mounted inside. The thermistor is trapped on the outside with a small M3 washer screw. I&rsquo;d love to reduce the amount of metal on my hot end and just use a nozzle mounted directly into the PTFE heat barrier and go back to using nichrome wire. This would let it heat up much faster but it would mean that it would need to be carefully controlled whilst extruding as it would lose heat much more easily. However I could use a <a href="http://reprap.org/wiki/J_Head_Nozzle">J-Head Nozzle</a> hot end, these are popular due to their high reliability, unfortunately they can cost up to &pound;50 which is a lot for something so small.</p>
 
