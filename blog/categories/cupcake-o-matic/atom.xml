@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Cupcake-o-Matic | Wires and Bits]]></title>
   <link href="http://pinski1.github.io/blog/categories/cupcake-o-matic/atom.xml" rel="self"/>
   <link href="http://pinski1.github.io/"/>
-  <updated>2013-09-20T17:40:10+01:00</updated>
+  <updated>2013-09-20T18:06:00+01:00</updated>
   <id>http://pinski1.github.io/</id>
   <author>
     <name><![CDATA[Pinski1]]></name>
@@ -18,7 +18,7 @@
     <link href="http://pinski1.github.io/blog/2013/09/20/Cupcake-o-Matic/"/>
     <updated>2013-09-20T13:41:00+01:00</updated>
     <id>http://pinski1.github.io/blog/2013/09/20/Cupcake-o-Matic</id>
-    <content type="html"><![CDATA[<p>This post is a copy of a log I wrote up <a href="http://wiki.london.hackspace.org.uk/view/Project:Cupcake-o-Matic">here</a></p>
+    <content type="html"><![CDATA[<p><em>This post is a copy of a log I wrote up <a href="http://wiki.london.hackspace.org.uk/view/Project:Cupcake-o-Matic">here</a>.</em></p>
 
 <p>The Makerbot Cupcake CNC was Makerbot&rsquo;s first foray into the 3D printer kit market, and one of the first 3D printer kits on that market. The Cupcake CNC takes a lot of it&rsquo;s design cues from 2 sources, the initial reprap 3D printer, <a href="http://reprap.org/wiki/Darwin">Darwin</a>, and the other from the need to make it laser cut-able. It was followed by the Thing-o-Matic which fixed many of the problems associated with the Cupcake CNC.</p>
 
