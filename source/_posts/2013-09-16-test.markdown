@@ -1,0 +1,27 @@
+---
+layout: post
+title: "test"
+date: 2013-09-16 17:19
+comments: true
+published: false
+categories: [The Unnamed, Powerbridge, Teardown]
+---
+The Unnamed will be powered by 2 Gimson GR02s which drive a wheel and a pulley each, which turn another wheel and pulley combo. This gives me four wheeled drive which helps with acceleration and manoeuvrability. However I need something to take the servo signals (a period of 20 milliseconds with a high pulse between 1 millisecond to 2 milliseconds to determine speed and direction) and convert them into motor signals.
+
+A GR02 will, when stalled, pull approximately 61.6 Amps according to the manufacturer. This means I need to find something that can withstand that much current for short moments of time. The best way to do this is to do some research and build up a table of options.
+
+|&nbsp;|[RageBridge](http://e0designs.com/products/ragebridge/)|[Modified TZ-85A](http://www.botbitz.com/index.php?route=product/product&path=59&product_id=59)|[TZ-85A](http://www.hobbyking.com/hobbyking/store/__29644__Turnigy_Brushless_ESC_85A_w_5A_SBEC_UK_Warehouse_.html)|[Sabertooth 2x25A](http://www.dimensionengineering.com/products/sabertooth2x25)
+|---------|----------|---------|------|--
+|Channels | 2 | 1 | 1 | 2
+|Continuous Current | 30 Amps | 85 Amps | 85 Amps | 25 Amps
+|Peak Current | 90 Amps | 100 Amps | 100 Amps | 50 Amps
+|Min Voltage | 12 Volts | 7.4 Volts | 7.4 Volts | 6 Volts
+|Max Voltage | 36 Volts | 22.2 Volts | 22.2 Volts | 30 Volts
+|Dimensions | ? | ? | ? | ? 
+|Weight | 99.2 Grams | 89 Grams | 89 Grams | 90 Grams
+|Price | &pound;116.16 | &pound;43.94 | &pound;28.22 | &pound;78.48|
+
+One thing to note about this comparison is that the TZ-85As are only single channel, I will need two to drive both my motors. I'm also not confident that they will withstand 85 Amps continuously. <!-- more when I receive mine -->
+
+One thing I've wanted to do since I started trying to build robots is to build a custom controller. Inspired by the [RageBridge](http://www.etotheipiplusone.net/?cat=85) I'm going to try building a similar version.
+
