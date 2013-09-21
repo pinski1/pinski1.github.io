@@ -9,6 +9,8 @@ _This post is a copy of a log I wrote up [here](http://wiki.london.hackspace.org
 
 The Makerbot Cupcake CNC was Makerbot's first foray into the 3D printer kit market, and one of the first 3D printer kits on that market. The Cupcake CNC takes a lot of it's design cues from 2 sources, the initial reprap 3D printer, [Darwin](http://reprap.org/wiki/Darwin), and the other from the need to make it laser cut-able. It was followed by the Thing-o-Matic which fixed many of the problems associated with the Cupcake CNC.
 
+{% img https://lh3.googleusercontent.com/-r1cPZChABMQ/Ujx77GRrmeI/AAAAAAAACn0/Yjtqp7HYJvk/w471-h835-no/Cupcake_cnc_224.png 'The modified Cupcake' %}
+
 ##The Start
 I bought a Cupcake CNC from Makerbot Industries in September 2009. I received Cupcake 224 from batch #6. I quickly assembled it and attempted a test print all in about 24 hours. It did not work. I could not get it to extrude plastic through the MK4 Plastruder reliably, when it did extrude I could then not get it to stick to the acrylic build platform. I left it be for a couple of years annoyed with what seemed a wasted purchase until January 2012 when I bought a MK5 drive gear from [KD85](http://kd85.com/) , the closest European distributor. I also added a heated build platform to my order to ensure the extrusion would stick to the bed.
 
@@ -49,7 +51,7 @@ The first solution I found was a middle point solution, the [ACME rod upgrade fo
 
 The Thing-o-Matic had come out for some time ago at this point and I was rather interested in the Z axis which was made up of a cantilevered platform which had 2 smooth rods for stability and a linear stepper motor for positioning. What with the Thing-o-Matic being rather similar to the Cupcake CNC I looked around for a way to add this cantilever in. The first examples I found require the back plate be removed and then the fitting of some large plastic parts to be fitted to accommodate the rods and motors. These struck me as being a little too focused on the need to be 3D printable to actually be usable. However I also found the [Cantilevered Z-Stage for Cupcake](http://www.thingiverse.com/thing:14492) which is a laser cut design in 5mm plywood. Unfortunately I've not been able to find anywhere in the UK that supplies, let alone cuts 5mm plywood, it seems to be a uniquely US thing. With that in mind I had to settle for acrylic which is available in a range of colours with a 5mm thickness.
 
-{% img http://pinski1.github.io/assets/images/Cupcake_cantilever_z_axis.png 'A cantilever Z-axis in laser cut acrylic.' %}
+{% img https://lh4.googleusercontent.com/-8V--yy1HxiM/Ujx8AkSu2UI/AAAAAAAACoc/Rt5bklo7a9k/w1358-h766-no/Cupcake_cantilever_z_axis.png 'A cantilever Z-axis in laser cut acrylic.' %}
 
 ###A Better Extruder
 The Makerbot Cupcake CNCs from batch 6 came with a laser cut [Plastruder MK4](http://wiki.makerbot.com/plastruder-mk4). To drive the filament a T2.5 timing belt gear was used, it had 17 teeth which would bite into the filament, however the teeth were blunt so could not get a good grip on the filament reliably. This lead to the extruder jamming mid way through a print. When the Plastruder MK4 came out it was a new design but it was quickly superseded by improvements from the RepRap project.
@@ -58,7 +60,7 @@ These improvements took the form of the [Wade's Geared Extruder](http://reprap.o
 
 When I managed to get my MK4 working I printed out, among others, a [Greg's Hinged Accessible Extruder](http://www.thingiverse.com/thing:8252) as I wanted the best extruder. I was unsure as to what hot end I would end up with so ended up removing that part of the SCAD code. This probably wasn't my best idea as it makes mounting the Cupcake hot end very difficult and I've had to use some long M4 bolts and a piece of laser cut 3mm MDF to clamp it in place. This bodge, to be kind, can be seen in the image to the right. I'm hoping this bodge will last long enough for me to print an improved extruder, perhaps the latest modified Greg's but with mounting options for the 16mm diameter Cupcake hot end.
 
-{% img http://pinski1.github.io/assets/images/Gregs_Extruder_mounted_in_cupcake.png 'The Gregs extruder setup.' %}
+{% img https://lh6.googleusercontent.com/-hkS4tbBHrCM/Ujx7-USM01I/AAAAAAAACoQ/pxermp3R9wQ/w582-h835-no/Gregs_Extruder_mounted_in_cupcake.png 'The Gregs extruder setup.' %}
 
 I'd also like to alter my hot end, at the moment it consists of the MK4 hotend but instead of nichrome wire wrapped around the brass barrel/nozzle I've added an aluminium heater block. This is a 20x20x10mm block of milled aluminium with a 5.6 ohm 2 Watt vitreous enamel resistor mounted inside. The thermistor is trapped on the outside with a small M3 washer screw. I'd love to reduce the amount of metal on my hot end and just use a nozzle mounted directly into the PTFE heat barrier and go back to using nichrome wire. This would let it heat up much faster but it would mean that it would need to be carefully controlled whilst extruding as it would lose heat much more easily. However I could use a [J-Head Nozzle](http://reprap.org/wiki/J_Head_Nozzle) hot end, these are popular due to their high reliability, unfortunately they can cost up to &pound;50 which is a lot for something so small.
 
