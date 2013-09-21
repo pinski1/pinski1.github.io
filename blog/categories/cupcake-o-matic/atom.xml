@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Cupcake-o-Matic | Wires and Bits]]></title>
   <link href="http://pinski1.github.io/blog/categories/cupcake-o-matic/atom.xml" rel="self"/>
   <link href="http://pinski1.github.io/"/>
-  <updated>2013-09-21T14:05:57+01:00</updated>
+  <updated>2013-09-21T14:22:56+01:00</updated>
   <id>http://pinski1.github.io/</id>
   <author>
     <name><![CDATA[Pinski1]]></name>
@@ -72,7 +72,7 @@
 
 <p>The Thing-o-Matic had come out for some time ago at this point and I was rather interested in the Z axis which was made up of a cantilevered platform which had 2 smooth rods for stability and a linear stepper motor for positioning. What with the Thing-o-Matic being rather similar to the Cupcake CNC I looked around for a way to add this cantilever in. The first examples I found require the back plate be removed and then the fitting of some large plastic parts to be fitted to accommodate the rods and motors. These struck me as being a little too focused on the need to be 3D printable to actually be usable. However I also found the <a href="http://www.thingiverse.com/thing:14492">Cantilevered Z-Stage for Cupcake</a> which is a laser cut design in 5mm plywood. Unfortunately I&rsquo;ve not been able to find anywhere in the UK that supplies, let alone cuts 5mm plywood, it seems to be a uniquely US thing. With that in mind I had to settle for acrylic which is available in a range of colours with a 5mm thickness.</p>
 
-<p><img class="<a" src="href="https://lh4.googleusercontent.com/-8V--yy1HxiM/Ujx8AkSu2UI/AAAAAAAACoc/Rt5bklo7a9k/w1358-h766-no/Cupcake_cantilever_z_axis.png">https://lh4.googleusercontent.com/-8V--yy1HxiM/Ujx8AkSu2UI/AAAAAAAACoc/Rt5bklo7a9k/w1358-h766-no/Cupcake_cantilever_z_axis.png</a>" title="&lsquo;A cantilever Z-axis in laser cut acrylic.&rsquo;" ></p>
+<p><img class="<a" src="href="https://lh4.googleusercontent.com/-8V--yy1HxiM/Ujx8AkSu2UI/AAAAAAAACoc/Rt5bklo7a9k/w800/Cupcake_cantilever_z_axis.png">https://lh4.googleusercontent.com/-8V--yy1HxiM/Ujx8AkSu2UI/AAAAAAAACoc/Rt5bklo7a9k/w800/Cupcake_cantilever_z_axis.png</a>" title="&lsquo;A cantilever Z-axis in laser cut acrylic.&rsquo;" ></p>
 
 <h3>A Better Extruder</h3>
 
