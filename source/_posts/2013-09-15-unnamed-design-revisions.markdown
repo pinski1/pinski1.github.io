@@ -20,7 +20,7 @@ All the internal UHMWPE support/structure is being replaced with 2"x1"x0.125" al
 
 The revised total weight is 8.3kg minus lifting arm and revised total cost is &pound;414.06.
 
-{% img https://lh3.googleusercontent.com/-cdFqAYJzpj4/Ujx7-zmH_iI/AAAAAAAACoE/Yds_11oxjC8/w1357-h762-no/The_Unnamed_Featherweight_Iso_28-08-2013.png 'The Unnamed after revisions' 'The Unnamed from a front isometric view' %} 
+{% img https://lh3.googleusercontent.com/-cdFqAYJzpj4/Ujx7-zmH_iI/AAAAAAAACoE/Yds_11oxjC8/w800/The_Unnamed_Featherweight_Iso_28-08-2013.png 'The Unnamed after revisions' 'The Unnamed from a front isometric view' %} 
 
-{% img https://lh6.googleusercontent.com/-wEIegLXU6GE/Ujx8AJJ_XII/AAAAAAAACoU/2GDiBjVDc3c/w1357-h762-no/The_Unnamed_Featherweight_Rear_Iso_28-08-2013.png 'The Unnamed after revisions' 'The Unnamed from a rear isometric view' %}
+{% img https://lh6.googleusercontent.com/-wEIegLXU6GE/Ujx8AJJ_XII/AAAAAAAACoU/2GDiBjVDc3c/w800/The_Unnamed_Featherweight_Rear_Iso_28-08-2013.png 'The Unnamed after revisions' 'The Unnamed from a rear isometric view' %}
 
