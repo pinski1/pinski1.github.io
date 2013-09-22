@@ -4,7 +4,7 @@
   <title><![CDATA[Wires and Bits]]></title>
   <link href="http://pinski1.github.io/atom.xml" rel="self"/>
   <link href="http://pinski1.github.io/"/>
-  <updated>2013-09-22T22:07:15+01:00</updated>
+  <updated>2013-09-22T22:20:14+01:00</updated>
   <id>http://pinski1.github.io/</id>
   <author>
     <name><![CDATA[Pinski1]]></name>
@@ -118,7 +118,11 @@
 <p>After many design ideas and tweaks I came up with an idea:
 <img src="https://lh6.googleusercontent.com/-TnAG8U0xAqc/Uj9I1sREXNI/AAAAAAAACro/a-_sV7KKI7o/w866-h755-no/Claymore_front_iso_v4.1.png"></p>
 
-<p>It was to be built out of laser cut 6mm plastic, ideally Delrin, Acetal, or Polycarbonate (preferably not acrylic) using Pettis joints to hold it together with hex cap screw and square nuts. These joins have proven them selves to be very rigid and very easy to cut out with a laser cutter. The motors, not having any mounting attachments, would be zip-tied in custom 3D printed motor clips which had nut traps so they could be bolted onto the top plate of the chassis. This would form a monocoque structure which would be easy to fabricate, construct and dismantle for repairs/upgrades.</p>
+<p>It was to be built out of laser cut 6mm plastic, ideally Delrin, Acetal, or Polycarbonate (preferably not acrylic) using Pettis joints to hold it together with hex cap screw and square nuts. These joins have proven them selves to be very rigid and very easy to cut out with a laser cutter.</p>
+
+<p><img src="https://lh3.googleusercontent.com/HVLwRU5L3vmTO_1dLBvSWOXqMmJwF2gdlz_CROpXohg=w663-h498-no"></p>
+
+<p>The motors, not having any mounting attachments, would be zip-tied in custom 3D printed motor clips which had nut traps so they could be bolted onto the top plate of the chassis. This would form a monocoque structure which would be easy to fabricate, construct and dismantle for repairs/upgrades.</p>
 
 <p><img src="https://lh4.googleusercontent.com/-vRsUFuJQyCU/Uj9I1n4VsiI/AAAAAAAACrg/CcDRTmb8KPA/w994-h835-no/Claymore_rear_iso_v4.1.png"></p>
 
