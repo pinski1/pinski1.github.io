@@ -9,7 +9,7 @@
   <meta name="author" content="Pinski1">
 
   
-  <meta name="description" content="This post is a copy of a log I wrote up here. The Makerbot Cupcake CNC was Makerbot&rsquo;s first foray into the 3D printer kit market, and one of &hellip;">
+  <meta name="description" content="Whilst visiting the Birmingham TechFest in 2011 with a few classmates from university I saw people with small autonomous robots, the robots were &hellip;">
   
   <meta name="keywords" content="electronics,hobby,hack">
 
@@ -79,6 +79,472 @@
     <div id="content">
       <div class="blog-index">
   
+  
+  
+    <article>
+      
+  <header>
+    
+      <h1 class="entry-title"><a href="/blog/2013/09/22/mini-sumo-claymore/">Mini-Sumo Claymore</a></h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-22T14:39:00+01:00" pubdate data-updated="true">Sep 22<span>nd</span>, 2013</time>
+        
+      </p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>Whilst visiting the Birmingham <a href="https://www.bcu.ac.uk/tee/events/techfest">TechFest</a> in 2011 with a few classmates from university I saw people with small autonomous robots, the robots were attempting to push each other out of a black circle. It turned out that this was a mini-sumo competition. The robots had to be autonomous, weight less than 500 grams and must fit in a 100mm cube. This sounded like an interesting challenge so I have tried to make my own.</p>
+
+<!-- youtube a video of a competition -->
+
+
+<h3>Rules</h3>
+
+<p>The official rules are listed <a href="http://www.tic.ac.uk/micromouse/RULES/MiniSumoRules.pdf">here in PDF</a> however the important points are:</p>
+
+<ul>
+<li>Matches take place in a Dohyo
+
+<ul>
+<li>This is a circular arena with a diameter of 77 centimetres painted black</li>
+<li>It has a white line on the border 2.5 centimetres wide</li>
+<li>There is nothing else surrounding the Dohyo for at least 50 centimetres</li>
+</ul>
+</li>
+<li>The robot must:
+
+<ul>
+<li>Fit in a box 10 centimetres wide and 10 centimetres deep, there is no height restriction</li>
+<li>It must not weight more than 500 grams</li>
+<li>Autonomous robots must begin a match 5 seconds after a button is pressed</li>
+<li>No jammers or damaging weapons allowed
+
+<ul>
+<li>But a flipper is not ruled out&hellip;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Objectives</h2>
+
+<p>Like The Unnamed I&rsquo;ve set down some initial starting goals:</p>
+
+<ul>
+<li>It must weight 500 grams</li>
+<li>Fit inside the 100 mm cube</li>
+<li>Try and be less than 30mm high</li>
+<li>I want to focus on intelligence rather than brute force
+
+<ul>
+<li>But it helps to have brute force too</li>
+</ul>
+</li>
+<li>Use 2 opponent sensors and 2 edge sensors</li>
+<li>Use &lsquo;modern&rsquo; construction methods
+
+<ul>
+<li>This includes 3D printers and laser cutters</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Parts</h2>
+
+<p>I started by collecting some parts for the robot. Normally I try and fully design a robot before ordering parts, this stops me from wasting money on things that won&rsquo;t fit with the final design, however more often than now I find myself never quite finishing it. This time I decided that as the robot will be rather small I may as well buy parts that look like they&rsquo;ll fit and then design a chassis around them.</p>
+
+<h3>Drive System</h3>
+
+<p>I figured the first step would be to organise a decent drive system after all the point of this robot is to push other robots out of the ring, it needs to be a solid system as it is my only offensive weapon. I started by trying to find motors from Faulhaber or Maxxon, both very high quality, very high cost precision motors. Googling for Faulhaber lead me to a <a href="http://www.robotroom.com/FaulhaberGearmotor.html">Robot Room</a> post which then lead me to a surplus website selling them <a href="http://www.voti.nl/shop/catalog.html?MOT-20-2">here</a>. A couple of important things to note about these motors which made them ideal; they have pre-built right angle gearboxes already attached, they have encoders mounted on the rear to count rotations and while they&rsquo;re rated for 6 Volts they seem capable of handling ~12 Volts.</p>
+
+<p>I&rsquo;m planning to run the motors in a closed loop control system, this means that rather than setting a PWM value as is the standard I will instead set a counts per interval then the code will attempt to match that value by varying the speed of the motor. This means that should something slow me down, either battery levels draining or an opponent in front of me the controller will increase the PWM value until the counts per interval matches. The only downside to this method is that it is more complex and requires a decently powerful microcontroller, however I was planning to add one anyway so this is acceptable.</p>
+
+<p>The motors at 6 Volts only rotate 80 times a minute or 1.3 times a second which is not very quick at all, if I instead run these motors at 12 Volts then I should get 170 Rotations per Minute (RPM) or 2.8 times a second. This is much better and coupled with the right wheels will make for a fast robot. To provide this 12 Volts I need a powerful but compact battery, I&rsquo;m not too concerned about weight, but the smaller I can make my robot the harder it will be to sense. With that in mind I&rsquo;ve chosen a Lithium Polymer (LiPoly) battery made up of 3 cells for a battery voltage of +11.1 Volts and a capacity of 800 milliamp hours, it measures 75mm x 23mm x 15mm and weights under 63 grams.</p>
+
+<p>The final component of the drive system are the wheels. I want a robot that is around 30mm high so cannot choose wheels larger than that, they also need to maintain good grip on the floor to help push other robots around. I ended up buying a pair of Solarbotics <a href="http://www.technobotsonline.com/solarbotics-rw2-aluminium-wheel-for-3mm-axle.html">RW2 wheels</a>. These have a diameter of 31.2mm which translates to a top speed of 277 mm per second which would be fast enough for this purpose.</p>
+
+<h3>Sensors</h3>
+
+<p>The robot will require 2 types of sensors, one set to detect opponents and manoeuvre them off the edge of the Dohyo and another set to detect the edge of the Dohyo and avoid it.</p>
+
+<p>The distance sensors should have a long range, but to avoid detecting things outside the Dohyo the maximum range must be limited to 50 centimetres + 2.5 centimetres = 52.5 centimetres but should be more than 77 centimetres  &ndash; 10 centimetres &ndash; 10 centimetres = 57 centimetres to ensure that the opponent can be sensed at all ranges. The minimum range should be as close to 0 centimetres as possible to avoid missing the opponent when it is directly in front. The (IR) distance sensors from Sharp are very popular as they fit nicely into this range bracket. I&rsquo;ve chosen the <a href="http://sharp-world.com/products/device/lineup/data/pdf/datasheet/gp2y0d340k_e.pdf">GP2Y0D340K</a> as it has a minimum range of 1.5 centimetres and a maximum range of 40-42.5 centimetres. The maximum range should be acceptable as the robot will be moving around as it scans for the opponent which will reduce the chances of the worst case scenario happening.</p>
+
+<p>The edge detection sensors don&rsquo;t need quite so much range but they need to detect the change from the black Dohyo floor to the white edge border cleanly. The edge sensors I choose will need to sense the change quickly, if the robot is travelling at its top speed of 277 millimetres per second then the robot has 1.1 seconds to come to a halt to avoid driving off the edge. The popular sensors for this task are the <a href="http://www.vishay.com/docs/83752/tcrt1000.pdf">TCRT1000</a> from Vishay. The TCRT1000 combines an Infra-Red (IR) transmitter receiver pair in a single package, correctly biased they be set up to give a digital output that ranges when the border is detected, this can then set off an interrupt to stop the robot.</p>
+
+<h3>Logic</h3>
+
+<p>To control the robot I will need some logic to receive inputs, process them and then act upon them, as I want the strength of my robot to be the processor this is where I need to choose a fast and powerful microcontroller. I will use the faster microcontroller to get inside my opponents Observe, Orientate, Decide, Act loop (<a href="http://en.wikipedia.org/wiki/OODA_loop">OODA</a>), this is done by cycling through the loop faster than the opponent, causing the opponent to act upon a situation that has already changed.</p>
+
+<p>For fast powerful microcontrollers that are still compact the ARM architecture is the most prevalent and of these I have the most experience with the <a href="http://www.nxp.com/products/microcontrollers/cortex_m3/LPC1343FBD48.html">LPC1343</a>. This will be a good choice as it has enough input/output pins for the robot and runs at 72 Megahertz which will allow it to react quickly to changes in its environment. Unfortunately it does not have any non-volatile memory so I may have to include an external EEPROM chip to provide the memory that will exist between power cycles.</p>
+
+<p>The motors will require a specialised chip to drive them as the microcontroller outputs will not be sufficient. This chip will need to work with a +11.1 Volt supply from the battery for the motors and accept control signals  that are +3.3 Volts. The motors will pull approximately 0.4 Amps when stalled so the chip ideally needs to be able to handle approximately 1 Amp of current to be safe. There are a few available chips such as the <a href="http://www.toshiba-components.com/docs/linear/TB6612FNG_en_datasheet.pdf">TB6612FNG</a> or the <a href="www.allegromicro.com/~/Media/Files/Datasheets/A4950-Datasheet.ashx">A4950</a> I will choose a suitable one as the space constraints are discovered.</p>
+
+<p>The LPC1343 requires a +3.3 Volt power supply, the sensors require a +5 Volt power supply, I have a +11.1 Volts battery on my robot, this means I will need to include 2 stages of regulation, one to +5V and another to +3V3. The best way to drop the +11.1 Volts down to +5 Volts is to use a Switch Mode Power Supply (SMPS), these are typically very efficient and generate very little heat. I will then use a linear regulator to drop from +5 Volts down to +3.3 Volts this will give me a very stable, noise free supply for the sensitive microcontroller.</p>
+
+<h3>Chassis</h3>
+
+<p>These disparate parts require a chassis to act as glue holding them together. As none of the robots opponents will be able to cause physical damage there is no need to armour my robot however the chassis will need to be stiff enough to withstand pushing and being pushed by other robots. By making at low as possible I reduce the cross sectional area that an opponent can detect, depending on my opponents sensors I can also construct my robot to further reduce my chances of being detected. For robots that use sonar sensors I can either deflect the ultrasound or absorb it to reduce the returned ultrasound levels, for IR sensors I can do the same but with different materials. I however will not construct my robot to take advantage of this in the first mini-sumo, however for my next robot I may look into &ldquo;stealth&rdquo; techniques.</p>
+
+<p>The minimum height I can build my robot is set by my wheels, 31.2mm, the minimum width of my robot is set by the width of 2 wheels, 2 motors and the battery, 87mm, the minimum length of my robot is set by the length of the motors, 72mm. The total weight of those 5 components is ~200 grams. This means I have approximately 300 grams to fit the logic circuitry, sensors and chassis in. To accurately plan how I would do this I used SketchUp as a Computer Aided Design (CAD) program, it&rsquo;s not as functional as Solidworks or AutoCAD but it is far easier to use.</p>
+
+<p>After many design ideas and tweaks I came up with an idea:
+<img src="https://lh6.googleusercontent.com/-TnAG8U0xAqc/Uj9I1sREXNI/AAAAAAAACro/a-_sV7KKI7o/w866-h755-no/Claymore_front_iso_v4.1.png"></p>
+
+<p>It was to be built out of laser cut 6mm plastic, ideally Delrin, Acetal, or Polycarbonate (preferably not acrylic) using Pettis joints to hold it together with hex cap screw and square nuts. These joins have proven them selves to be very rigid and very easy to cut out with a laser cutter. The motors, not having any mounting attachments, would be zip-tied in custom 3D printed motor clips which had nut traps so they could be bolted onto the top plate of the chassis. This would form a monocoque structure which would be easy to fabricate, construct and dismantle for repairs/upgrades.</p>
+
+<p><img src="https://lh4.googleusercontent.com/-vRsUFuJQyCU/Uj9I1n4VsiI/AAAAAAAACrg/CcDRTmb8KPA/w994-h835-no/Claymore_rear_iso_v4.1.png"></p>
+
+<p>To aid in the pushing of opponents a metal plate was added, this had a lip on the front that would protrude out and down. The idea being that as an opponent was found, engaged and pushed the lip would get underneath the opponent and raise their wheels reducing the contact with the ground degrading the grip.</p>
+
+<h2>Testing</h2>
+
+<p>Once version 1 of the chassis was laser cut and the parts installed the first problem was noted, the chassis was in fact cut out of 5mm acrylic, the design was for 6mm plastic. This difference was enough to completely ruin the strength of the structure however it was acceptable enough for testing. Another initial problem was that I was already using my LPC1343 <a href="http://www.universalair.co.uk/control/forebrain">development board</a> in another project and could not remove it however I had recently bought a <a href="http://www.pjrc.com/store/teensy3.html">Teensy 3</a> from the <a href="http://www.kickstarter.com/">Kickstarter</a>. To control the motors I use a TB6612FNG <a href="https://www.sparkfun.com/products/9457">breakout board</a> I had available.</p>
+
+<p><img src="https://lh5.googleusercontent.com/-kgKjf0jEcWQ/Uj78qt4TjJI/AAAAAAAACq4/GfYSNinDPf8/w1358-h766-no/2013-08-09+07.45.00.jpg"></p>
+
+<p>I connected everything up, wrote a quick program to control the motors and loaded it onto the Teensy 3. The first problem was the amount of noise that came from the motors, I thought something had gone horribly wrong, they shouldn&rsquo;t be that loud! Looking at the information on the Teensy 3&rsquo;s PWM it turns out the default frequency is 488.28 Hertz, this is far too slow and is well with in the human audible range. I changed the frequency to 18 kilohertz this is at the very top end of the audible frequency range and reduced the noise completely.
+I&rsquo;ve started to implement the code to read the number of counts per interval however I&rsquo;ve yet to verify the numbers nor do anything useful with them.</p>
+
+<figure class='code'><figcaption><span>Claymore test code for Teensy 3</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+<span class='line-number'>26</span>
+<span class='line-number'>27</span>
+<span class='line-number'>28</span>
+<span class='line-number'>29</span>
+<span class='line-number'>30</span>
+<span class='line-number'>31</span>
+<span class='line-number'>32</span>
+<span class='line-number'>33</span>
+<span class='line-number'>34</span>
+<span class='line-number'>35</span>
+<span class='line-number'>36</span>
+<span class='line-number'>37</span>
+<span class='line-number'>38</span>
+<span class='line-number'>39</span>
+<span class='line-number'>40</span>
+<span class='line-number'>41</span>
+<span class='line-number'>42</span>
+<span class='line-number'>43</span>
+<span class='line-number'>44</span>
+<span class='line-number'>45</span>
+<span class='line-number'>46</span>
+<span class='line-number'>47</span>
+<span class='line-number'>48</span>
+<span class='line-number'>49</span>
+<span class='line-number'>50</span>
+<span class='line-number'>51</span>
+<span class='line-number'>52</span>
+<span class='line-number'>53</span>
+<span class='line-number'>54</span>
+<span class='line-number'>55</span>
+<span class='line-number'>56</span>
+<span class='line-number'>57</span>
+<span class='line-number'>58</span>
+<span class='line-number'>59</span>
+<span class='line-number'>60</span>
+<span class='line-number'>61</span>
+<span class='line-number'>62</span>
+<span class='line-number'>63</span>
+<span class='line-number'>64</span>
+<span class='line-number'>65</span>
+<span class='line-number'>66</span>
+<span class='line-number'>67</span>
+<span class='line-number'>68</span>
+<span class='line-number'>69</span>
+<span class='line-number'>70</span>
+<span class='line-number'>71</span>
+<span class='line-number'>72</span>
+<span class='line-number'>73</span>
+<span class='line-number'>74</span>
+<span class='line-number'>75</span>
+<span class='line-number'>76</span>
+<span class='line-number'>77</span>
+<span class='line-number'>78</span>
+<span class='line-number'>79</span>
+<span class='line-number'>80</span>
+<span class='line-number'>81</span>
+<span class='line-number'>82</span>
+<span class='line-number'>83</span>
+<span class='line-number'>84</span>
+<span class='line-number'>85</span>
+<span class='line-number'>86</span>
+<span class='line-number'>87</span>
+<span class='line-number'>88</span>
+<span class='line-number'>89</span>
+<span class='line-number'>90</span>
+<span class='line-number'>91</span>
+<span class='line-number'>92</span>
+<span class='line-number'>93</span>
+<span class='line-number'>94</span>
+<span class='line-number'>95</span>
+<span class='line-number'>96</span>
+<span class='line-number'>97</span>
+<span class='line-number'>98</span>
+<span class='line-number'>99</span>
+<span class='line-number'>100</span>
+<span class='line-number'>101</span>
+<span class='line-number'>102</span>
+<span class='line-number'>103</span>
+<span class='line-number'>104</span>
+<span class='line-number'>105</span>
+<span class='line-number'>106</span>
+<span class='line-number'>107</span>
+<span class='line-number'>108</span>
+<span class='line-number'>109</span>
+<span class='line-number'>110</span>
+<span class='line-number'>111</span>
+<span class='line-number'>112</span>
+<span class='line-number'>113</span>
+<span class='line-number'>114</span>
+<span class='line-number'>115</span>
+<span class='line-number'>116</span>
+<span class='line-number'>117</span>
+<span class='line-number'>118</span>
+<span class='line-number'>119</span>
+<span class='line-number'>120</span>
+<span class='line-number'>121</span>
+<span class='line-number'>122</span>
+<span class='line-number'>123</span>
+<span class='line-number'>124</span>
+<span class='line-number'>125</span>
+<span class='line-number'>126</span>
+<span class='line-number'>127</span>
+<span class='line-number'>128</span>
+<span class='line-number'>129</span>
+<span class='line-number'>130</span>
+<span class='line-number'>131</span>
+<span class='line-number'>132</span>
+<span class='line-number'>133</span>
+<span class='line-number'>134</span>
+<span class='line-number'>135</span>
+<span class='line-number'>136</span>
+<span class='line-number'>137</span>
+<span class='line-number'>138</span>
+<span class='line-number'>139</span>
+<span class='line-number'>140</span>
+<span class='line-number'>141</span>
+<span class='line-number'>142</span>
+<span class='line-number'>143</span>
+<span class='line-number'>144</span>
+<span class='line-number'>145</span>
+<span class='line-number'>146</span>
+<span class='line-number'>147</span>
+<span class='line-number'>148</span>
+<span class='line-number'>149</span>
+<span class='line-number'>150</span>
+<span class='line-number'>151</span>
+<span class='line-number'>152</span>
+<span class='line-number'>153</span>
+<span class='line-number'>154</span>
+<span class='line-number'>155</span>
+</pre></td><td class='code'><pre><code class='cpp'><span class='line'><span class="cm">/* Pin Map */</span>
+</span><span class='line'><span class="cp">#define MOTOR_L_IN_1    16</span>
+</span><span class='line'><span class="cp">#define MOTOR_L_IN_2    15</span>
+</span><span class='line'><span class="cp">#define MOTOR_L_PWM     22 </span>
+</span><span class='line'><span class="cp">#define MOTOR_STBY      14</span>
+</span><span class='line'><span class="cp">#define MOTOR_R_IN_1    17</span>
+</span><span class='line'><span class="cp">#define MOTOR_R_IN_2    18</span>
+</span><span class='line'><span class="cp">#define MOTOR_R_PWM     23  </span>
+</span><span class='line'><span class="cp">#define MOTOR_L_A       11</span>
+</span><span class='line'><span class="cp">#define MOTOR_L_B       12</span>
+</span><span class='line'><span class="cp">#define MOTOR_R_A       2</span>
+</span><span class='line'><span class="cp">#define MOTOR_R_B       3</span>
+</span><span class='line'><span class="cp">#define LED_STATUS      13</span>
+</span><span class='line'><span class="cp">#define SENSOR_OPP_L    0</span>
+</span><span class='line'><span class="cp">#define SENSOR_OPP_R    0</span>
+</span><span class='line'><span class="cp">#define SENSOR_FLR_L    0</span>
+</span><span class='line'><span class="cp">#define SENSOR_FLR_R    0</span>
+</span><span class='line'><span class="cp">#define RUN             0</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="cm">/* Global Variables */</span>
+</span><span class='line'><span class="k">volatile</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">leftCounter</span> <span class="o">=</span> <span class="mh">0x00000000UL</span><span class="p">;</span>
+</span><span class='line'><span class="k">volatile</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">rightCounter</span> <span class="o">=</span> <span class="mh">0x00000000UL</span><span class="p">;</span>
+</span><span class='line'><span class="k">volatile</span> <span class="kt">char</span> <span class="n">oldLeft</span><span class="p">,</span> <span class="n">oldRight</span><span class="p">,</span> <span class="n">newLeft</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">newRight</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+</span><span class='line'><span class="k">static</span> <span class="kt">char</span> <span class="n">encoderQuadrature</span><span class="p">[</span><span class="mi">16</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">};</span>
+</span><span class='line'>
+</span><span class='line'><span class="cm">/* Global Functions */</span>
+</span><span class='line'><span class="kt">void</span> <span class="n">leftMotorA</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="n">oldLeft</span> <span class="o">=</span> <span class="n">newLeft</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">newLeft</span> <span class="o">=</span> <span class="p">(</span><span class="n">digitalRead</span><span class="p">(</span><span class="n">MOTOR_L_A</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">digitalRead</span><span class="p">(</span><span class="n">MOTOR_L_B</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">leftCounter</span> <span class="o">+=</span> <span class="n">encoderQuadrature</span><span class="p">[(</span><span class="n">oldLeft</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="n">newLeft</span><span class="p">];</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kt">void</span> <span class="n">leftMotorB</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="n">oldLeft</span> <span class="o">=</span> <span class="n">newLeft</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">newLeft</span> <span class="o">=</span> <span class="p">(</span><span class="n">digitalRead</span><span class="p">(</span><span class="n">MOTOR_L_A</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">digitalRead</span><span class="p">(</span><span class="n">MOTOR_L_B</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">leftCounter</span> <span class="o">+=</span> <span class="n">encoderQuadrature</span><span class="p">[(</span><span class="n">oldLeft</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="n">newLeft</span><span class="p">];</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kt">void</span> <span class="n">rightMotorA</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="n">oldRight</span> <span class="o">=</span> <span class="n">newRight</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">newRight</span> <span class="o">=</span> <span class="p">(</span><span class="n">digitalRead</span><span class="p">(</span><span class="n">MOTOR_R_A</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">digitalRead</span><span class="p">(</span><span class="n">MOTOR_R_B</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">rightCounter</span> <span class="o">+=</span> <span class="n">encoderQuadrature</span><span class="p">[(</span><span class="n">oldRight</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="n">newRight</span><span class="p">];</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'><span class="kt">void</span> <span class="n">rightMotorB</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="n">oldRight</span> <span class="o">=</span> <span class="n">newRight</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">newRight</span> <span class="o">=</span> <span class="p">(</span><span class="n">digitalRead</span><span class="p">(</span><span class="n">MOTOR_R_A</span><span class="p">)</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="n">digitalRead</span><span class="p">(</span><span class="n">MOTOR_R_B</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">rightCounter</span> <span class="o">+=</span> <span class="n">encoderQuadrature</span><span class="p">[(</span><span class="n">oldRight</span> <span class="o">*</span> <span class="mi">4</span><span class="p">)</span> <span class="o">+</span> <span class="n">newRight</span><span class="p">];</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kt">void</span> <span class="n">getMotorSpeed</span><span class="p">(</span><span class="kt">int</span> <span class="o">&amp;</span><span class="n">leftSpeed</span><span class="p">,</span> <span class="kt">int</span> <span class="o">&amp;</span><span class="n">rightSpeed</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">static</span> <span class="kt">unsigned</span> <span class="kt">long</span> <span class="n">elapsed</span> <span class="o">=</span> <span class="mh">0x00000000UL</span><span class="p">;</span>
+</span><span class='line'>  <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">localLeftCounter</span> <span class="o">=</span> <span class="n">leftCounter</span><span class="p">;</span>
+</span><span class='line'>  <span class="kt">unsigned</span> <span class="kt">int</span> <span class="n">localRightCounter</span> <span class="o">=</span> <span class="n">rightCounter</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">leftCounter</span> <span class="o">=</span> <span class="mh">0x00UL</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">rightCounter</span> <span class="o">=</span> <span class="mh">0x00UL</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">elapsed</span> <span class="o">=</span> <span class="n">micros</span><span class="p">()</span> <span class="o">-</span> <span class="n">elapsed</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">leftSpeed</span> <span class="o">=</span> <span class="p">(</span><span class="n">localLeftCounter</span> <span class="o">*</span> <span class="mi">60000000</span><span class="p">)</span><span class="o">/</span><span class="n">elapsed</span><span class="p">;</span>
+</span><span class='line'>  <span class="n">rightSpeed</span> <span class="o">=</span> <span class="p">(</span><span class="n">localRightCounter</span> <span class="o">*</span> <span class="mi">60000000</span><span class="p">)</span><span class="o">/</span><span class="n">elapsed</span><span class="p">;</span>
+</span><span class='line'>  <span class="k">return</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kt">void</span> <span class="n">setMotorSpeed</span><span class="p">(</span><span class="kt">int</span> <span class="n">leftSpeed</span><span class="p">,</span> <span class="kt">int</span> <span class="n">rightSpeed</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="k">if</span><span class="p">(</span><span class="n">leftSpeed</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">{</span>
+</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">MOTOR_L_IN_1</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">MOTOR_L_IN_2</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">leftSpeed</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">{</span>
+</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">MOTOR_L_IN_1</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">MOTOR_L_IN_2</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="k">else</span>
+</span><span class='line'>  <span class="p">{</span>
+</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">MOTOR_L_IN_1</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">MOTOR_L_IN_2</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="n">analogWrite</span><span class="p">(</span><span class="n">MOTOR_L_PWM</span><span class="p">,</span> <span class="n">leftSpeed</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">if</span><span class="p">(</span><span class="n">rightSpeed</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">{</span>
+</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">MOTOR_R_IN_1</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">MOTOR_R_IN_2</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="k">else</span> <span class="k">if</span><span class="p">(</span><span class="n">rightSpeed</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">{</span>
+</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">MOTOR_R_IN_1</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">MOTOR_R_IN_2</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="k">else</span>
+</span><span class='line'>  <span class="p">{</span>
+</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">MOTOR_R_IN_1</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">MOTOR_R_IN_2</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'>  <span class="n">analogWrite</span><span class="p">(</span><span class="n">MOTOR_R_PWM</span><span class="p">,</span> <span class="n">rightSpeed</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">return</span><span class="p">;</span>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'><span class="kt">void</span> <span class="n">setup</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="n">Serial</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="mi">115200</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">pinMode</span><span class="p">(</span><span class="n">MOTOR_L_IN_1</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">pinMode</span><span class="p">(</span><span class="n">MOTOR_L_IN_2</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">pinMode</span><span class="p">(</span><span class="n">MOTOR_L_PWM</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">pinMode</span><span class="p">(</span><span class="n">MOTOR_R_IN_1</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">pinMode</span><span class="p">(</span><span class="n">MOTOR_R_IN_2</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">pinMode</span><span class="p">(</span><span class="n">MOTOR_L_PWM</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">pinMode</span><span class="p">(</span><span class="n">MOTOR_STBY</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">pinMode</span><span class="p">(</span><span class="n">LED_STATUS</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">pinMode</span><span class="p">(</span><span class="n">MOTOR_L_A</span><span class="p">,</span> <span class="n">INPUT</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">pinMode</span><span class="p">(</span><span class="n">MOTOR_L_B</span><span class="p">,</span> <span class="n">INPUT</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">pinMode</span><span class="p">(</span><span class="n">MOTOR_R_A</span><span class="p">,</span> <span class="n">INPUT</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">pinMode</span><span class="p">(</span><span class="n">MOTOR_R_B</span><span class="p">,</span> <span class="n">INPUT</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">pinMode</span><span class="p">(</span><span class="n">SENSOR_OPP_L</span><span class="p">,</span> <span class="n">INPUT</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">pinMode</span><span class="p">(</span><span class="n">SENSOR_OPP_R</span><span class="p">,</span> <span class="n">INPUT</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">pinMode</span><span class="p">(</span><span class="n">SENSOR_FLR_L</span><span class="p">,</span> <span class="n">INPUT</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">pinMode</span><span class="p">(</span><span class="n">SENSOR_FLR_R</span><span class="p">,</span> <span class="n">INPUT</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">pinMode</span><span class="p">(</span><span class="n">RUN</span><span class="p">,</span> <span class="n">INPUT_PULLUP</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">digitalWrite</span><span class="p">(</span><span class="n">MOTOR_L_IN_1</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">digitalWrite</span><span class="p">(</span><span class="n">MOTOR_L_IN_2</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">digitalWrite</span><span class="p">(</span><span class="n">MOTOR_L_PWM</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">digitalWrite</span><span class="p">(</span><span class="n">MOTOR_R_IN_1</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">digitalWrite</span><span class="p">(</span><span class="n">MOTOR_R_IN_2</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">digitalWrite</span><span class="p">(</span><span class="n">MOTOR_R_PWM</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">digitalWrite</span><span class="p">(</span><span class="n">MOTOR_STBY</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED_STATUS</span><span class="p">,</span> <span class="n">LOW</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">attachInterrupt</span><span class="p">(</span><span class="n">MOTOR_L_A</span><span class="p">,</span> <span class="n">leftMotorA</span><span class="p">,</span> <span class="n">CHANGE</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">attachInterrupt</span><span class="p">(</span><span class="n">MOTOR_L_B</span><span class="p">,</span> <span class="n">leftMotorB</span><span class="p">,</span> <span class="n">CHANGE</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">attachInterrupt</span><span class="p">(</span><span class="n">MOTOR_R_A</span><span class="p">,</span> <span class="n">rightMotorA</span><span class="p">,</span> <span class="n">CHANGE</span><span class="p">);</span>
+</span><span class='line'>  <span class="n">attachInterrupt</span><span class="p">(</span><span class="n">MOTOR_R_B</span><span class="p">,</span> <span class="n">rightMotorB</span><span class="p">,</span> <span class="n">CHANGE</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">analogWriteFrequency</span><span class="p">(</span><span class="n">MOTOR_L_PWM</span><span class="p">,</span> <span class="mi">18000</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'><span class="p">}</span>
+</span><span class='line'>
+</span><span class='line'><span class="kt">void</span> <span class="n">loop</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span> <span class="p">{</span>
+</span><span class='line'>  <span class="kt">int</span> <span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">digitalWrite</span><span class="p">(</span><span class="n">MOTOR_STBY</span><span class="p">,</span> <span class="n">HIGH</span><span class="p">);</span> <span class="c1">// enable motors</span>
+</span><span class='line'>  <span class="n">setMotorSpeed</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</span><span class='line'>  <span class="p">{</span>
+</span><span class='line'>    <span class="n">getMotorSpeed</span><span class="p">(</span><span class="n">left</span><span class="p">,</span> <span class="n">right</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="s">&quot;</span><span class="se">\f\r</span><span class="s">Counts/minute is: &quot;</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">Serial</span><span class="p">.</span><span class="n">print</span><span class="p">(</span><span class="n">right</span><span class="p">,</span> <span class="n">DEC</span><span class="p">);</span>
+</span><span class='line'>    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED_STATUS</span><span class="p">,</span> <span class="o">!</span><span class="n">digitalRead</span><span class="p">(</span><span class="n">LED_STATUS</span><span class="p">));</span>
+</span><span class='line'>    <span class="n">delay</span><span class="p">(</span><span class="mi">2000</span><span class="p">);</span>
+</span><span class='line'>  <span class="p">}</span>
+</span><span class='line'><span class="p">}</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<h2>Next Steps</h2>
+
+<p>The next steps forward from this point would be to sort out the chassis, either re-design it to take advantage of 5mm plastics or get it cut from 6mm plastic. Once I&rsquo;ve finalised my chassis design and actually have it I then can finish the logic board layout and get it sent off to be manufactured. Another step I can take in parallel would be see about implementing the closed loop control in the Teensy 3 or using my LPC1343 development board. I&rsquo;m planning on running this robot at the June 2014 Birmingham Tech Fest so I&rsquo;ll consider May 2014 to be my final deadline for a completed robot.</p>
+</div>
+  
+  
+
+
+    </article>
   
   
     <article>
@@ -420,6 +886,10 @@
 <section>
   <h1>Recent Posts</h1>
   <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/09/22/mini-sumo-claymore/">Mini-Sumo Claymore</a>
+      </li>
     
       <li class="post">
         <a href="/blog/2013/09/20/Cupcake-o-Matic/">Cupcake-o-Matic</a>

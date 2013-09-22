@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Claymore | Wires and Bits]]></title>
   <link href="http://pinski1.github.io/blog/categories/claymore/atom.xml" rel="self"/>
   <link href="http://pinski1.github.io/"/>
-  <updated>2013-09-21T14:22:56+01:00</updated>
+  <updated>2013-09-22T22:07:15+01:00</updated>
   <id>http://pinski1.github.io/</id>
   <author>
     <name><![CDATA[Pinski1]]></name>
@@ -12,6 +12,326 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Mini-Sumo Claymore]]></title>
+    <link href="http://pinski1.github.io/blog/2013/09/22/mini-sumo-claymore/"/>
+    <updated>2013-09-22T14:39:00+01:00</updated>
+    <id>http://pinski1.github.io/blog/2013/09/22/mini-sumo-claymore</id>
+    <content type="html"><![CDATA[<p>Whilst visiting the Birmingham <a href="https://www.bcu.ac.uk/tee/events/techfest">TechFest</a> in 2011 with a few classmates from university I saw people with small autonomous robots, the robots were attempting to push each other out of a black circle. It turned out that this was a mini-sumo competition. The robots had to be autonomous, weight less than 500 grams and must fit in a 100mm cube. This sounded like an interesting challenge so I have tried to make my own.</p>
+
+<!-- youtube a video of a competition -->
+
+
+<h3>Rules</h3>
+
+<p>The official rules are listed <a href="http://www.tic.ac.uk/micromouse/RULES/MiniSumoRules.pdf">here in PDF</a> however the important points are:</p>
+
+<ul>
+<li>Matches take place in a Dohyo
+
+<ul>
+<li>This is a circular arena with a diameter of 77 centimetres painted black</li>
+<li>It has a white line on the border 2.5 centimetres wide</li>
+<li>There is nothing else surrounding the Dohyo for at least 50 centimetres</li>
+</ul>
+</li>
+<li>The robot must:
+
+<ul>
+<li>Fit in a box 10 centimetres wide and 10 centimetres deep, there is no height restriction</li>
+<li>It must not weight more than 500 grams</li>
+<li>Autonomous robots must begin a match 5 seconds after a button is pressed</li>
+<li>No jammers or damaging weapons allowed
+
+<ul>
+<li>But a flipper is not ruled out&hellip;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Objectives</h2>
+
+<p>Like The Unnamed I&rsquo;ve set down some initial starting goals:</p>
+
+<ul>
+<li>It must weight 500 grams</li>
+<li>Fit inside the 100 mm cube</li>
+<li>Try and be less than 30mm high</li>
+<li>I want to focus on intelligence rather than brute force
+
+<ul>
+<li>But it helps to have brute force too</li>
+</ul>
+</li>
+<li>Use 2 opponent sensors and 2 edge sensors</li>
+<li>Use &lsquo;modern&rsquo; construction methods
+
+<ul>
+<li>This includes 3D printers and laser cutters</li>
+</ul>
+</li>
+</ul>
+
+
+<h2>Parts</h2>
+
+<p>I started by collecting some parts for the robot. Normally I try and fully design a robot before ordering parts, this stops me from wasting money on things that won&rsquo;t fit with the final design, however more often than now I find myself never quite finishing it. This time I decided that as the robot will be rather small I may as well buy parts that look like they&rsquo;ll fit and then design a chassis around them.</p>
+
+<h3>Drive System</h3>
+
+<p>I figured the first step would be to organise a decent drive system after all the point of this robot is to push other robots out of the ring, it needs to be a solid system as it is my only offensive weapon. I started by trying to find motors from Faulhaber or Maxxon, both very high quality, very high cost precision motors. Googling for Faulhaber lead me to a <a href="http://www.robotroom.com/FaulhaberGearmotor.html">Robot Room</a> post which then lead me to a surplus website selling them <a href="http://www.voti.nl/shop/catalog.html?MOT-20-2">here</a>. A couple of important things to note about these motors which made them ideal; they have pre-built right angle gearboxes already attached, they have encoders mounted on the rear to count rotations and while they&rsquo;re rated for 6 Volts they seem capable of handling ~12 Volts.</p>
+
+<p>I&rsquo;m planning to run the motors in a closed loop control system, this means that rather than setting a PWM value as is the standard I will instead set a counts per interval then the code will attempt to match that value by varying the speed of the motor. This means that should something slow me down, either battery levels draining or an opponent in front of me the controller will increase the PWM value until the counts per interval matches. The only downside to this method is that it is more complex and requires a decently powerful microcontroller, however I was planning to add one anyway so this is acceptable.</p>
+
+<p>The motors at 6 Volts only rotate 80 times a minute or 1.3 times a second which is not very quick at all, if I instead run these motors at 12 Volts then I should get 170 Rotations per Minute (RPM) or 2.8 times a second. This is much better and coupled with the right wheels will make for a fast robot. To provide this 12 Volts I need a powerful but compact battery, I&rsquo;m not too concerned about weight, but the smaller I can make my robot the harder it will be to sense. With that in mind I&rsquo;ve chosen a Lithium Polymer (LiPoly) battery made up of 3 cells for a battery voltage of +11.1 Volts and a capacity of 800 milliamp hours, it measures 75mm x 23mm x 15mm and weights under 63 grams.</p>
+
+<p>The final component of the drive system are the wheels. I want a robot that is around 30mm high so cannot choose wheels larger than that, they also need to maintain good grip on the floor to help push other robots around. I ended up buying a pair of Solarbotics <a href="http://www.technobotsonline.com/solarbotics-rw2-aluminium-wheel-for-3mm-axle.html">RW2 wheels</a>. These have a diameter of 31.2mm which translates to a top speed of 277 mm per second which would be fast enough for this purpose.</p>
+
+<h3>Sensors</h3>
+
+<p>The robot will require 2 types of sensors, one set to detect opponents and manoeuvre them off the edge of the Dohyo and another set to detect the edge of the Dohyo and avoid it.</p>
+
+<p>The distance sensors should have a long range, but to avoid detecting things outside the Dohyo the maximum range must be limited to 50 centimetres + 2.5 centimetres = 52.5 centimetres but should be more than 77 centimetres  &ndash; 10 centimetres &ndash; 10 centimetres = 57 centimetres to ensure that the opponent can be sensed at all ranges. The minimum range should be as close to 0 centimetres as possible to avoid missing the opponent when it is directly in front. The (IR) distance sensors from Sharp are very popular as they fit nicely into this range bracket. I&rsquo;ve chosen the <a href="http://sharp-world.com/products/device/lineup/data/pdf/datasheet/gp2y0d340k_e.pdf">GP2Y0D340K</a> as it has a minimum range of 1.5 centimetres and a maximum range of 40-42.5 centimetres. The maximum range should be acceptable as the robot will be moving around as it scans for the opponent which will reduce the chances of the worst case scenario happening.</p>
+
+<p>The edge detection sensors don&rsquo;t need quite so much range but they need to detect the change from the black Dohyo floor to the white edge border cleanly. The edge sensors I choose will need to sense the change quickly, if the robot is travelling at its top speed of 277 millimetres per second then the robot has 1.1 seconds to come to a halt to avoid driving off the edge. The popular sensors for this task are the <a href="http://www.vishay.com/docs/83752/tcrt1000.pdf">TCRT1000</a> from Vishay. The TCRT1000 combines an Infra-Red (IR) transmitter receiver pair in a single package, correctly biased they be set up to give a digital output that ranges when the border is detected, this can then set off an interrupt to stop the robot.</p>
+
+<h3>Logic</h3>
+
+<p>To control the robot I will need some logic to receive inputs, process them and then act upon them, as I want the strength of my robot to be the processor this is where I need to choose a fast and powerful microcontroller. I will use the faster microcontroller to get inside my opponents Observe, Orientate, Decide, Act loop (<a href="http://en.wikipedia.org/wiki/OODA_loop">OODA</a>), this is done by cycling through the loop faster than the opponent, causing the opponent to act upon a situation that has already changed.</p>
+
+<p>For fast powerful microcontrollers that are still compact the ARM architecture is the most prevalent and of these I have the most experience with the <a href="http://www.nxp.com/products/microcontrollers/cortex_m3/LPC1343FBD48.html">LPC1343</a>. This will be a good choice as it has enough input/output pins for the robot and runs at 72 Megahertz which will allow it to react quickly to changes in its environment. Unfortunately it does not have any non-volatile memory so I may have to include an external EEPROM chip to provide the memory that will exist between power cycles.</p>
+
+<p>The motors will require a specialised chip to drive them as the microcontroller outputs will not be sufficient. This chip will need to work with a +11.1 Volt supply from the battery for the motors and accept control signals  that are +3.3 Volts. The motors will pull approximately 0.4 Amps when stalled so the chip ideally needs to be able to handle approximately 1 Amp of current to be safe. There are a few available chips such as the <a href="http://www.toshiba-components.com/docs/linear/TB6612FNG_en_datasheet.pdf">TB6612FNG</a> or the <a href="www.allegromicro.com/~/Media/Files/Datasheets/A4950-Datasheet.ashx">A4950</a> I will choose a suitable one as the space constraints are discovered.</p>
+
+<p>The LPC1343 requires a +3.3 Volt power supply, the sensors require a +5 Volt power supply, I have a +11.1 Volts battery on my robot, this means I will need to include 2 stages of regulation, one to +5V and another to +3V3. The best way to drop the +11.1 Volts down to +5 Volts is to use a Switch Mode Power Supply (SMPS), these are typically very efficient and generate very little heat. I will then use a linear regulator to drop from +5 Volts down to +3.3 Volts this will give me a very stable, noise free supply for the sensitive microcontroller.</p>
+
+<h3>Chassis</h3>
+
+<p>These disparate parts require a chassis to act as glue holding them together. As none of the robots opponents will be able to cause physical damage there is no need to armour my robot however the chassis will need to be stiff enough to withstand pushing and being pushed by other robots. By making at low as possible I reduce the cross sectional area that an opponent can detect, depending on my opponents sensors I can also construct my robot to further reduce my chances of being detected. For robots that use sonar sensors I can either deflect the ultrasound or absorb it to reduce the returned ultrasound levels, for IR sensors I can do the same but with different materials. I however will not construct my robot to take advantage of this in the first mini-sumo, however for my next robot I may look into &ldquo;stealth&rdquo; techniques.</p>
+
+<p>The minimum height I can build my robot is set by my wheels, 31.2mm, the minimum width of my robot is set by the width of 2 wheels, 2 motors and the battery, 87mm, the minimum length of my robot is set by the length of the motors, 72mm. The total weight of those 5 components is ~200 grams. This means I have approximately 300 grams to fit the logic circuitry, sensors and chassis in. To accurately plan how I would do this I used SketchUp as a Computer Aided Design (CAD) program, it&rsquo;s not as functional as Solidworks or AutoCAD but it is far easier to use.</p>
+
+<p>After many design ideas and tweaks I came up with an idea:
+<img class="<a" src="href="https://lh6.googleusercontent.com/-TnAG8U0xAqc/Uj9I1sREXNI/AAAAAAAACro/a-_sV7KKI7o/w866-h755-no/Claymore_front_iso_v4.1.png">https://lh6.googleusercontent.com/-TnAG8U0xAqc/Uj9I1sREXNI/AAAAAAAACro/a-_sV7KKI7o/w866-h755-no/Claymore_front_iso_v4.1.png</a>"></p>
+
+<p>It was to be built out of laser cut 6mm plastic, ideally Delrin, Acetal, or Polycarbonate (preferably not acrylic) using Pettis joints to hold it together with hex cap screw and square nuts. These joins have proven them selves to be very rigid and very easy to cut out with a laser cutter. The motors, not having any mounting attachments, would be zip-tied in custom 3D printed motor clips which had nut traps so they could be bolted onto the top plate of the chassis. This would form a monocoque structure which would be easy to fabricate, construct and dismantle for repairs/upgrades.</p>
+
+<p><img class="<a" src="href="https://lh4.googleusercontent.com/-vRsUFuJQyCU/Uj9I1n4VsiI/AAAAAAAACrg/CcDRTmb8KPA/w994-h835-no/Claymore_rear_iso_v4.1.png">https://lh4.googleusercontent.com/-vRsUFuJQyCU/Uj9I1n4VsiI/AAAAAAAACrg/CcDRTmb8KPA/w994-h835-no/Claymore_rear_iso_v4.1.png</a>"></p>
+
+<p>To aid in the pushing of opponents a metal plate was added, this had a lip on the front that would protrude out and down. The idea being that as an opponent was found, engaged and pushed the lip would get underneath the opponent and raise their wheels reducing the contact with the ground degrading the grip.</p>
+
+<h2>Testing</h2>
+
+<p>Once version 1 of the chassis was laser cut and the parts installed the first problem was noted, the chassis was in fact cut out of 5mm acrylic, the design was for 6mm plastic. This difference was enough to completely ruin the strength of the structure however it was acceptable enough for testing. Another initial problem was that I was already using my LPC1343 <a href="http://www.universalair.co.uk/control/forebrain">development board</a> in another project and could not remove it however I had recently bought a <a href="http://www.pjrc.com/store/teensy3.html">Teensy 3</a> from the <a href="http://www.kickstarter.com/">Kickstarter</a>. To control the motors I use a TB6612FNG <a href="https://www.sparkfun.com/products/9457">breakout board</a> I had available.</p>
+
+<p><img class="<a" src="href="https://lh5.googleusercontent.com/-kgKjf0jEcWQ/Uj78qt4TjJI/AAAAAAAACq4/GfYSNinDPf8/w1358-h766-no/2013-08-09+07.45.00.jpg">https://lh5.googleusercontent.com/-kgKjf0jEcWQ/Uj78qt4TjJI/AAAAAAAACq4/GfYSNinDPf8/w1358-h766-no/2013-08-09+07.45.00.jpg</a>"></p>
+
+<p>I connected everything up, wrote a quick program to control the motors and loaded it onto the Teensy 3. The first problem was the amount of noise that came from the motors, I thought something had gone horribly wrong, they shouldn&rsquo;t be that loud! Looking at the information on the Teensy 3&rsquo;s PWM it turns out the default frequency is 488.28 Hertz, this is far too slow and is well with in the human audible range. I changed the frequency to 18 kilohertz this is at the very top end of the audible frequency range and reduced the noise completely.
+I&rsquo;ve started to implement the code to read the number of counts per interval however I&rsquo;ve yet to verify the numbers nor do anything useful with them.</p>
+
+<p>``` cpp Claymore test code for Teensy 3
+/<em> Pin Map </em>/</p>
+
+<h1>define MOTOR_L_IN_1    16</h1>
+
+<h1>define MOTOR_L_IN_2    15</h1>
+
+<h1>define MOTOR_L_PWM     22</h1>
+
+<h1>define MOTOR_STBY      14</h1>
+
+<h1>define MOTOR_R_IN_1    17</h1>
+
+<h1>define MOTOR_R_IN_2    18</h1>
+
+<h1>define MOTOR_R_PWM     23</h1>
+
+<h1>define MOTOR_L_A       11</h1>
+
+<h1>define MOTOR_L_B       12</h1>
+
+<h1>define MOTOR_R_A       2</h1>
+
+<h1>define MOTOR_R_B       3</h1>
+
+<h1>define LED_STATUS      13</h1>
+
+<h1>define SENSOR_OPP_L    0</h1>
+
+<h1>define SENSOR_OPP_R    0</h1>
+
+<h1>define SENSOR_FLR_L    0</h1>
+
+<h1>define SENSOR_FLR_R    0</h1>
+
+<h1>define RUN             0</h1>
+
+<p>/<em> Global Variables </em>/
+volatile unsigned long leftCounter = 0x00000000UL;
+volatile unsigned long rightCounter = 0x00000000UL;
+volatile char oldLeft, oldRight, newLeft = 0, newRight = 0;
+static char encoderQuadrature[16] = {0,-1,1,2,1,0,2,-1,-1,2,0,1,2,1,-1,0};</p>
+
+<p>/<em> Global Functions </em>/
+void leftMotorA(void) {
+  oldLeft = newLeft;
+  newLeft = (digitalRead(MOTOR_L_A) * 2) + digitalRead(MOTOR_L_B);
+  leftCounter += encoderQuadrature[(oldLeft * 4) + newLeft];<br/>
+}</p>
+
+<p>void leftMotorB(void) {
+  oldLeft = newLeft;
+  newLeft = (digitalRead(MOTOR_L_A) * 2) + digitalRead(MOTOR_L_B);
+  leftCounter += encoderQuadrature[(oldLeft * 4) + newLeft];
+}</p>
+
+<p>void rightMotorA(void) {
+  oldRight = newRight;
+  newRight = (digitalRead(MOTOR_R_A) * 2) + digitalRead(MOTOR_R_B);
+  rightCounter += encoderQuadrature[(oldRight * 4) + newRight];
+}
+void rightMotorB(void) {
+  oldRight = newRight;
+  newRight = (digitalRead(MOTOR_R_A) * 2) + digitalRead(MOTOR_R_B);
+  rightCounter += encoderQuadrature[(oldRight * 4) + newRight];
+}</p>
+
+<p>void getMotorSpeed(int &amp;leftSpeed, int &amp;rightSpeed) {
+  static unsigned long elapsed = 0x00000000UL;
+  unsigned int localLeftCounter = leftCounter;
+  unsigned int localRightCounter = rightCounter;
+  leftCounter = 0x00UL;
+  rightCounter = 0x00UL;
+  elapsed = micros() &ndash; elapsed;
+  leftSpeed = (localLeftCounter * 60000000)/elapsed;
+  rightSpeed = (localRightCounter * 60000000)/elapsed;
+  return;
+}</p>
+
+<p>void setMotorSpeed(int leftSpeed, int rightSpeed) {
+  if(leftSpeed > 0)
+  {</p>
+
+<pre><code>digitalWrite(MOTOR_L_IN_1, LOW);
+digitalWrite(MOTOR_L_IN_2, HIGH);
+</code></pre>
+
+<p>  }
+  else if(leftSpeed &lt; 0)
+  {</p>
+
+<pre><code>digitalWrite(MOTOR_L_IN_1, HIGH);
+digitalWrite(MOTOR_L_IN_2, LOW);
+</code></pre>
+
+<p>  }
+  else
+  {</p>
+
+<pre><code>digitalWrite(MOTOR_L_IN_1, HIGH);
+digitalWrite(MOTOR_L_IN_2, HIGH);
+</code></pre>
+
+<p>  }
+  analogWrite(MOTOR_L_PWM, leftSpeed);</p>
+
+<p>  if(rightSpeed > 0)
+  {</p>
+
+<pre><code>digitalWrite(MOTOR_R_IN_1, LOW);
+digitalWrite(MOTOR_R_IN_2, HIGH);
+</code></pre>
+
+<p>  }
+  else if(rightSpeed &lt; 0)
+  {</p>
+
+<pre><code>digitalWrite(MOTOR_R_IN_1, HIGH);
+digitalWrite(MOTOR_R_IN_2, LOW);
+</code></pre>
+
+<p>  }
+  else
+  {</p>
+
+<pre><code>digitalWrite(MOTOR_R_IN_1, HIGH);
+digitalWrite(MOTOR_R_IN_2, HIGH);
+</code></pre>
+
+<p>  }
+  analogWrite(MOTOR_R_PWM, rightSpeed);</p>
+
+<p>  return;
+}</p>
+
+<p>void setup(void) {
+  Serial.begin(115200);</p>
+
+<p>  pinMode(MOTOR_L_IN_1, OUTPUT);
+  pinMode(MOTOR_L_IN_2, OUTPUT);
+  pinMode(MOTOR_L_PWM, OUTPUT);
+  pinMode(MOTOR_R_IN_1, OUTPUT);
+  pinMode(MOTOR_R_IN_2, OUTPUT);
+  pinMode(MOTOR_L_PWM, OUTPUT);
+  pinMode(MOTOR_STBY, OUTPUT);
+  pinMode(LED_STATUS, OUTPUT);
+  pinMode(MOTOR_L_A, INPUT);
+  pinMode(MOTOR_L_B, INPUT);
+  pinMode(MOTOR_R_A, INPUT);
+  pinMode(MOTOR_R_B, INPUT);
+  pinMode(SENSOR_OPP_L, INPUT);
+  pinMode(SENSOR_OPP_R, INPUT);
+  pinMode(SENSOR_FLR_L, INPUT);
+  pinMode(SENSOR_FLR_R, INPUT);
+  pinMode(RUN, INPUT_PULLUP);</p>
+
+<p>  digitalWrite(MOTOR_L_IN_1, LOW);
+  digitalWrite(MOTOR_L_IN_2, LOW);
+  digitalWrite(MOTOR_L_PWM, LOW);
+  digitalWrite(MOTOR_R_IN_1, LOW);
+  digitalWrite(MOTOR_R_IN_2, LOW);
+  digitalWrite(MOTOR_R_PWM, LOW);
+  digitalWrite(MOTOR_STBY, LOW);
+  digitalWrite(LED_STATUS, LOW);</p>
+
+<p>  attachInterrupt(MOTOR_L_A, leftMotorA, CHANGE);
+  attachInterrupt(MOTOR_L_B, leftMotorB, CHANGE);
+  attachInterrupt(MOTOR_R_A, rightMotorA, CHANGE);
+  attachInterrupt(MOTOR_R_B, rightMotorB, CHANGE);</p>
+
+<p>  analogWriteFrequency(MOTOR_L_PWM, 18000);</p>
+
+<p>}</p>
+
+<p>void loop(void) {
+  int left, right;</p>
+
+<p>  digitalWrite(MOTOR_STBY, HIGH); // enable motors
+  setMotorSpeed(200, 200);</p>
+
+<p>  while(1)
+  {</p>
+
+<pre><code>getMotorSpeed(left, right);
+Serial.print("\f\rCounts/minute is: ");
+Serial.print(right, DEC);
+digitalWrite(LED_STATUS, !digitalRead(LED_STATUS));
+delay(2000);
+</code></pre>
+
+<p>  }
+}
+```</p>
+
+<h2>Next Steps</h2>
+
+<p>The next steps forward from this point would be to sort out the chassis, either re-design it to take advantage of 5mm plastics or get it cut from 6mm plastic. Once I&rsquo;ve finalised my chassis design and actually have it I then can finish the logic board layout and get it sent off to be manufactured. Another step I can take in parallel would be see about implementing the closed loop control in the Teensy 3 or using my LPC1343 development board. I&rsquo;m planning on running this robot at the June 2014 Birmingham Tech Fest so I&rsquo;ll consider May 2014 to be my final deadline for a completed robot.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[*tock tock* Is this thing on?]]></title>
