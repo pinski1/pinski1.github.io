@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Cupcake-o-Matic | Wires and Bits]]></title>
-  <link href="http://pinski1.github.io/blog/categories/cupcake-o-matic/atom.xml" rel="self"/>
-  <link href="http://pinski1.github.io/"/>
-  <updated>2013-09-22T22:20:14+01:00</updated>
-  <id>http://pinski1.github.io/</id>
+  <link href="http://wiresandbits.co.uk/blog/categories/cupcake-o-matic/atom.xml" rel="self"/>
+  <link href="http://wiresandbits.co.uk/"/>
+  <updated>2013-10-05T12:49:54+01:00</updated>
+  <id>http://wiresandbits.co.uk/</id>
   <author>
     <name><![CDATA[Pinski1]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Cupcake-o-Matic]]></title>
-    <link href="http://pinski1.github.io/blog/2013/09/20/Cupcake-o-Matic/"/>
+    <link href="http://wiresandbits.co.uk/blog/2013/09/20/Cupcake-o-Matic/"/>
     <updated>2013-09-20T13:41:00+01:00</updated>
-    <id>http://pinski1.github.io/blog/2013/09/20/Cupcake-o-Matic</id>
+    <id>http://wiresandbits.co.uk/blog/2013/09/20/Cupcake-o-Matic</id>
     <content type="html"><![CDATA[<p><em>This post is a copy of a log I wrote up <a href="http://wiki.london.hackspace.org.uk/view/Project:Cupcake-o-Matic">here</a>.</em></p>
 
 <p>The Makerbot Cupcake CNC was Makerbot&rsquo;s first foray into the 3D printer kit market, and one of the first 3D printer kits on that market. The Cupcake CNC takes a lot of it&rsquo;s design cues from 2 sources, the initial reprap 3D printer, <a href="http://reprap.org/wiki/Darwin">Darwin</a>, and the other from the need to make it laser cut-able. It was followed by the Thing-o-Matic which fixed many of the problems associated with the Cupcake CNC.</p>
@@ -106,9 +106,9 @@
   
   <entry>
     <title type="html"><![CDATA[*tock tock* Is this thing on?]]></title>
-    <link href="http://pinski1.github.io/blog/2013/09/11/star-tock-tock-star-is-this-thing-on/"/>
+    <link href="http://wiresandbits.co.uk/blog/2013/09/11/star-tock-tock-star-is-this-thing-on/"/>
     <updated>2013-09-11T20:26:00+01:00</updated>
-    <id>http://pinski1.github.io/blog/2013/09/11/star-tock-tock-star-is-this-thing-on</id>
+    <id>http://wiresandbits.co.uk/blog/2013/09/11/star-tock-tock-star-is-this-thing-on</id>
     <content type="html"><![CDATA[<p>I&rsquo;ve decided to start a blog. I have lots of creative ideas and keep starting projects but never quite finish them. I&rsquo;m hoping that by writing about them I&rsquo;ll end up finishing more of them, or at least getting them to a finished-ish state. So with out further ado&hellip;</p>
 
 <h2>Active projects</h2>

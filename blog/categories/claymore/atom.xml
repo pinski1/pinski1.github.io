@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Claymore | Wires and Bits]]></title>
-  <link href="http://pinski1.github.io/blog/categories/claymore/atom.xml" rel="self"/>
-  <link href="http://pinski1.github.io/"/>
-  <updated>2013-09-22T22:20:14+01:00</updated>
-  <id>http://pinski1.github.io/</id>
+  <link href="http://wiresandbits.co.uk/blog/categories/claymore/atom.xml" rel="self"/>
+  <link href="http://wiresandbits.co.uk/"/>
+  <updated>2013-10-05T12:49:54+01:00</updated>
+  <id>http://wiresandbits.co.uk/</id>
   <author>
     <name><![CDATA[Pinski1]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Mini-Sumo Claymore]]></title>
-    <link href="http://pinski1.github.io/blog/2013/09/22/mini-sumo-claymore/"/>
+    <link href="http://wiresandbits.co.uk/blog/2013/09/22/mini-sumo-claymore/"/>
     <updated>2013-09-22T14:39:00+01:00</updated>
-    <id>http://pinski1.github.io/blog/2013/09/22/mini-sumo-claymore</id>
+    <id>http://wiresandbits.co.uk/blog/2013/09/22/mini-sumo-claymore</id>
     <content type="html"><![CDATA[<p>Whilst visiting the Birmingham <a href="https://www.bcu.ac.uk/tee/events/techfest">TechFest</a> in 2011 with a few classmates from university I saw people with small autonomous robots, the robots were attempting to push each other out of a black circle. It turned out that this was a mini-sumo competition. The robots had to be autonomous, weight less than 500 grams and must fit in a 100mm cube. This sounded like an interesting challenge so I have tried to make my own.</p>
 
 <!-- youtube a video of a competition -->
@@ -339,9 +339,9 @@ delay(2000);
   
   <entry>
     <title type="html"><![CDATA[*tock tock* Is this thing on?]]></title>
-    <link href="http://pinski1.github.io/blog/2013/09/11/star-tock-tock-star-is-this-thing-on/"/>
+    <link href="http://wiresandbits.co.uk/blog/2013/09/11/star-tock-tock-star-is-this-thing-on/"/>
     <updated>2013-09-11T20:26:00+01:00</updated>
-    <id>http://pinski1.github.io/blog/2013/09/11/star-tock-tock-star-is-this-thing-on</id>
+    <id>http://wiresandbits.co.uk/blog/2013/09/11/star-tock-tock-star-is-this-thing-on</id>
     <content type="html"><![CDATA[<p>I&rsquo;ve decided to start a blog. I have lots of creative ideas and keep starting projects but never quite finish them. I&rsquo;m hoping that by writing about them I&rsquo;ll end up finishing more of them, or at least getting them to a finished-ish state. So with out further ado&hellip;</p>
 
 <h2>Active projects</h2>

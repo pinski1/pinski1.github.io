@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: The Unnamed | Wires and Bits]]></title>
-  <link href="http://pinski1.github.io/blog/categories/the-unnamed/atom.xml" rel="self"/>
-  <link href="http://pinski1.github.io/"/>
-  <updated>2013-09-22T22:20:14+01:00</updated>
-  <id>http://pinski1.github.io/</id>
+  <link href="http://wiresandbits.co.uk/blog/categories/the-unnamed/atom.xml" rel="self"/>
+  <link href="http://wiresandbits.co.uk/"/>
+  <updated>2013-10-05T12:49:54+01:00</updated>
+  <id>http://wiresandbits.co.uk/</id>
   <author>
     <name><![CDATA[Pinski1]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Unnamed Design Revisions]]></title>
-    <link href="http://pinski1.github.io/blog/2013/09/15/unnamed-design-revisions/"/>
+    <link href="http://wiresandbits.co.uk/blog/2013/09/15/unnamed-design-revisions/"/>
     <updated>2013-09-15T17:40:00+01:00</updated>
-    <id>http://pinski1.github.io/blog/2013/09/15/unnamed-design-revisions</id>
+    <id>http://wiresandbits.co.uk/blog/2013/09/15/unnamed-design-revisions</id>
     <content type="html"><![CDATA[<p>After coming up with the first design I posted it on the Fighting Robot Association (<a href="http://www.fightingrobots.co.uk/">FRA</a>) forums to get some comments and suggestions. One of the worries was that it wouldn&rsquo;t be armoured enough to survive the spinners. Another concern raised was the need for a solid drive-train as the robot would need to be agile and fast to out manoeuvre opponents.</p>
 
 <p>You can visit the forum post <a href="http://www.fightingrobots.co.uk/threads/11705-the-unnamed-(fw)">here</a>.</p>
@@ -45,9 +45,9 @@
   
   <entry>
     <title type="html"><![CDATA[The Unnamed]]></title>
-    <link href="http://pinski1.github.io/blog/2013/09/14/the-unnamed/"/>
+    <link href="http://wiresandbits.co.uk/blog/2013/09/14/the-unnamed/"/>
     <updated>2013-09-14T09:51:00+01:00</updated>
-    <id>http://pinski1.github.io/blog/2013/09/14/the-unnamed</id>
+    <id>http://wiresandbits.co.uk/blog/2013/09/14/the-unnamed</id>
     <content type="html"><![CDATA[<p>I&rsquo;ve been a great fan of Robot Wars since 1998 leading to running a robot club in secondary school. None of the feather weight robots that were being built really got anywhere, and considering they were largely built out of MDF they weren&rsquo;t going to be very robust. However this did plant a seed in my mind which has been constantly growing and nagging. The MDF robots hit the painful snag of not having a decent way to mount wheels to the windscreen wiper motors and attempts to use the Rex&rsquo;s Robot Challenge method of washers and wood never worked well enough.</p>
 
 <p>Now I&rsquo;ve moved on a little bit and got a proper job I think it&rsquo;s time to have another go with 15 years of added experience.</p>
@@ -106,9 +106,9 @@
   
   <entry>
     <title type="html"><![CDATA[*tock tock* Is this thing on?]]></title>
-    <link href="http://pinski1.github.io/blog/2013/09/11/star-tock-tock-star-is-this-thing-on/"/>
+    <link href="http://wiresandbits.co.uk/blog/2013/09/11/star-tock-tock-star-is-this-thing-on/"/>
     <updated>2013-09-11T20:26:00+01:00</updated>
-    <id>http://pinski1.github.io/blog/2013/09/11/star-tock-tock-star-is-this-thing-on</id>
+    <id>http://wiresandbits.co.uk/blog/2013/09/11/star-tock-tock-star-is-this-thing-on</id>
     <content type="html"><![CDATA[<p>I&rsquo;ve decided to start a blog. I have lots of creative ideas and keep starting projects but never quite finish them. I&rsquo;m hoping that by writing about them I&rsquo;ll end up finishing more of them, or at least getting them to a finished-ish state. So with out further ado&hellip;</p>
 
 <h2>Active projects</h2>
