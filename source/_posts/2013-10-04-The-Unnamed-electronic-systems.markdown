@@ -43,13 +43,13 @@ Linear actuators do not spin continuously and will reach a limit where they cann
 ###Battery
 To power the motors in the robot a battery is needed, its characteristics such as voltage and capacity are defined by what I need it to power. The Unnamed has:
 
-|Qty&emsp;|Description&emsp;&emsp;|Load Current&emsp;|Sub-Total&emsp;|Stall Current&emsp;|SubTotal&emsp;
+|Qty&emsp;|Description&emsp;|Load Current (Amps)&nbsp;|Sub-Total (Amps)&nbsp;|Stall Current (Amps)&nbsp;|SubTotal (Amps)&nbsp;
 |-|-|-|-|-|-
 |2|Gimson GR02|8|16|62|124
 |1|Gimson GLA-S|23|23|62|62
 |1|Misc Electronics&emsp;|0|0|0|0
 |Totals:|||39||186
-&emsp;
+<br />
 Assuming a bout lasts 10 minutes then I will need a battery capacity of 6.5 Amp hours (Ah) if all the motors are constantly operating, the absolute worst case suggests I'd need a 31 Ah battery if the motors were continuously stalled. Neither of these estimates are particularly realistic as I will not be driving at top speed for all of a bout, and nor will the lifter be constantly extending and retracting. Obviously the 6.5 Ah figures is much more attainable so I will aim to have a battery that is close to this value. Another consideration is the voltage of the battery, the GR02s and the GLA-S are both rated at 18 Volts however I'm planning to over Volt them by using a 22.2 Volt battery, the motor controllers have PWM control so I will probably clamp the Voltages to 20 Volts to be safe.
 
 ###Radio Control Receiver
@@ -58,7 +58,7 @@ To control the robot I am planning to use a DSM2 compatible transmitter and rece
 ##My Solution
 With these considerations in mind I came up with the following circuit:
 
-{% img https://lh6.googleusercontent.com/-CMTDOl2QUTI/UkxPR-PNIqI/AAAAAAAACso/jil3C-lsSkw/w1358-h618-no/The+Unnamed.png %}
+{% img https://lh3.googleusercontent.com/-AO9cxGub2X8/UnT7i4gSR2I/AAAAAAAACt8/3wYcZNjn4qU/w1358-h681-no/The+Unnamed.png %}
 
 The diagram is largely self-explanatory however the large black/grey block in the centre is a [Wago 862-0504](http://global.wago.com/en/products/product-catalog/terminal-blocks-connectors/modular-terminal-blocks-terminal-strips-panel-mounting/chassis-mount-terminal-strips-witth-cage-clamp-s-connection/index.jsp) terminal block which looks like this:
 

@@ -10,16 +10,16 @@ The Unnamed will be powered by 2 Gimson GR02s which drive a wheel and a pulley e
 
 A GR02 will, when stalled, pull approximately 61.6 Amps according to the manufacturer. This means I need to find something that can withstand that much current for short moments of time. The best way to do this is to do some research and build up a table of options.
 
-|&nbsp;|[RageBridge](http://e0designs.com/products/ragebridge/)|[Modified TZ-85A](http://www.botbitz.com/index.php?route=product/product&path=59&product_id=59)|[TZ-85A](http://www.hobbyking.com/hobbyking/store/__29644__Turnigy_Brushless_ESC_85A_w_5A_SBEC_UK_Warehouse_.html)|[Sabertooth 2x25A](http://www.dimensionengineering.com/products/sabertooth2x25)
+|&nbsp;|[RageBridge](http://e0designs.com/products/ragebridge/)&emsp;|[BB TZ-85A](http://www.botbitz.com/index.php?route=product/product&path=59&product_id=59)&emsp;|[TZ-85A](http://www.hobbyking.com/hobbyking/store/__29644__Turnigy_Brushless_ESC_85A_w_5A_SBEC_UK_Warehouse_.html)&emsp;|[Sabertooth 2x25A](http://www.dimensionengineering.com/products/sabertooth2x25)&emsp;
 |---------|----------|---------|------|--
-|Channels | 2 | 1 | 1 | 2
-|Continuous Current | 30 Amps | 85 Amps | 85 Amps | 25 Amps
-|Peak Current | 90 Amps | 100 Amps | 100 Amps | 50 Amps
-|Min Voltage | 12 Volts | 7.4 Volts | 7.4 Volts | 6 Volts
-|Max Voltage | 36 Volts | 22.2 Volts | 22.2 Volts | 30 Volts
-|Dimensions | ? | ? | ? | ? 
-|Weight | 99.2 Grams | 89 Grams | 89 Grams | 90 Grams
-|Price | &pound;116.16 | &pound;43.94 | &pound;28.22 | &pound;78.48|
+|Channels&emsp;| 2 | 1 | 1 | 2
+|Continuous Current&emsp;| 30 Amps | 85 Amps | 85 Amps | 25 Amps
+|Peak Current&emsp;| 90 Amps | 100 Amps | 100 Amps | 50 Amps
+|Min Voltage&emsp;| 12 Volts | 7.4 Volts | 7.4 Volts | 6 Volts
+|Max Voltage&emsp;| 36 Volts | 22.2 Volts | 22.2 Volts | 30 Volts
+|Dimensions&emsp;| ? | ? | ? | ? 
+|Weight&emsp;| 99.2 Grams | 89 Grams | 89 Grams | 90 Grams
+|Price&emsp;| &pound;116.16 | &pound;43.94 | &pound;28.22 | &pound;78.48|
 
 One thing to note about this comparison is that the TZ-85As are only single channel, I will need two to drive both my motors. I'm also not confident that they will withstand 85 Amps continuously. <!-- more when I receive mine -->
 
