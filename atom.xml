@@ -1,116 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
 
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <title>Wires and Bits</title>
-  <meta name="author" content="Pinski1">
-
-  
-  <meta name="description" content="The main weapon for The Unnamed is a 4-bar lifter. It takes its name from the Four-bar Linkage used to move the lifting arm One of the most famous 4- &hellip;">
-  
-  <meta name="keywords" content="electronics,hobby,hack">
-
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  
-  <link rel="canonical" href="http://wiresandbits.co.uk">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="Wires and Bits" type="application/atom+xml">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
-<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
-
-  
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-43965998-1']);
-    _gaq.push(['_trackPageview']);
-
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
-
-
-</head>
-
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">Wires and Bits</a></h1>
-  
-    <h2>Robots and electronics.</h2>
-  
-</hgroup>
-
-</header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:wiresandbits.co.uk" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul class="main-navigation">
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-  <li><a href="/shop">Shop</a></li>
-</ul>
-
-</nav>
-  <div id="main">
-    <div id="content">
-      <div class="blog-index">
-  
-  
-  
-    <article>
-      
-  <header>
+  <title><![CDATA[Wires and Bits]]></title>
+  <link href="http://wiresandbits.co.uk/atom.xml" rel="self"/>
+  <link href="http://wiresandbits.co.uk/"/>
+  <updated>2015-01-28T23:00:45+00:00</updated>
+  <id>http://wiresandbits.co.uk/</id>
+  <author>
+    <name><![CDATA[Pinski1]]></name>
     
-      <h1 class="entry-title"><a href="/blog/2013/09/25/rules-of-thumb-for-designing-4-bar-lifters/">Rules of Thumb for Designing 4-bar Lifters</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
 
   
-
-
-<time datetime="2013-09-25T21:19:00+01:00" pubdate data-updated="true">Sep 25<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/09/25/rules-of-thumb-for-designing-4-bar-lifters/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>The main weapon for The Unnamed is a 4-bar lifter. It takes its name from the <a href="http://en.wikipedia.org/wiki/Four-bar_linkage">Four-bar Linkage</a> used to move the lifting arm</p>
+  <entry>
+    <title type="html"><![CDATA[Rules of Thumb for Designing 4-bar Lifters]]></title>
+    <link href="http://wiresandbits.co.uk/blog/2013/09/25/rules-of-thumb-for-designing-4-bar-lifters/"/>
+    <updated>2013-09-25T21:19:00+01:00</updated>
+    <id>http://wiresandbits.co.uk/blog/2013/09/25/rules-of-thumb-for-designing-4-bar-lifters</id>
+    <content type="html"><![CDATA[<p>The main weapon for The Unnamed is a 4-bar lifter. It takes its name from the <a href="http://en.wikipedia.org/wiki/Four-bar_linkage">Four-bar Linkage</a> used to move the lifting arm</p>
 
 <p>One of the most famous 4-bar lifter robots is the American Biohazard, it coupled a very low robot with the ability to lift the opponent very high. Below is a video of it defeating Greenspan in May 2002.</p>
 
@@ -199,44 +107,15 @@
 <p>Another option is to further modify the TZ-85A but not re-programming with the stock brushed DC motor control firmware. Instead further modifying the firmware to accept an analogue input and connecting a variable resistor or potentiometer to it. The potentiometer would vary in relation to the position of the linear actuator and would be in effect be a super sized servo. The advantage of this is that the RC pulses no longer specify a speed but a position which the linear actuator will always try and match. This way should external forces move the actuator out of position, it would apply more power (if available) until it matched the requested position again. This would require understanding the current modified firmware as well as extensive testing. Any mistakes could cause the linear actuator to irreparably damage itself.</p>
 
 <p>That would be bad.</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/09/22/mini-sumo-claymore/">Mini-Sumo Claymore</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-09-22T14:39:00+01:00" pubdate data-updated="true">Sep 22<span>nd</span>, 2013</time>
-        
-         | <a href="/blog/2013/09/22/mini-sumo-claymore/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Whilst visiting the Birmingham <a href="https://www.bcu.ac.uk/tee/events/techfest">TechFest</a> in 2011 with a few classmates from university I saw people with small autonomous robots, the robots were attempting to push each other out of a black circle. It turned out that this was a mini-sumo competition. The robots had to be autonomous, weight less than 500 grams and must fit in a 100mm cube. This sounded like an interesting challenge so I have tried to make my own.</p>
+  <entry>
+    <title type="html"><![CDATA[Mini-Sumo Claymore]]></title>
+    <link href="http://wiresandbits.co.uk/blog/2013/09/22/mini-sumo-claymore/"/>
+    <updated>2013-09-22T14:39:00+01:00</updated>
+    <id>http://wiresandbits.co.uk/blog/2013/09/22/mini-sumo-claymore</id>
+    <content type="html"><![CDATA[<p>Whilst visiting the Birmingham <a href="https://www.bcu.ac.uk/tee/events/techfest">TechFest</a> in 2011 with a few classmates from university I saw people with small autonomous robots, the robots were attempting to push each other out of a black circle. It turned out that this was a mini-sumo competition. The robots had to be autonomous, weight less than 500 grams and must fit in a 100mm cube. This sounded like an interesting challenge so I have tried to make my own.</p>
 
 <!-- youtube a video of a competition -->
 
@@ -671,44 +550,15 @@ I&rsquo;ve started to implement the code to read the number of counts per interv
 <h2>Next Steps</h2>
 
 <p>The next steps forward from this point would be to sort out the chassis, either re-design it to take advantage of 5mm plastics or get it cut from 6mm plastic. Once I&rsquo;ve finalised my chassis design and actually have it I then can finish the logic board layout and get it sent off to be manufactured. Another step I can take in parallel would be see about implementing the closed loop control in the Teensy 3 or using my LPC1343 development board. I&rsquo;m planning on running this robot at the June 2014 Birmingham Tech Fest so I&rsquo;ll consider May 2014 to be my final deadline for a completed robot.</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/09/20/Cupcake-o-Matic/">Cupcake-o-Matic</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-09-20T13:41:00+01:00" pubdate data-updated="true">Sep 20<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/09/20/Cupcake-o-Matic/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><em>This post is a copy of a log I wrote up <a href="http://wiki.london.hackspace.org.uk/view/Project:Cupcake-o-Matic">here</a>.</em></p>
+  <entry>
+    <title type="html"><![CDATA[Cupcake-o-Matic]]></title>
+    <link href="http://wiresandbits.co.uk/blog/2013/09/20/Cupcake-o-Matic/"/>
+    <updated>2013-09-20T13:41:00+01:00</updated>
+    <id>http://wiresandbits.co.uk/blog/2013/09/20/Cupcake-o-Matic</id>
+    <content type="html"><![CDATA[<p><em>This post is a copy of a log I wrote up <a href="http://wiki.london.hackspace.org.uk/view/Project:Cupcake-o-Matic">here</a>.</em></p>
 
 <p>The Makerbot Cupcake CNC was Makerbot&rsquo;s first foray into the 3D printer kit market, and one of the first 3D printer kits on that market. The Cupcake CNC takes a lot of it&rsquo;s design cues from 2 sources, the initial reprap 3D printer, <a href="http://reprap.org/wiki/Darwin">Darwin</a>, and the other from the need to make it laser cut-able. It was followed by the Thing-o-Matic which fixed many of the problems associated with the Cupcake CNC.</p>
 
@@ -791,44 +641,15 @@ I&rsquo;ve started to implement the code to read the number of counts per interv
 
 
 <p>At the moment I view 3D printing akin to Linux. In order to be working on the cool parts you MUST have a rock solid back up machine so that you can rescue the cutting edge machine when needs be. I want my Cupcake-o-Matic to be my back-up machine.</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/09/16/speed-controllers/">Speed Controllers</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-09-16T17:19:00+01:00" pubdate data-updated="true">Sep 16<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/09/16/speed-controllers/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>The Unnamed will be powered by 2 Gimson GR02s which drive a wheel and a pulley each, which turn another wheel and pulley combo. This gives me four wheeled drive which helps with acceleration and manoeuvrability. However I need something to take the servo signals (a period of 20 milliseconds with a high pulse between 1 millisecond to 2 milliseconds to determine speed and direction) and convert them into motor signals.</p>
+  <entry>
+    <title type="html"><![CDATA[Speed Controllers]]></title>
+    <link href="http://wiresandbits.co.uk/blog/2013/09/16/speed-controllers/"/>
+    <updated>2013-09-16T17:19:00+01:00</updated>
+    <id>http://wiresandbits.co.uk/blog/2013/09/16/speed-controllers</id>
+    <content type="html"><![CDATA[<p>The Unnamed will be powered by 2 Gimson GR02s which drive a wheel and a pulley each, which turn another wheel and pulley combo. This gives me four wheeled drive which helps with acceleration and manoeuvrability. However I need something to take the servo signals (a period of 20 milliseconds with a high pulse between 1 millisecond to 2 milliseconds to determine speed and direction) and convert them into motor signals.</p>
 
 <p>A GR02 will, when stalled, pull approximately 61.6 Amps according to the manufacturer. This means I need to find something that can withstand that much current for short moments of time. The best way to do this is to do some research and build up a table of options.</p>
 
@@ -920,44 +741,15 @@ I&rsquo;ve started to implement the code to read the number of counts per interv
 <p><img src="https://lh5.googleusercontent.com/-W_1vNbxzFk0/VMlULs7o7eI/AAAAAAAAC4Y/rOeGUtbUxaY/w510-h398-no/Tz85A.jpg"></p>
 
 <p>Looking at that table the TZ-85As seem to be the best for current handling capabilities and their maximum voltage is greater than the motor can handle. They are also quite compact and if I buy them from HobbyKing and re-program them myself they work out to be much cheaper. The lower cost also means that I feel alot better about modifying them as having spares around will not be expensive.</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/09/15/unnamed-design-revisions/">Unnamed Design Revisions</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-09-15T17:40:00+01:00" pubdate data-updated="true">Sep 15<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/09/15/unnamed-design-revisions/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>After coming up with the first design I posted it on the Fighting Robot Association (<a href="http://www.fightingrobots.co.uk/">FRA</a>) forums to get some comments and suggestions. One of the worries was that it wouldn&rsquo;t be armoured enough to survive the spinners. Another concern raised was the need for a solid drive-train as the robot would need to be agile and fast to out manoeuvre opponents.</p>
+  <entry>
+    <title type="html"><![CDATA[Unnamed Design Revisions]]></title>
+    <link href="http://wiresandbits.co.uk/blog/2013/09/15/unnamed-design-revisions/"/>
+    <updated>2013-09-15T17:40:00+01:00</updated>
+    <id>http://wiresandbits.co.uk/blog/2013/09/15/unnamed-design-revisions</id>
+    <content type="html"><![CDATA[<p>After coming up with the first design I posted it on the Fighting Robot Association (<a href="http://www.fightingrobots.co.uk/">FRA</a>) forums to get some comments and suggestions. One of the worries was that it wouldn&rsquo;t be armoured enough to survive the spinners. Another concern raised was the need for a solid drive-train as the robot would need to be agile and fast to out manoeuvre opponents.</p>
 
 <p>You can visit the forum post <a href="http://www.fightingrobots.co.uk/threads/11705-the-unnamed-(fw)">here</a>.</p>
 
@@ -979,44 +771,15 @@ I&rsquo;ve started to implement the code to read the number of counts per interv
 <p><img src="https://lh3.googleusercontent.com/-cdFqAYJzpj4/Ujx7-zmH_iI/AAAAAAAACoE/Yds_11oxjC8/w800/The_Unnamed_Featherweight_Iso_28-08-2013.png" title="The Unnamed after revisions" alt="The Unnamed from a front isometric view"></p>
 
 <p><img src="https://lh6.googleusercontent.com/-wEIegLXU6GE/Ujx8AJJ_XII/AAAAAAAACoU/2GDiBjVDc3c/w800/The_Unnamed_Featherweight_Rear_Iso_28-08-2013.png" title="The Unnamed after revisions" alt="The Unnamed from a rear isometric view"></p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/09/14/the-unnamed/">The Unnamed</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-09-14T09:51:00+01:00" pubdate data-updated="true">Sep 14<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/09/14/the-unnamed/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I&rsquo;ve been a great fan of Robot Wars since 1998 leading to running a robot club in secondary school. None of the feather weight robots that were being built really got anywhere, and considering they were largely built out of MDF they weren&rsquo;t going to be very robust. However this did plant a seed in my mind which has been constantly growing and nagging. The MDF robots hit the painful snag of not having a decent way to mount wheels to the windscreen wiper motors and attempts to use the Rex&rsquo;s Robot Challenge method of washers and wood never worked well enough.</p>
+  <entry>
+    <title type="html"><![CDATA[The Unnamed]]></title>
+    <link href="http://wiresandbits.co.uk/blog/2013/09/14/the-unnamed/"/>
+    <updated>2013-09-14T09:51:00+01:00</updated>
+    <id>http://wiresandbits.co.uk/blog/2013/09/14/the-unnamed</id>
+    <content type="html"><![CDATA[<p>I&rsquo;ve been a great fan of Robot Wars since 1998 leading to running a robot club in secondary school. None of the feather weight robots that were being built really got anywhere, and considering they were largely built out of MDF they weren&rsquo;t going to be very robust. However this did plant a seed in my mind which has been constantly growing and nagging. The MDF robots hit the painful snag of not having a decent way to mount wheels to the windscreen wiper motors and attempts to use the Rex&rsquo;s Robot Challenge method of washers and wood never worked well enough.</p>
 
 <p>Now I&rsquo;ve moved on a little bit and got a proper job I think it&rsquo;s time to have another go with 15 years of added experience.</p>
 
@@ -1069,44 +832,15 @@ I&rsquo;ve started to implement the code to read the number of counts per interv
 <p>The <a href="http://www.gimsonrobotics.co.uk/">Gimson</a> GR02 motors will be the 18 Volt version with a 24:1 gear ratio output. I chose this rather than the 36:1 as while a ratio of 36:1 gave me a faster top speed, it had slower acceleration, the 24:1 gives me a faster acceleration which I feel will be better suited to arena combat. With 75mm wheels I&rsquo;m estimating a top speed of around 3.2 metres per second, the number will go down due to the motors being loaded, but at the same time I&rsquo;ll be overvolting them from 18 Volts to 22 Volts.</p>
 
 <p>Hopefully once I get an idea of how I&rsquo;m going to mount the wheels and the dimensions of the lifter I should be able to push forward and order the parts. The current running cost is an estimated &pound;350 minus the cost of steel armour, the lifter and the electronics. The current running weight is 9.7kg all included however I expect that to creep up as the wheels and lifter arrangements are finalised.</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/09/11/star-tock-tock-star-is-this-thing-on/">*tock Tock* Is This Thing On?</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-09-11T20:26:00+01:00" pubdate data-updated="true">Sep 11<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/09/11/star-tock-tock-star-is-this-thing-on/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I&rsquo;ve decided to start a blog. I have lots of creative ideas and keep starting projects but never quite finish them. I&rsquo;m hoping that by writing about them I&rsquo;ll end up finishing more of them, or at least getting them to a finished-ish state. So with out further ado&hellip;</p>
+  <entry>
+    <title type="html"><![CDATA[*tock tock* Is this thing on?]]></title>
+    <link href="http://wiresandbits.co.uk/blog/2013/09/11/star-tock-tock-star-is-this-thing-on/"/>
+    <updated>2013-09-11T20:26:00+01:00</updated>
+    <id>http://wiresandbits.co.uk/blog/2013/09/11/star-tock-tock-star-is-this-thing-on</id>
+    <content type="html"><![CDATA[<p>I&rsquo;ve decided to start a blog. I have lots of creative ideas and keep starting projects but never quite finish them. I&rsquo;m hoping that by writing about them I&rsquo;ll end up finishing more of them, or at least getting them to a finished-ish state. So with out further ado&hellip;</p>
 
 <h2>Active projects</h2>
 
@@ -1133,173 +867,7 @@ I&rsquo;ve started to implement the code to read the number of counts per interv
 <h2>That is it</h2>
 
 <p>I&rsquo;m going to concentrate on these 4 projects until I complete as many of them as possible. My ideas for other projects like: a gokart, a home server, home automation, an updated <a href="http://www.ladyada.net/make/wavebubble/">Wave Bubble</a> are all going on hiatus.</p>
-</div>
+]]></content>
+  </entry>
   
-  
-
-
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
-<aside class="sidebar">
-  
-    <section>
-	<h1>About Me</h1>
-	<p>I am an Electronic Engineer working in the south of England. I enjoy trying to build the random ideas that occur to me, some don&#8217;t work out, but some do and I try to document them here.</p>
-	<p>I&#8217;ve been into electronics since I was 14 and into building random things well before that.</p>
-</section>
-
-
-
-<section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/blog/2013/09/25/rules-of-thumb-for-designing-4-bar-lifters/">Rules of Thumb for Designing 4-bar Lifters</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/09/22/mini-sumo-claymore/">Mini-Sumo Claymore</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/09/20/Cupcake-o-Matic/">Cupcake-o-Matic</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/09/16/speed-controllers/">Speed Controllers</a>
-      </li>
-    
-      <li class="post">
-        <a href="/blog/2013/09/15/unnamed-design-revisions/">Unnamed Design Revisions</a>
-      </li>
-    
-  </ul>
-</section>
-<section>
-  <h1>Links</h1>
-  <ul>
-    <li><a href="http://hackaday.com/">Hack A Day</a></li>
-    <li><a href="http://dangerousprototypes.com/">Dangerous Prototypes</a></li>
-    <li><a href="http://www.etotheipiplusone.net/">EQUALS ZERO</a></li>
-    <li><a href="http://www.bunniestudios.com/">bunnie:studios</a></li>
-    <li><a href="http://www.hoektronics.com/">Hoektronics</a></li>
-    <li><a href="http://ch00ftech.com/">ch00ftech</a></li>
-    <li><a href="http://makezine.com/blog/">Makezine</a></li>
-	<li><a href="https://www.sparkfun.com/">Sparkfun</a></li>
-    <li><a href="http://www.adafruit.com/">Adafruit Industries</a></li>
-    <li><a href="http://www.coolcomponents.co.uk/">Cool Components</a></li>
-    <li><a href="http://www.skpang.co.uk/catalog/index.php">SK Pang</a></li>
-    <li><a href="https://www.hobbytronics.co.uk/">Hobbytronics</a></li>
-    <li><a href="http://proto-pic.co.uk/">Proto-PIC</a></li>
-    </ul>
-</section>
-<section>
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
-  </ul>
-  
-  <a href="https://github.com/Pinski1">@Pinski1</a> on GitHub
-  
-  <script type="text/javascript">
-    $(document).ready(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
-        github.showRepos({
-            user: 'Pinski1',
-            count: 0,
-            skip_forks: true,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
-
-
-
-
-<section>
-  <h1>Categories</h1>
-  <ul id="categories">
-	<li>3D Printers</li><ul><li><a href='/blog/categories/cupcake-o-matic'>Cupcake-o-Matic</a></li><li><a href='/blog/categories/prusa-i3'>Prusa i3</a></li></ul><li>Robots</li><ul><li><a href='/blog/categories/claymore'>Claymore</a></li><li><a href='/blog/categories/powerbridge'>Powerbridge</a></li><li><a href='/blog/categories/the-unnamed'>The Unnamed</a></li></ul>
-  </ul>
-</section>
-  
-</aside>
-
-    </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2015 - Pinski1 -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
-
-</footer>
-  
-
-<script type="text/javascript">
-      var disqus_shortname = 'wiresandbits';
-      
-        
-        var disqus_script = 'count.js';
-      
-    (function () {
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    }());
-</script>
-
-
-
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) {return;}
-  js = d.createElement(s); js.id = id; js.async = true;
-  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-
-
-  <script type="text/javascript">
-    (function() {
-      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
-      script.src = 'https://apis.google.com/js/plusone.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
-    })();
-  </script>
-
-
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
-
-
-
-
-
-</body>
-</html>
+</feed>

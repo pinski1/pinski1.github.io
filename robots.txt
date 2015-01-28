@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+
+Sitemap: http://wiresandbits.co.uk/sitemap.xml 

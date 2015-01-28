@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: The Unnamed | Wires and Bits]]></title>
+  <link href="http://wiresandbits.co.uk/blog/categories/the-unnamed/atom.xml" rel="self"/>
+  <link href="http://wiresandbits.co.uk/"/>
+  <updated>2015-01-28T23:00:45+00:00</updated>
+  <id>http://wiresandbits.co.uk/</id>
+  <author>
+    <name><![CDATA[Pinski1]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Rules of Thumb for Designing 4-bar Lifters]]></title>
+    <link href="http://wiresandbits.co.uk/blog/2013/09/25/rules-of-thumb-for-designing-4-bar-lifters/"/>
+    <updated>2013-09-25T21:19:00+01:00</updated>
+    <id>http://wiresandbits.co.uk/blog/2013/09/25/rules-of-thumb-for-designing-4-bar-lifters</id>
+    <content type="html"><![CDATA[<p>The main weapon for The Unnamed is a 4-bar lifter. It takes its name from the <a href="http://en.wikipedia.org/wiki/Four-bar_linkage">Four-bar Linkage</a> used to move the lifting arm</p>
+
+<p>One of the most famous 4-bar lifter robots is the American Biohazard, it coupled a very low robot with the ability to lift the opponent very high. Below is a video of it defeating Greenspan in May 2002.</p>
+
+<iframe width="600" height="450" src="https://www.youtube.com/embed/zf3wN87oY0o" frameborder="0" allowfullscreen></iframe>
+
+
+<p>As I&rsquo;m trying to emulate the weapon of Biohazard for The Unnamed I need design my own 4-bar lifter.</p>
+
+<h2>Design</h2>
+
+<p>While it is called a 4-bar linkage one of the bars is actually the robots chassis so this is fixed from a design point of view. The other 3 bars however are very much up to the designer, and because of this the number of variables it is very hard to work out the &ldquo;best&rdquo; design.</p>
+
+<p>I began my design with a number of aims:</p>
+
+<ul>
+<li>It needs to fit into an area roughly 300mm by 50mm to stay inside the robot</li>
+<li>It needs to be reasonably fast, ~2 seconds to complete a lift</li>
+</ul>
+
+
+<p><img class="<a" src="href="https://lh4.googleusercontent.com/-DdzypPtyBzQ/VMlC9p-gbHI/AAAAAAAAC4A/nAhbY0O4txU/w860-h685-no/Four%2BBar%2B-%2Bstarting%2Bscreen.png">https://lh4.googleusercontent.com/-DdzypPtyBzQ/VMlC9p-gbHI/AAAAAAAAC4A/nAhbY0O4txU/w860-h685-no/Four%2BBar%2B-%2Bstarting%2Bscreen.png</a>"></p>
+
+<p>To do this I used SketchUp to position the bars which allowed me to easily get the lengths and angles. These lengths and angles where then inputted into &ldquo;Four Bar&rdquo;, a 4-bar lifter calculated written by Adam Wrigley and available from <a href="http://www.totalinsanity.net/tut/mechanical/4barfrontbar.php">here</a>.</p>
+
+<p><em>Note: This software is old and will need an older version of dotNet in order to install.</em></p>
+
+<h3>Rules of Thumb</h3>
+
+<p>After playing around with it a lot I&rsquo;ve decided on these rules of thumb, I&rsquo;m not a mechanical engineer so there is no theoretical justification, just what&rsquo;s happened when I&rsquo;ve altered it.</p>
+
+<ul>
+<li>The rear bar controls how far forwards or backwards the lifter throws
+
+<ul>
+<li>if it&rsquo;s at a 45&deg; angle then you will have a vertical lift with little forward or backwards throw</li>
+<li>if it&rsquo;s less than a 45&deg; angle then the lifter blade will move forward during the lift</li>
+<li>if it&rsquo;s more than a 45&deg; angle then the lifter blade will move backwards during the lift</li>
+</ul>
+</li>
+<li>The forward bar controls the height the lifter reaches at the end of a throw
+
+<ul>
+<li>the longer the forward bar is, the higher the lifter will be able to reach</li>
+<li>the shorter the forward bar is, the less height the lifter will be able to reach</li>
+</ul>
+</li>
+</ul>
+
+
+<p>After spending quite some time playing around with the lengths and angles I finally came up with a design that produced a result I was happy with.</p>
+
+<p><img class="<a" src="href="https://lh3.googleusercontent.com/-ZY3PFmmdkEE/VMlC9UKsb_I/AAAAAAAAC38/ieWMySVafTc/w853-h685-no/Four%2BBar%2B-%2Bfinal%2Bresult.png">https://lh3.googleusercontent.com/-ZY3PFmmdkEE/VMlC9UKsb_I/AAAAAAAAC38/ieWMySVafTc/w853-h685-no/Four%2BBar%2B-%2Bfinal%2Bresult.png</a>"></p>
+
+<p><em>Note: The calculator uses the units that you enter, in my case millimetres and kilograms.</em></p>
+
+<p>The drawing on the left shows the lowered position in red and the raised position in blue. The tip of the lifter is traced through the entire range with the pink line. As you can see the lifter raises 22.5 centimetres and also moves forwards by 5.0 centimetres, this the advantage of using a 4-bar linkage compared to a simpler flipper.</p>
+
+<p>The graph on the right shows that the front arm is originally 12&deg; from horizontal and rotates until it is 58&deg; from the horizontal. The height increases linearly with rotation which should help the control of the lifter. The torque curve is constant around 39 Newton Meters for the majority of the lifter&rsquo;s movement however for the last 7 centimetres the torque rises very sharply to 129 Newton Meters. The torque figures are calculated assuming a 15 kilogramme weight (opponent) on the tip of the lifter however increases to this mass (multiple opponents, the arena wall) will cause the torque requirements to increase.</p>
+
+<h2>Powering the Lifter</h2>
+
+<p>Of course just having a mechanical design for the lifter bars is great, most of the work in fact, however I still need a way to power the lifter. Using the calculator above I need to provide more than 150 Newton metres of torque to the front arm of the lifter. Looking back to Biohazard it uses 2 electronic linear actuators to push against the front arms.</p>
+
+<h3>Pneumatics</h3>
+
+<p>One of the main advantages of lifters is that they are very similar to a flipper but without the high impulse power that can be provided by pneumatics. It would be possible to drive the 4-bar lifter with a pneumatic ram however I don&rsquo;t feel like I have enough knowledge and understanding of pneumatic systems to do this safely and will save this for a future robot.</p>
+
+<h3>Motors</h3>
+
+<p>An alternative to linear actuators is to have a very high torque motor to drive one of the linkages directly. This was the approach taken by Charles Guan with his <a href="http://www.etotheipiplusone.net/?cat=30">Test Bot 4.5 MCE</a>. This would be more difficult for me to impliment as I do not have lots of space and I need to source or design a suitable gear box. I will probably avoid this approach.</p>
+
+<h3>Linear Actuators</h3>
+
+<p>These are a popular method of driving lifters, although they&rsquo;re much rarer in HeavyWeight robots, Biohazard was an exception rather than a rule. A recent featherweight combat robot that made use of a lifter powered by linear actuators was <a href="http://www.fightingrobots.co.uk/threads/11330-team-pasty-build-diary-loki/">Loki</a> who did quite well for themselves in the 2014 Featherweight Championships.</p>
+
+<p>Looking on <a href="http://www.gimsonrobotics.co.uk/">Gimson Robotics</a> they have the <a href="http://www.gimsonrobotics.co.uk/GLA-S_linear_actuator.html">GLA750-S</a> which seems like exactly what I need. It is capable of 2300 Newtons of force, 50 millimetres of throw, and a top speed of 37 millimetres per second. However I will need more than just a motor controller to drive this as I need it to stop at the lower and upper end points else it will lock itself together.</p>
+
+<h2>Control</h2>
+
+<p>The GLA750-S uses the same motor (RS 550) as the GR02 gear motors, therefore it makes a bit of sense to use the same motor controller, the TZ-85A. However I need to add some way of stopping the linear actuator when it has reached the minimum and maximum lengths. Typically actuator have end stop switches built in which are connected as shown below in the image from Gimson Robotics:</p>
+
+<p><img class="<a" src="href="https://lh5.googleusercontent.com/-tc0a_J3iFf8/VMlggr23neI/AAAAAAAAC5E/gdtb71Crl4Y/w589-h258-no/gla_limit-switch-circuit.jpg">https://lh5.googleusercontent.com/-tc0a_J3iFf8/VMlggr23neI/AAAAAAAAC5E/gdtb71Crl4Y/w589-h258-no/gla_limit-switch-circuit.jpg</a>"></p>
+
+<p>However for the GLA750-S the motor current is too high and will cause the switches to fail, even under no load conditions. This means I&rsquo;d have to construct my own limit switches, most likely due to the currents the limit switches would then operate relays or MOSFETs to limit the motor.</p>
+
+<p>Another option is to further modify the TZ-85A but not re-programming with the stock brushed DC motor control firmware. Instead further modifying the firmware to accept an analogue input and connecting a variable resistor or potentiometer to it. The potentiometer would vary in relation to the position of the linear actuator and would be in effect be a super sized servo. The advantage of this is that the RC pulses no longer specify a speed but a position which the linear actuator will always try and match. This way should external forces move the actuator out of position, it would apply more power (if available) until it matched the requested position again. This would require understanding the current modified firmware as well as extensive testing. Any mistakes could cause the linear actuator to irreparably damage itself.</p>
+
+<p>That would be bad.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Speed Controllers]]></title>
+    <link href="http://wiresandbits.co.uk/blog/2013/09/16/speed-controllers/"/>
+    <updated>2013-09-16T17:19:00+01:00</updated>
+    <id>http://wiresandbits.co.uk/blog/2013/09/16/speed-controllers</id>
+    <content type="html"><![CDATA[<p>The Unnamed will be powered by 2 Gimson GR02s which drive a wheel and a pulley each, which turn another wheel and pulley combo. This gives me four wheeled drive which helps with acceleration and manoeuvrability. However I need something to take the servo signals (a period of 20 milliseconds with a high pulse between 1 millisecond to 2 milliseconds to determine speed and direction) and convert them into motor signals.</p>
+
+<p>A GR02 will, when stalled, pull approximately 61.6 Amps according to the manufacturer. This means I need to find something that can withstand that much current for short moments of time. The best way to do this is to do some research and build up a table of options.</p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th>&nbsp;</th>
+<th><a href="http://e0designs.com/products/ragebridge/">RageBridge</a>&emsp;</th>
+<th><a href="http://www.botbitz.com/index.php?route=product/product&amp;path=59&amp;product_id=59">BB TZ-85A</a>&emsp;</th>
+<th><a href="http://www.hobbyking.com/hobbyking/store/__29644__Turnigy_Brushless_ESC_85A_w_5A_SBEC_UK_Warehouse_.html">TZ-85A</a>&emsp;</th>
+<th><a href="http://www.dimensionengineering.com/products/sabertooth2x25">Sabertooth 2x25A</a>&emsp;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>Channels&emsp;</td>
+<td> 2 </td>
+<td> 1 </td>
+<td> 1 </td>
+<td> 2</td>
+</tr>
+<tr>
+<td></td>
+<td>Continuous Current&emsp;</td>
+<td> 30 Amps </td>
+<td> 85 Amps </td>
+<td> 85 Amps </td>
+<td> 25 Amps</td>
+</tr>
+<tr>
+<td></td>
+<td>Peak Current&emsp;</td>
+<td> 90 Amps </td>
+<td> 100 Amps </td>
+<td> 100 Amps </td>
+<td> 50 Amps</td>
+</tr>
+<tr>
+<td></td>
+<td>Min Voltage&emsp;</td>
+<td> 12 Volts </td>
+<td> 7.4 Volts </td>
+<td> 7.4 Volts </td>
+<td> 6 Volts</td>
+</tr>
+<tr>
+<td></td>
+<td>Max Voltage&emsp;</td>
+<td> 36 Volts </td>
+<td> 25.2 Volts </td>
+<td> 25.2 Volts </td>
+<td> 30 Volts</td>
+</tr>
+<tr>
+<td></td>
+<td>Dimensions&emsp;</td>
+<td> ? </td>
+<td> ? </td>
+<td> ? </td>
+<td> ? </td>
+</tr>
+<tr>
+<td></td>
+<td>Weight&emsp;</td>
+<td> 99.2 Grams </td>
+<td> 89 Grams </td>
+<td> 89 Grams </td>
+<td> 90 Grams</td>
+</tr>
+<tr>
+<td></td>
+<td>Price&emsp;</td>
+<td> &pound;116.16 </td>
+<td> &pound;43.94 </td>
+<td> &pound;28.22 </td>
+<td> &pound;78.48|</td>
+</tr>
+</tbody>
+</table>
+
+
+<br />
+
+
+<p>One thing to note about this comparison is that the TZ-85As are only single channel, I will need two to drive both my motors. I&rsquo;m also not confident that they will withstand 85 Amps continuously. However there have been widely used without complaints in the Australian robot combat leagues. I&rsquo;ve included the pre-programmed ones sold by BotBitz as well as un-programmed ones directly from HobbyKing.</p>
+
+<p><img class="<a" src="href="https://lh5.googleusercontent.com/-W_1vNbxzFk0/VMlULs7o7eI/AAAAAAAAC4Y/rOeGUtbUxaY/w510-h398-no/Tz85A.jpg">https://lh5.googleusercontent.com/-W_1vNbxzFk0/VMlULs7o7eI/AAAAAAAAC4Y/rOeGUtbUxaY/w510-h398-no/Tz85A.jpg</a>"></p>
+
+<p>Looking at that table the TZ-85As seem to be the best for current handling capabilities and their maximum voltage is greater than the motor can handle. They are also quite compact and if I buy them from HobbyKing and re-program them myself they work out to be much cheaper. The lower cost also means that I feel alot better about modifying them as having spares around will not be expensive.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Unnamed Design Revisions]]></title>
+    <link href="http://wiresandbits.co.uk/blog/2013/09/15/unnamed-design-revisions/"/>
+    <updated>2013-09-15T17:40:00+01:00</updated>
+    <id>http://wiresandbits.co.uk/blog/2013/09/15/unnamed-design-revisions</id>
+    <content type="html"><![CDATA[<p>After coming up with the first design I posted it on the Fighting Robot Association (<a href="http://www.fightingrobots.co.uk/">FRA</a>) forums to get some comments and suggestions. One of the worries was that it wouldn&rsquo;t be armoured enough to survive the spinners. Another concern raised was the need for a solid drive-train as the robot would need to be agile and fast to out manoeuvre opponents.</p>
+
+<p>You can visit the forum post <a href="http://www.fightingrobots.co.uk/threads/11705-the-unnamed-(fw)">here</a>.</p>
+
+<h2>What&rsquo;s Changed ?</h2>
+
+<p>All the internal UHMWPE support/structure is being replaced with 2"x1"x0.125" aluminium (6063 T3) channel. I&rsquo;ll be buying it from Aluminium Warehouse and they offer a cutting service which I&rsquo;ll use to get the lengths into ~500mm sections. This massively simplifies the mounting of the motors not to mention improving the rigidity of the robot. I&rsquo;m going to keep the 20mm &amp; 0.5mm tool steel composite armour for the moment however it can be changed out later.</p>
+
+<ul>
+<li>I&rsquo;ll make nut strip using 12mmx12mm aluminium bar with M6 threads and use that to connect the aluminium channel together.</li>
+<li>The front and rear armour has been upgraded to 4mm-6mm Hardox however this will need to be machined by someone with the tools.</li>
+<li>The top and bottom armour/covers will also be upgraded to 5mm polycarbonate however I&rsquo;m not too sure how to mount these.</li>
+<li>The lifter will now be powered by 2 linear actuators from Gimson but the overall design &amp; calculations are still in progress.</li>
+<li>The wheels will be Banebots 2-7/8" Shure 50 tires with &frac34;" hex mounting, I&rsquo;ll then use the &frac12;" to &frac34;" key way mount to affix these to the shafts. The gears will hopefully be attached to the wheels but I may get HPC to put a &frac12;" key way mount on them too.</li>
+</ul>
+
+
+<p>The revised total weight is 8.3kg minus lifting arm and revised total cost is &pound;414.06.</p>
+
+<p><img class="<a" src="href="https://lh3.googleusercontent.com/-cdFqAYJzpj4/Ujx7-zmH_iI/AAAAAAAACoE/Yds_11oxjC8/w800/The_Unnamed_Featherweight_Iso_28-08-2013.png">https://lh3.googleusercontent.com/-cdFqAYJzpj4/Ujx7-zmH_iI/AAAAAAAACoE/Yds_11oxjC8/w800/The_Unnamed_Featherweight_Iso_28-08-2013.png</a>" title="&lsquo;The Unnamed after revisions&rsquo; &lsquo;The Unnamed from a front isometric view&rsquo;" ></p>
+
+<p><img class="<a" src="href="https://lh6.googleusercontent.com/-wEIegLXU6GE/Ujx8AJJ_XII/AAAAAAAACoU/2GDiBjVDc3c/w800/The_Unnamed_Featherweight_Rear_Iso_28-08-2013.png">https://lh6.googleusercontent.com/-wEIegLXU6GE/Ujx8AJJ_XII/AAAAAAAACoU/2GDiBjVDc3c/w800/The_Unnamed_Featherweight_Rear_Iso_28-08-2013.png</a>" title="&lsquo;The Unnamed after revisions&rsquo; &lsquo;The Unnamed from a rear isometric view&rsquo;" ></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The Unnamed]]></title>
+    <link href="http://wiresandbits.co.uk/blog/2013/09/14/the-unnamed/"/>
+    <updated>2013-09-14T09:51:00+01:00</updated>
+    <id>http://wiresandbits.co.uk/blog/2013/09/14/the-unnamed</id>
+    <content type="html"><![CDATA[<p>I&rsquo;ve been a great fan of Robot Wars since 1998 leading to running a robot club in secondary school. None of the feather weight robots that were being built really got anywhere, and considering they were largely built out of MDF they weren&rsquo;t going to be very robust. However this did plant a seed in my mind which has been constantly growing and nagging. The MDF robots hit the painful snag of not having a decent way to mount wheels to the windscreen wiper motors and attempts to use the Rex&rsquo;s Robot Challenge method of washers and wood never worked well enough.</p>
+
+<p>Now I&rsquo;ve moved on a little bit and got a proper job I think it&rsquo;s time to have another go with 15 years of added experience.</p>
+
+<h2>Scope</h2>
+
+<p>I&rsquo;ve got an electronic engineering degree and if that and my work experience have taught me one thing, requirements are king. With that in mind here I go:</p>
+
+<ul>
+<li>To design, build and compete with a 12-13.6kg robot</li>
+<li>To spend less than &pound;500 on parts</li>
+<li>To increase my mechanical knowledge</li>
+<li>To enjoy the fact my 100s of hours of work may well be destroyed in seconds by a full body spinner.</li>
+</ul>
+
+
+<h2>Description</h2>
+
+<p>Now in order to fulfil the compete part of that specification I want something that is reasonably simple and robust, no esoteric weapons. Cutting and impact weapons always seemed to lack any visible damage element (heavy weight Razor aside). This leaves spinners and flippers and I much prefer Chaos 2 to Hypnodisk&hellip;</p>
+
+<p>I&rsquo;ve been a great fan of Charles Guan&rsquo;s <a href="http://www.etotheipiplusone.net/">blog</a> and I&rsquo;m going to heavily plagiarise from his designs, after all he is a mechanical engineer from MIT who builds successful featherweights. Unfortunately I do not have access to quite his wealth of machine tools, I have access to a friend&rsquo;s combination lathe &amp; mill, a few mechanical engineers to run ideas by and that&rsquo;s about it. I personally own a hacksaw, a 14V drill and 1 working 3D printer.</p>
+
+<p>Pneumatics are something I&rsquo;m totally unfamiliar with and so I feel for safety I will leave them well alone, instead I shall use a 4 bar lifter. Four bar lifters seem to be complicated to design but straightforward to construct which certainly fits my limitations. I&rsquo;ll couple that with some high power, high speed drill motors with gear boxes in an attempt to mix &ldquo;Test Bot 4 SP1&rdquo; and &ldquo;Null Hypothesis&rdquo; from Charles Guan.</p>
+
+<h2>The Ingredients</h2>
+
+<ul>
+<li>20mm thick Ultra High Molecular Weight PolyEthylene (UHMWPE) for the chassis frame held together with M8 bolts and threaded inserts</li>
+<li>0.5mm tool steel (or better) side armour</li>
+<li>3mm steel (or better) armour for front and rear</li>
+<li>3mm polycarbonate for the top &amp; bottom armour held with M5 bolts and threaded inserts</li>
+<li>2 off Gimson GR02 18V 24:1 motors for drive</li>
+<li>4 off ~75mmx20mm wheels, either 3" no names or Banebots 2-7/8"</li>
+<li>4 off 5mm pitch, 9mm HTD belt &amp; pulleys to drive 2 wheels per motor</li>
+<li>1 off 6S1P 22.2V 5000mAh 35-70C Turnigy Nano-tech LiPoly battery pack</li>
+<li>1 off custom motor &amp; weapon controller with magic</li>
+<li>1 off 2.4GHz RC set (suggestions welcome)</li>
+<li>1 off weapon, 4 bar lifter, tending towards a linear actuator from Gimson.</li>
+</ul>
+
+
+<h2>The Result</h2>
+
+<p>This is the work of a few nights of playing around in SketchUp:
+<img class="<a" src="href="https://lh4.googleusercontent.com/-ehveM2fI6oc/Ujx79WnwE0I/AAAAAAAACn8/FV2EaW4s4H8/w1357-h762-no/The_Unnamed_Featherweight_20-08-2013.png">https://lh4.googleusercontent.com/-ehveM2fI6oc/Ujx79WnwE0I/AAAAAAAACn8/FV2EaW4s4H8/w1357-h762-no/The_Unnamed_Featherweight_20-08-2013.png</a>" title="&lsquo;The Unnamed&rsquo; &lsquo;The first render of The Unnamed&rsquo;" ></p>
+
+<p>The side armour will consist of 0.5mm of tool steel mounted to a 20mm thick panel of UHMWPE. I&rsquo;m hoping that this composite armour should be capable of surviving spinner attacks because the tool steel should stop the teeth from biting very well and the UHMWPE will flex absorbing some of the spinners impact. Of course it&rsquo;s fairly replaceable and I may redesign it in future as I finalise it.</p>
+
+<p>I&rsquo;ve chosen polycarbonate for the top and bottom as I think featureless steel boxes are pretty boring to look at even if they are painted amazingly. I may have to thicken up the polycarbonate in a later redesign but it should be both strong and transparent enough for this robot.</p>
+
+<p>The <a href="http://www.gimsonrobotics.co.uk/">Gimson</a> GR02 motors will be the 18 Volt version with a 24:1 gear ratio output. I chose this rather than the 36:1 as while a ratio of 36:1 gave me a faster top speed, it had slower acceleration, the 24:1 gives me a faster acceleration which I feel will be better suited to arena combat. With 75mm wheels I&rsquo;m estimating a top speed of around 3.2 metres per second, the number will go down due to the motors being loaded, but at the same time I&rsquo;ll be overvolting them from 18 Volts to 22 Volts.</p>
+
+<p>Hopefully once I get an idea of how I&rsquo;m going to mount the wheels and the dimensions of the lifter I should be able to push forward and order the parts. The current running cost is an estimated &pound;350 minus the cost of steel armour, the lifter and the electronics. The current running weight is 9.7kg all included however I expect that to creep up as the wheels and lifter arrangements are finalised.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[*tock tock* Is this thing on?]]></title>
+    <link href="http://wiresandbits.co.uk/blog/2013/09/11/star-tock-tock-star-is-this-thing-on/"/>
+    <updated>2013-09-11T20:26:00+01:00</updated>
+    <id>http://wiresandbits.co.uk/blog/2013/09/11/star-tock-tock-star-is-this-thing-on</id>
+    <content type="html"><![CDATA[<p>I&rsquo;ve decided to start a blog. I have lots of creative ideas and keep starting projects but never quite finish them. I&rsquo;m hoping that by writing about them I&rsquo;ll end up finishing more of them, or at least getting them to a finished-ish state. So with out further ado&hellip;</p>
+
+<h2>Active projects</h2>
+
+<h3>Makerbot Cupcake-o-Matic</h3>
+
+<p>This is my fairly successful attempt to convert my non-working <a href="http://www.makerbot.com/">Makerbot</a> <a href="http://www.makerbot.com/support/cupcake/">Cupcake</a> into a working reliable 3D printer. I&rsquo;ve largely finished this, it just needs the wires hiding to neaten the external appearance, of course it&rsquo;s not quite as simple as that but I&rsquo;ll save that for a subsequent post.</p>
+
+<h3>Prusa i3</h3>
+
+<p>Whilst the Cupcake-o-Matic works, and fairly reliable at that it does only have a 100mm x 100mm x 100mm build volume with a single extruder it&rsquo;s not very expandable. I do want to print large objects in multiple materials and so I began to construct a single sheet style <a href="http://reprap.org/wiki/Prusa_i3">Prusa i3</a>. I have nearly all of the parts but I still need to print some and design some.</p>
+
+<h3>The Unnamed featherweight</h3>
+
+<p>I&rsquo;ve been interested in combat robots since Robot Wars came out in 1998. I tried my hand at building a featherweight (12Kg max) class robot whilst at secondary school but it didn&rsquo;t work out at all. After reading Charles Guan&rsquo;s <a href="http://www.etotheipiplusone.net/">blog</a> I&rsquo;ve decided to have another go.</p>
+
+<h3>Powerbridge</h3>
+
+<p>Of course a 12kg combat robot will need some motor controllers, so I resurrected some designs I&rsquo;ve been playing around and started to update them for the featherweight class of robots, it has the preliminary specs of 2x 20Amp 50Volt motor controller with easy firmware updates.</p>
+
+<h3>Claymore MiniSumo</h3>
+
+<p>Another combat robot I&rsquo;ve been designing is a small autonomous 500gram sumo bot, I like the idea of robots that control themselves, the start of Skynet as it were.</p>
+
+<h2>That is it</h2>
+
+<p>I&rsquo;m going to concentrate on these 4 projects until I complete as many of them as possible. My ideas for other projects like: a gokart, a home server, home automation, an updated <a href="http://www.ladyada.net/make/wavebubble/">Wave Bubble</a> are all going on hiatus.</p>
+]]></content>
+  </entry>
+  
+</feed>

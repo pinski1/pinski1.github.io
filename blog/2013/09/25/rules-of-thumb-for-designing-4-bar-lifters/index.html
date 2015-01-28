@@ -1,0 +1,423 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Rules of Thumb for Designing 4-bar Lifters - Wires and Bits</title>
+  <meta name="author" content="Pinski1">
+
+  
+  <meta name="description" content="The main weapon for The Unnamed is a 4-bar lifter. It takes its name from the Four-bar Linkage used to move the lifting arm One of the most famous 4- &hellip;">
+  
+  <meta name="keywords" content="electronics,hobby,hack">
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+  <link rel="canonical" href="http://wiresandbits.co.uk/blog/2013/09/25/rules-of-thumb-for-designing-4-bar-lifters">
+  <link href="/favicon.png" rel="icon">
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Wires and Bits" type="application/atom+xml">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/lib/jquery.min.js"%3E%3C/script%3E'))</script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
+<link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-43965998-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+</head>
+
+<body   >
+  <header role="banner"><hgroup>
+  <h1><a href="/">Wires and Bits</a></h1>
+  
+    <h2>Robots and electronics.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+  
+<form action="http://google.com/search" method="get">
+  <fieldset role="search">
+    <input type="hidden" name="q" value="site:wiresandbits.co.uk" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+  
+<ul class="main-navigation">
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/shop">Shop</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry" role="article">
+  
+  <header>
+    
+      <h1 class="entry-title">Rules of Thumb for Designing 4-bar Lifters</h1>
+    
+    
+      <p class="meta">
+        
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-25T21:19:00+01:00" pubdate data-updated="true">Sep 25<span>th</span>, 2013</time>
+        
+         | <a href="#disqus_thread">Comments</a>
+        
+      </p>
+    
+  </header>
+
+
+<div class="entry-content"><p>The main weapon for The Unnamed is a 4-bar lifter. It takes its name from the <a href="http://en.wikipedia.org/wiki/Four-bar_linkage">Four-bar Linkage</a> used to move the lifting arm</p>
+
+<p>One of the most famous 4-bar lifter robots is the American Biohazard, it coupled a very low robot with the ability to lift the opponent very high. Below is a video of it defeating Greenspan in May 2002.</p>
+
+<iframe width="600" height="450" src="https://www.youtube.com/embed/zf3wN87oY0o" frameborder="0" allowfullscreen></iframe>
+
+
+<p>As I&rsquo;m trying to emulate the weapon of Biohazard for The Unnamed I need design my own 4-bar lifter.</p>
+
+<h2>Design</h2>
+
+<p>While it is called a 4-bar linkage one of the bars is actually the robots chassis so this is fixed from a design point of view. The other 3 bars however are very much up to the designer, and because of this the number of variables it is very hard to work out the &ldquo;best&rdquo; design.</p>
+
+<p>I began my design with a number of aims:</p>
+
+<ul>
+<li>It needs to fit into an area roughly 300mm by 50mm to stay inside the robot</li>
+<li>It needs to be reasonably fast, ~2 seconds to complete a lift</li>
+</ul>
+
+
+<p><img src="https://lh4.googleusercontent.com/-DdzypPtyBzQ/VMlC9p-gbHI/AAAAAAAAC4A/nAhbY0O4txU/w860-h685-no/Four%2BBar%2B-%2Bstarting%2Bscreen.png"></p>
+
+<p>To do this I used SketchUp to position the bars which allowed me to easily get the lengths and angles. These lengths and angles where then inputted into &ldquo;Four Bar&rdquo;, a 4-bar lifter calculated written by Adam Wrigley and available from <a href="http://www.totalinsanity.net/tut/mechanical/4barfrontbar.php">here</a>.</p>
+
+<p><em>Note: This software is old and will need an older version of dotNet in order to install.</em></p>
+
+<h3>Rules of Thumb</h3>
+
+<p>After playing around with it a lot I&rsquo;ve decided on these rules of thumb, I&rsquo;m not a mechanical engineer so there is no theoretical justification, just what&rsquo;s happened when I&rsquo;ve altered it.</p>
+
+<ul>
+<li>The rear bar controls how far forwards or backwards the lifter throws
+
+<ul>
+<li>if it&rsquo;s at a 45&deg; angle then you will have a vertical lift with little forward or backwards throw</li>
+<li>if it&rsquo;s less than a 45&deg; angle then the lifter blade will move forward during the lift</li>
+<li>if it&rsquo;s more than a 45&deg; angle then the lifter blade will move backwards during the lift</li>
+</ul>
+</li>
+<li>The forward bar controls the height the lifter reaches at the end of a throw
+
+<ul>
+<li>the longer the forward bar is, the higher the lifter will be able to reach</li>
+<li>the shorter the forward bar is, the less height the lifter will be able to reach</li>
+</ul>
+</li>
+</ul>
+
+
+<p>After spending quite some time playing around with the lengths and angles I finally came up with a design that produced a result I was happy with.</p>
+
+<p><img src="https://lh3.googleusercontent.com/-ZY3PFmmdkEE/VMlC9UKsb_I/AAAAAAAAC38/ieWMySVafTc/w853-h685-no/Four%2BBar%2B-%2Bfinal%2Bresult.png"></p>
+
+<p><em>Note: The calculator uses the units that you enter, in my case millimetres and kilograms.</em></p>
+
+<p>The drawing on the left shows the lowered position in red and the raised position in blue. The tip of the lifter is traced through the entire range with the pink line. As you can see the lifter raises 22.5 centimetres and also moves forwards by 5.0 centimetres, this the advantage of using a 4-bar linkage compared to a simpler flipper.</p>
+
+<p>The graph on the right shows that the front arm is originally 12&deg; from horizontal and rotates until it is 58&deg; from the horizontal. The height increases linearly with rotation which should help the control of the lifter. The torque curve is constant around 39 Newton Meters for the majority of the lifter&rsquo;s movement however for the last 7 centimetres the torque rises very sharply to 129 Newton Meters. The torque figures are calculated assuming a 15 kilogramme weight (opponent) on the tip of the lifter however increases to this mass (multiple opponents, the arena wall) will cause the torque requirements to increase.</p>
+
+<h2>Powering the Lifter</h2>
+
+<p>Of course just having a mechanical design for the lifter bars is great, most of the work in fact, however I still need a way to power the lifter. Using the calculator above I need to provide more than 150 Newton metres of torque to the front arm of the lifter. Looking back to Biohazard it uses 2 electronic linear actuators to push against the front arms.</p>
+
+<h3>Pneumatics</h3>
+
+<p>One of the main advantages of lifters is that they are very similar to a flipper but without the high impulse power that can be provided by pneumatics. It would be possible to drive the 4-bar lifter with a pneumatic ram however I don&rsquo;t feel like I have enough knowledge and understanding of pneumatic systems to do this safely and will save this for a future robot.</p>
+
+<h3>Motors</h3>
+
+<p>An alternative to linear actuators is to have a very high torque motor to drive one of the linkages directly. This was the approach taken by Charles Guan with his <a href="http://www.etotheipiplusone.net/?cat=30">Test Bot 4.5 MCE</a>. This would be more difficult for me to impliment as I do not have lots of space and I need to source or design a suitable gear box. I will probably avoid this approach.</p>
+
+<h3>Linear Actuators</h3>
+
+<p>These are a popular method of driving lifters, although they&rsquo;re much rarer in HeavyWeight robots, Biohazard was an exception rather than a rule. A recent featherweight combat robot that made use of a lifter powered by linear actuators was <a href="http://www.fightingrobots.co.uk/threads/11330-team-pasty-build-diary-loki/">Loki</a> who did quite well for themselves in the 2014 Featherweight Championships.</p>
+
+<p>Looking on <a href="http://www.gimsonrobotics.co.uk/">Gimson Robotics</a> they have the <a href="http://www.gimsonrobotics.co.uk/GLA-S_linear_actuator.html">GLA750-S</a> which seems like exactly what I need. It is capable of 2300 Newtons of force, 50 millimetres of throw, and a top speed of 37 millimetres per second. However I will need more than just a motor controller to drive this as I need it to stop at the lower and upper end points else it will lock itself together.</p>
+
+<h2>Control</h2>
+
+<p>The GLA750-S uses the same motor (RS 550) as the GR02 gear motors, therefore it makes a bit of sense to use the same motor controller, the TZ-85A. However I need to add some way of stopping the linear actuator when it has reached the minimum and maximum lengths. Typically actuator have end stop switches built in which are connected as shown below in the image from Gimson Robotics:</p>
+
+<p><img src="https://lh5.googleusercontent.com/-tc0a_J3iFf8/VMlggr23neI/AAAAAAAAC5E/gdtb71Crl4Y/w589-h258-no/gla_limit-switch-circuit.jpg"></p>
+
+<p>However for the GLA750-S the motor current is too high and will cause the switches to fail, even under no load conditions. This means I&rsquo;d have to construct my own limit switches, most likely due to the currents the limit switches would then operate relays or MOSFETs to limit the motor.</p>
+
+<p>Another option is to further modify the TZ-85A but not re-programming with the stock brushed DC motor control firmware. Instead further modifying the firmware to accept an analogue input and connecting a variable resistor or potentiometer to it. The potentiometer would vary in relation to the position of the linear actuator and would be in effect be a super sized servo. The advantage of this is that the RC pulses no longer specify a speed but a position which the linear actuator will always try and match. This way should external forces move the actuator out of position, it would apply more power (if available) until it matched the requested position again. This would require understanding the current modified firmware as well as extensive testing. Any mistakes could cause the linear actuator to irreparably damage itself.</p>
+
+<p>That would be bad.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Pinski1</span></span>
+
+      
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-09-25T21:19:00+01:00" pubdate data-updated="true">Sep 25<span>th</span>, 2013</time>
+      
+
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/the-unnamed/'>The Unnamed</a>
+  
+</span>
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://wiresandbits.co.uk/blog/2013/09/25/rules-of-thumb-for-designing-4-bar-lifters/" data-via="pinski1_" data-counturl="http://wiresandbits.co.uk/blog/2013/09/25/rules-of-thumb-for-designing-4-bar-lifters/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
+
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/09/22/mini-sumo-claymore/" title="Previous Post: Mini-Sumo Claymore">&laquo; Mini-Sumo Claymore</a>
+      
+      
+    </p>
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside class="sidebar">
+  
+    <section>
+	<h1>About Me</h1>
+	<p>I am an Electronic Engineer working in the south of England. I enjoy trying to build the random ideas that occur to me, some don't work out, but some do and I try to document them here.</p>
+	<p>I've been into electronics since I was 14 and into building random things well before that.</p>
+</section>
+
+
+
+<section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/blog/2013/09/25/rules-of-thumb-for-designing-4-bar-lifters/">Rules of Thumb for Designing 4-bar Lifters</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/22/mini-sumo-claymore/">Mini-Sumo Claymore</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/20/Cupcake-o-Matic/">Cupcake-o-Matic</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/16/speed-controllers/">Speed Controllers</a>
+      </li>
+    
+      <li class="post">
+        <a href="/blog/2013/09/15/unnamed-design-revisions/">Unnamed Design Revisions</a>
+      </li>
+    
+  </ul>
+</section>
+<section>
+  <h1>Links</h1>
+  <ul>
+    <li><a href="http://hackaday.com/">Hack A Day</a></li>
+    <li><a href="http://dangerousprototypes.com/">Dangerous Prototypes</a></li>
+    <li><a href="http://www.etotheipiplusone.net/">EQUALS ZERO</a></li>
+    <li><a href="http://www.bunniestudios.com/">bunnie:studios</a></li>
+    <li><a href="http://www.hoektronics.com/">Hoektronics</a></li>
+    <li><a href="http://ch00ftech.com/">ch00ftech</a></li>
+    <li><a href="http://makezine.com/blog/">Makezine</a></li>
+	<li><a href="https://www.sparkfun.com/">Sparkfun</a></li>
+    <li><a href="http://www.adafruit.com/">Adafruit Industries</a></li>
+    <li><a href="http://www.coolcomponents.co.uk/">Cool Components</a></li>
+    <li><a href="http://www.skpang.co.uk/catalog/index.php">SK Pang</a></li>
+    <li><a href="https://www.hobbytronics.co.uk/">Hobbytronics</a></li>
+    <li><a href="http://proto-pic.co.uk/">Proto-PIC</a></li>
+    </ul>
+</section>
+<section>
+  <h1>GitHub Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating...</li>
+  </ul>
+  
+  <a href="https://github.com/Pinski1">@Pinski1</a> on GitHub
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'Pinski1',
+            count: 0,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+
+
+<section>
+  <h1>Categories</h1>
+  <ul id="categories">
+	<li>3D Printers</li><ul><li><a href='/blog/categories/cupcake-o-matic'>Cupcake-o-Matic</a></li><li><a href='/blog/categories/prusa-i3'>Prusa i3</a></li></ul><li>Robots</li><ul><li><a href='/blog/categories/claymore'>Claymore</a></li><li><a href='/blog/categories/powerbridge'>Powerbridge</a></li><li><a href='/blog/categories/the-unnamed'>The Unnamed</a></li></ul>
+  </ul>
+</section>
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer role="contentinfo"><p>
+  Copyright &copy; 2015 - Pinski1 -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+
+<script type="text/javascript">
+      var disqus_shortname = 'wiresandbits';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://wiresandbits.co.uk/blog/2013/09/25/rules-of-thumb-for-designing-4-bar-lifters/';
+        var disqus_url = 'http://wiresandbits.co.uk/blog/2013/09/25/rules-of-thumb-for-designing-4-bar-lifters/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) {return;}
+  js = d.createElement(s); js.id = id; js.async = true;
+  js.src = "//connect.facebook.net/en_US/all.js#appId=212934732101925&xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+
+
+
+</body>
+</html>

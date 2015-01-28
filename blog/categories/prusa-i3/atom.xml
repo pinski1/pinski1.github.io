@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Prusa i3 | Wires and Bits]]></title>
+  <link href="http://wiresandbits.co.uk/blog/categories/prusa-i3/atom.xml" rel="self"/>
+  <link href="http://wiresandbits.co.uk/"/>
+  <updated>2015-01-28T23:00:45+00:00</updated>
+  <id>http://wiresandbits.co.uk/</id>
+  <author>
+    <name><![CDATA[Pinski1]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[*tock tock* Is this thing on?]]></title>
+    <link href="http://wiresandbits.co.uk/blog/2013/09/11/star-tock-tock-star-is-this-thing-on/"/>
+    <updated>2013-09-11T20:26:00+01:00</updated>
+    <id>http://wiresandbits.co.uk/blog/2013/09/11/star-tock-tock-star-is-this-thing-on</id>
+    <content type="html"><![CDATA[<p>I&rsquo;ve decided to start a blog. I have lots of creative ideas and keep starting projects but never quite finish them. I&rsquo;m hoping that by writing about them I&rsquo;ll end up finishing more of them, or at least getting them to a finished-ish state. So with out further ado&hellip;</p>
+
+<h2>Active projects</h2>
+
+<h3>Makerbot Cupcake-o-Matic</h3>
+
+<p>This is my fairly successful attempt to convert my non-working <a href="http://www.makerbot.com/">Makerbot</a> <a href="http://www.makerbot.com/support/cupcake/">Cupcake</a> into a working reliable 3D printer. I&rsquo;ve largely finished this, it just needs the wires hiding to neaten the external appearance, of course it&rsquo;s not quite as simple as that but I&rsquo;ll save that for a subsequent post.</p>
+
+<h3>Prusa i3</h3>
+
+<p>Whilst the Cupcake-o-Matic works, and fairly reliable at that it does only have a 100mm x 100mm x 100mm build volume with a single extruder it&rsquo;s not very expandable. I do want to print large objects in multiple materials and so I began to construct a single sheet style <a href="http://reprap.org/wiki/Prusa_i3">Prusa i3</a>. I have nearly all of the parts but I still need to print some and design some.</p>
+
+<h3>The Unnamed featherweight</h3>
+
+<p>I&rsquo;ve been interested in combat robots since Robot Wars came out in 1998. I tried my hand at building a featherweight (12Kg max) class robot whilst at secondary school but it didn&rsquo;t work out at all. After reading Charles Guan&rsquo;s <a href="http://www.etotheipiplusone.net/">blog</a> I&rsquo;ve decided to have another go.</p>
+
+<h3>Powerbridge</h3>
+
+<p>Of course a 12kg combat robot will need some motor controllers, so I resurrected some designs I&rsquo;ve been playing around and started to update them for the featherweight class of robots, it has the preliminary specs of 2x 20Amp 50Volt motor controller with easy firmware updates.</p>
+
+<h3>Claymore MiniSumo</h3>
+
+<p>Another combat robot I&rsquo;ve been designing is a small autonomous 500gram sumo bot, I like the idea of robots that control themselves, the start of Skynet as it were.</p>
+
+<h2>That is it</h2>
+
+<p>I&rsquo;m going to concentrate on these 4 projects until I complete as many of them as possible. My ideas for other projects like: a gokart, a home server, home automation, an updated <a href="http://www.ladyada.net/make/wavebubble/">Wave Bubble</a> are all going on hiatus.</p>
+]]></content>
+  </entry>
+  
+</feed>

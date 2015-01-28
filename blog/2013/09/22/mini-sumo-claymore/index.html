@@ -5,11 +5,11 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Wires and Bits</title>
+  <title>Mini-Sumo Claymore - Wires and Bits</title>
   <meta name="author" content="Pinski1">
 
   
-  <meta name="description" content="The main weapon for The Unnamed is a 4-bar lifter. It takes its name from the Four-bar Linkage used to move the lifting arm One of the most famous 4- &hellip;">
+  <meta name="description" content="Whilst visiting the Birmingham TechFest in 2011 with a few classmates from university I saw people with small autonomous robots, the robots were &hellip;">
   
   <meta name="keywords" content="electronics,hobby,hack">
 
@@ -19,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://wiresandbits.co.uk">
+  <link rel="canonical" href="http://wiresandbits.co.uk/blog/2013/09/22/mini-sumo-claymore">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Wires and Bits" type="application/atom+xml">
@@ -77,141 +77,12 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/09/25/rules-of-thumb-for-designing-4-bar-lifters/">Rules of Thumb for Designing 4-bar Lifters</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-09-25T21:19:00+01:00" pubdate data-updated="true">Sep 25<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/09/25/rules-of-thumb-for-designing-4-bar-lifters/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>The main weapon for The Unnamed is a 4-bar lifter. It takes its name from the <a href="http://en.wikipedia.org/wiki/Four-bar_linkage">Four-bar Linkage</a> used to move the lifting arm</p>
-
-<p>One of the most famous 4-bar lifter robots is the American Biohazard, it coupled a very low robot with the ability to lift the opponent very high. Below is a video of it defeating Greenspan in May 2002.</p>
-
-<iframe width="600" height="450" src="https://www.youtube.com/embed/zf3wN87oY0o" frameborder="0" allowfullscreen></iframe>
-
-
-<p>As I&rsquo;m trying to emulate the weapon of Biohazard for The Unnamed I need design my own 4-bar lifter.</p>
-
-<h2>Design</h2>
-
-<p>While it is called a 4-bar linkage one of the bars is actually the robots chassis so this is fixed from a design point of view. The other 3 bars however are very much up to the designer, and because of this the number of variables it is very hard to work out the &ldquo;best&rdquo; design.</p>
-
-<p>I began my design with a number of aims:</p>
-
-<ul>
-<li>It needs to fit into an area roughly 300mm by 50mm to stay inside the robot</li>
-<li>It needs to be reasonably fast, ~2 seconds to complete a lift</li>
-</ul>
-
-
-<p><img src="https://lh4.googleusercontent.com/-DdzypPtyBzQ/VMlC9p-gbHI/AAAAAAAAC4A/nAhbY0O4txU/w860-h685-no/Four%2BBar%2B-%2Bstarting%2Bscreen.png"></p>
-
-<p>To do this I used SketchUp to position the bars which allowed me to easily get the lengths and angles. These lengths and angles where then inputted into &ldquo;Four Bar&rdquo;, a 4-bar lifter calculated written by Adam Wrigley and available from <a href="http://www.totalinsanity.net/tut/mechanical/4barfrontbar.php">here</a>.</p>
-
-<p><em>Note: This software is old and will need an older version of dotNet in order to install.</em></p>
-
-<h3>Rules of Thumb</h3>
-
-<p>After playing around with it a lot I&rsquo;ve decided on these rules of thumb, I&rsquo;m not a mechanical engineer so there is no theoretical justification, just what&rsquo;s happened when I&rsquo;ve altered it.</p>
-
-<ul>
-<li>The rear bar controls how far forwards or backwards the lifter throws
-
-<ul>
-<li>if it&rsquo;s at a 45&deg; angle then you will have a vertical lift with little forward or backwards throw</li>
-<li>if it&rsquo;s less than a 45&deg; angle then the lifter blade will move forward during the lift</li>
-<li>if it&rsquo;s more than a 45&deg; angle then the lifter blade will move backwards during the lift</li>
-</ul>
-</li>
-<li>The forward bar controls the height the lifter reaches at the end of a throw
-
-<ul>
-<li>the longer the forward bar is, the higher the lifter will be able to reach</li>
-<li>the shorter the forward bar is, the less height the lifter will be able to reach</li>
-</ul>
-</li>
-</ul>
-
-
-<p>After spending quite some time playing around with the lengths and angles I finally came up with a design that produced a result I was happy with.</p>
-
-<p><img src="https://lh3.googleusercontent.com/-ZY3PFmmdkEE/VMlC9UKsb_I/AAAAAAAAC38/ieWMySVafTc/w853-h685-no/Four%2BBar%2B-%2Bfinal%2Bresult.png"></p>
-
-<p><em>Note: The calculator uses the units that you enter, in my case millimetres and kilograms.</em></p>
-
-<p>The drawing on the left shows the lowered position in red and the raised position in blue. The tip of the lifter is traced through the entire range with the pink line. As you can see the lifter raises 22.5 centimetres and also moves forwards by 5.0 centimetres, this the advantage of using a 4-bar linkage compared to a simpler flipper.</p>
-
-<p>The graph on the right shows that the front arm is originally 12&deg; from horizontal and rotates until it is 58&deg; from the horizontal. The height increases linearly with rotation which should help the control of the lifter. The torque curve is constant around 39 Newton Meters for the majority of the lifter&rsquo;s movement however for the last 7 centimetres the torque rises very sharply to 129 Newton Meters. The torque figures are calculated assuming a 15 kilogramme weight (opponent) on the tip of the lifter however increases to this mass (multiple opponents, the arena wall) will cause the torque requirements to increase.</p>
-
-<h2>Powering the Lifter</h2>
-
-<p>Of course just having a mechanical design for the lifter bars is great, most of the work in fact, however I still need a way to power the lifter. Using the calculator above I need to provide more than 150 Newton metres of torque to the front arm of the lifter. Looking back to Biohazard it uses 2 electronic linear actuators to push against the front arms.</p>
-
-<h3>Pneumatics</h3>
-
-<p>One of the main advantages of lifters is that they are very similar to a flipper but without the high impulse power that can be provided by pneumatics. It would be possible to drive the 4-bar lifter with a pneumatic ram however I don&rsquo;t feel like I have enough knowledge and understanding of pneumatic systems to do this safely and will save this for a future robot.</p>
-
-<h3>Motors</h3>
-
-<p>An alternative to linear actuators is to have a very high torque motor to drive one of the linkages directly. This was the approach taken by Charles Guan with his <a href="http://www.etotheipiplusone.net/?cat=30">Test Bot 4.5 MCE</a>. This would be more difficult for me to impliment as I do not have lots of space and I need to source or design a suitable gear box. I will probably avoid this approach.</p>
-
-<h3>Linear Actuators</h3>
-
-<p>These are a popular method of driving lifters, although they&rsquo;re much rarer in HeavyWeight robots, Biohazard was an exception rather than a rule. A recent featherweight combat robot that made use of a lifter powered by linear actuators was <a href="http://www.fightingrobots.co.uk/threads/11330-team-pasty-build-diary-loki/">Loki</a> who did quite well for themselves in the 2014 Featherweight Championships.</p>
-
-<p>Looking on <a href="http://www.gimsonrobotics.co.uk/">Gimson Robotics</a> they have the <a href="http://www.gimsonrobotics.co.uk/GLA-S_linear_actuator.html">GLA750-S</a> which seems like exactly what I need. It is capable of 2300 Newtons of force, 50 millimetres of throw, and a top speed of 37 millimetres per second. However I will need more than just a motor controller to drive this as I need it to stop at the lower and upper end points else it will lock itself together.</p>
-
-<h2>Control</h2>
-
-<p>The GLA750-S uses the same motor (RS 550) as the GR02 gear motors, therefore it makes a bit of sense to use the same motor controller, the TZ-85A. However I need to add some way of stopping the linear actuator when it has reached the minimum and maximum lengths. Typically actuator have end stop switches built in which are connected as shown below in the image from Gimson Robotics:</p>
-
-<p><img src="https://lh5.googleusercontent.com/-tc0a_J3iFf8/VMlggr23neI/AAAAAAAAC5E/gdtb71Crl4Y/w589-h258-no/gla_limit-switch-circuit.jpg"></p>
-
-<p>However for the GLA750-S the motor current is too high and will cause the switches to fail, even under no load conditions. This means I&rsquo;d have to construct my own limit switches, most likely due to the currents the limit switches would then operate relays or MOSFETs to limit the motor.</p>
-
-<p>Another option is to further modify the TZ-85A but not re-programming with the stock brushed DC motor control firmware. Instead further modifying the firmware to accept an analogue input and connecting a variable resistor or potentiometer to it. The potentiometer would vary in relation to the position of the linear actuator and would be in effect be a super sized servo. The advantage of this is that the RC pulses no longer specify a speed but a position which the linear actuator will always try and match. This way should external forces move the actuator out of position, it would apply more power (if available) until it matched the requested position again. This would require understanding the current modified firmware as well as extensive testing. Any mistakes could cause the linear actuator to irreparably damage itself.</p>
-
-<p>That would be bad.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
-      
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/09/22/mini-sumo-claymore/">Mini-Sumo Claymore</a></h1>
+      <h1 class="entry-title">Mini-Sumo Claymore</h1>
     
     
       <p class="meta">
@@ -229,14 +100,14 @@
 
 <time datetime="2013-09-22T14:39:00+01:00" pubdate data-updated="true">Sep 22<span>nd</span>, 2013</time>
         
-         | <a href="/blog/2013/09/22/mini-sumo-claymore/#disqus_thread">Comments</a>
+         | <a href="#disqus_thread">Comments</a>
         
       </p>
     
   </header>
 
 
-  <div class="entry-content"><p>Whilst visiting the Birmingham <a href="https://www.bcu.ac.uk/tee/events/techfest">TechFest</a> in 2011 with a few classmates from university I saw people with small autonomous robots, the robots were attempting to push each other out of a black circle. It turned out that this was a mini-sumo competition. The robots had to be autonomous, weight less than 500 grams and must fit in a 100mm cube. This sounded like an interesting challenge so I have tried to make my own.</p>
+<div class="entry-content"><p>Whilst visiting the Birmingham <a href="https://www.bcu.ac.uk/tee/events/techfest">TechFest</a> in 2011 with a few classmates from university I saw people with small autonomous robots, the robots were attempting to push each other out of a black circle. It turned out that this was a mini-sumo competition. The robots had to be autonomous, weight less than 500 grams and must fit in a 100mm cube. This sounded like an interesting challenge so I have tried to make my own.</p>
 
 <!-- youtube a video of a competition -->
 
@@ -672,142 +543,16 @@ I&rsquo;ve started to implement the code to read the number of counts per interv
 
 <p>The next steps forward from this point would be to sort out the chassis, either re-design it to take advantage of 5mm plastics or get it cut from 6mm plastic. Once I&rsquo;ve finalised my chassis design and actually have it I then can finish the logic board layout and get it sent off to be manufactured. Another step I can take in parallel would be see about implementing the closed loop control in the Teensy 3 or using my LPC1343 development board. I&rsquo;m planning on running this robot at the June 2014 Birmingham Tech Fest so I&rsquo;ll consider May 2014 to be my final deadline for a completed robot.</p>
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/09/20/Cupcake-o-Matic/">Cupcake-o-Matic</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
   
 
+<span class="byline author vcard">Posted by <span class="fn">Pinski1</span></span>
 
-<time datetime="2013-09-20T13:41:00+01:00" pubdate data-updated="true">Sep 20<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/09/20/Cupcake-o-Matic/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p><em>This post is a copy of a log I wrote up <a href="http://wiki.london.hackspace.org.uk/view/Project:Cupcake-o-Matic">here</a>.</em></p>
-
-<p>The Makerbot Cupcake CNC was Makerbot&rsquo;s first foray into the 3D printer kit market, and one of the first 3D printer kits on that market. The Cupcake CNC takes a lot of it&rsquo;s design cues from 2 sources, the initial reprap 3D printer, <a href="http://reprap.org/wiki/Darwin">Darwin</a>, and the other from the need to make it laser cut-able. It was followed by the Thing-o-Matic which fixed many of the problems associated with the Cupcake CNC.</p>
-
-<p><img src="https://lh3.googleusercontent.com/-r1cPZChABMQ/Ujx77GRrmeI/AAAAAAAACn0/Yjtqp7HYJvk/w471-h835-no/Cupcake_cnc_224.png" title="'The modified Cupcake'" ></p>
-
-<h2>The Start</h2>
-
-<p>I bought a Cupcake CNC from Makerbot Industries in September 2009. I received Cupcake 224 from batch #6. I quickly assembled it and attempted a test print all in about 24 hours. It did not work. I could not get it to extrude plastic through the MK4 Plastruder reliably, when it did extrude I could then not get it to stick to the acrylic build platform. I left it be for a couple of years annoyed with what seemed a wasted purchase until January 2012 when I bought a MK5 drive gear from <a href="http://kd85.com/">KD85</a> , the closest European distributor. I also added a heated build platform to my order to ensure the extrusion would stick to the bed.</p>
-
-<p>These two upgrades allowed me to start printing reliably and I immediately started printing a new extruder to improve the MK4 plastruder. I was aiming to replace it with a stepper motor driven one so as to improve the build quality with a better model slicer such as Slic3r. I ended up printing out multiple extruder bodies as I repeatedly printed the wrong ones. One good side affect of this was that I also ended up printing out the rest of the <a href="http://reprap.org/wiki/RepRapPro_Huxley">Huxley Pro</a> parts to match the NEMA14 stepper extruder body. A friend of mine has suggested he may find a use for it.</p>
-
-<p>This vast amount of printing soon left me with very little of the 1lb natural ABS spool I received with the kit. I decided to buy some blue PLA as I thought it would be the ideal choice for future printing.</p>
-
-<h2>The Modifications</h2>
-
-<p>I have made the following modifications to my Cupcake CNC:</p>
-
-<h3>Updating the Electronics</h3>
-
-<p>The Cupcake originally came with the RepRap <a href="http://reprap.org/wiki/Generation_3">Generation 3 Electronics</a> set:</p>
-
-<ul>
-<li><a href="http://reprap.org/wiki/Motherboard_1.2">RepRap Motherboard v1.2</a> x1</li>
-<li><a href="http://reprap.org/wiki/Extruder_Controller_2.2">Extruder Controller v2.2</a> x1</li>
-<li><a href="http://reprap.org/wiki/Stepper_Motor_Driver_2.3">Stepper Motor Driver v2.3</a> x3</li>
-<li><a href="http://reprap.org/wiki/OptoEndstop_2.1">Opto Endstop v2.1</a> x6</li>
-</ul>
-
-
-<p>The idea was that as each board carried out a specific function it would be easy to design and easy to replace/fix. Unfortunately it wasn&rsquo;t ideal as everyone has 3 axes and an extruder and by separating the boards it took up a lot of space and required lots of messy connecting wires.</p>
-
-<p>One problem is that the Motherboard could only support 3 stepper motors however most 3D printers started to use a fourth stepper motor to drive the extruder. This led to some interesting hacks to add another stepper control channel to the Motherboard, the most popular of these was the <a href="http://www.thingiverse.com/thing:11837">3G 5D Shield</a>. It took one of the end stops from each Stepper Motor Driver and used them to generate the Enable, Step and Direction signals for a fourth Stepper Motor Driver. I did in fact make the required modifications to my Motherboard, see <a href="http://www.thingiverse.com/derivative:25852">here</a>, but I never did get round to using it as I decided that I wanted to step away from having so many separate boards mounted on my Cupcake&rsquo;s chassis.</p>
-
-<p>Whilst looking at alternatives for the electronics I came across the <a href="http://reprap.org/wiki/Sanguinololu">Sanguinololu</a> controller board. Checking on eBay had a Sanguinololu v1.2+ listed, complete, for  &pound;89.00 + P&amp;P. I decided that it would be better to just buy these electronics which would allow me to simply drop in popular firmwares such as Sprinter, Marlin or something more esoteric without having to modify everything so that it would work with a RepRap Motherboard. I simply have to edit the configuration files to match my Cupcake. Of course it is not as simple as plug and play, the new firmwares allow for things like acceleration and software based end stops so will require some tweaking. Nor do many of the connectors match, the stepper motors had 0.156&#8221; pitch connector but needed 0.1&#8221; connectors, it also meant that I could not use a PC PSU for power any more.</p>
-
-<h3>Improving the Power Supply</h3>
-
-<p>The Cupcake electronics were designed to use a PC power supply as a cheap and readily available power source. A 300 Watt PSU costs very little and produces +12V and +5V directly, but due to the range of PC PSUs there is a lot of variation. Some PSUs needed a load on the +5V rail in order to produce voltages, even on the +12V rail, that were within tolerances. They also have to be enabled by connecting a pin on the large ATX connector to ground, otherwise only the standby +5V rail was powered. This mean that despite their initial attractiveness they caused a lot of problems, not to mention their large bulk.</p>
-
-<p>Now most RepRaps use LED power supplies off of eBay, the typical standard is a +12V 30A model. This should be enough to power both the electronics and extruder but also a large 200x200mm heated print bed. It isn&rsquo;t quite as cheap as a PC PSU (about twice the price at &pound;20) it&rsquo;s certainly more compact and easier to use. One of the advantages of having a single board 3D printer controller is that it allows you to use a single regulator to produce the +5V rail for the micro-controller and logic circuits. I began to use the +12V LED PSU with my Cupcake-o-Matic and it worked very well with the Sanguinololu. It freed up a lot of space in the PSU mounting area underneath the build mechanism.</p>
-
-<p>I also came into possession of a old HP laptop power supply. This PSU was rated at 19.5 Volts and could supply 11.8 Amps, the higher volts would mean that the motors could run more efficiently and the heater and heated bed would warm up quicker. The decrease in total current doesn&rsquo;t affect the Cupcake-o-Matic as it only has a 100x100mm heated bed.</p>
-
-<h3>Adding a Cantilever Z Axis</h3>
-
-<p>In order to move the extruder up and down in the Z-axis the Cupcake CNC used a platform suspended on 4 M8 nuts on threaded rods. These threaded rods were linked together with a timing belt such that if the motor moved one step (1.8&deg;) then all the threaded rods would rotate by the same amount. This meant you could get an accuracy of 0.00625mm per step. Unfortunately this was very slow and relied on the threaded rod being exactly straight which it rarely was. What would happen is as the Z platform rose during a build one or more of the threaded rods would move in the x or y axes there by throwing off any precise accuracy in these axes. Another serious problem with this arrangement was the assumption that the 4 M8 nuts would always remain level and wouldn&rsquo;t jam. As a result the Z axis platform would be wonky which didn&rsquo;t help when printing.</p>
-
-<p>To first fix this I printed a <a href="http://www.thingiverse.com/thing:3091">Z-Wobble arrester without pin</a>. It replaces a nut on the Z platform and allows the threaded rod to move back and forth without necessarily dragging the platform in that direction. This was fiddle to install as it required the removal of a nut trap on the platform and then the nut to be moved down a bit, whilst still levelling the bed. It was hard to tell how well this was working but I certainly felt my Cupcake CNC worked better when the arrester was installed on the wonkiest threaded rod. However this did not fix the problem of having to level the Z platform so I began to research on <a href="http://www.thingiverse.com/">Thingiverse</a> for a good solution to solve my troubles permanently.</p>
-
-<p>The first solution I found was a middle point solution, the <a href="http://www.thingiverse.com/thing:18849">ACME rod upgrade for Makerbot Cupcake</a>. You needed to replace the bent M8 threaded rods and nuts with an ACME screw thread on CNC machined rods, this would be both smooth and straight. This seems like a great idea but it requires purchasing &dollar;85 worth of ACME threaded rod from the USA, which would cost a ridiculous amount with overseas shipping. So I had to shelve this idea with some regret.</p>
-
-<p>The Thing-o-Matic had come out for some time ago at this point and I was rather interested in the Z axis which was made up of a cantilevered platform which had 2 smooth rods for stability and a linear stepper motor for positioning. What with the Thing-o-Matic being rather similar to the Cupcake CNC I looked around for a way to add this cantilever in. The first examples I found require the back plate be removed and then the fitting of some large plastic parts to be fitted to accommodate the rods and motors. These struck me as being a little too focused on the need to be 3D printable to actually be usable. However I also found the <a href="http://www.thingiverse.com/thing:14492">Cantilevered Z-Stage for Cupcake</a> which is a laser cut design in 5mm plywood. Unfortunately I&rsquo;ve not been able to find anywhere in the UK that supplies, let alone cuts 5mm plywood, it seems to be a uniquely US thing. With that in mind I had to settle for acrylic which is available in a range of colours with a 5mm thickness.</p>
-
-<p><img src="https://lh4.googleusercontent.com/-8V--yy1HxiM/Ujx8AkSu2UI/AAAAAAAACoc/Rt5bklo7a9k/w800/Cupcake_cantilever_z_axis.png" title="'A cantilever Z-axis in laser cut acrylic.'" ></p>
-
-<h3>A Better Extruder</h3>
-
-<p>The Makerbot Cupcake CNCs from batch 6 came with a laser cut <a href="http://wiki.makerbot.com/plastruder-mk4">Plastruder MK4</a>. To drive the filament a T2.5 timing belt gear was used, it had 17 teeth which would bite into the filament, however the teeth were blunt so could not get a good grip on the filament reliably. This lead to the extruder jamming mid way through a print. When the Plastruder MK4 came out it was a new design but it was quickly superseded by improvements from the RepRap project.</p>
-
-<p>These improvements took the form of the <a href="http://reprap.org/wiki/Wade%27s_Geared_Extruder">Wade&rsquo;s Geared Extruder</a>, a simplified version of <a href="http://reprap.org/wiki/Geared_Nema17_Extruder_Driver">Adrian&rsquo;s Geared Extruder</a>. The Wade&rsquo;s extruder is notable for its use of a single mounting block, a stepper motor, two gears and an idler assembly. The gears drive a &lsquo;Hobbed&rsquo; bolt, this is a bolt where a thread has been cut across the bolt&rsquo;s circumference. The thread grips the filament but does not cut into it unnecessarily.</p>
-
-<p>When I managed to get my MK4 working I printed out, among others, a <a href="http://www.thingiverse.com/thing:8252">Greg&rsquo;s Hinged Accessible Extruder</a> as I wanted the best extruder. I was unsure as to what hot end I would end up with so ended up removing that part of the SCAD code. This probably wasn&rsquo;t my best idea as it makes mounting the Cupcake hot end very difficult and I&rsquo;ve had to use some long M4 bolts and a piece of laser cut 3mm MDF to clamp it in place. This bodge, to be kind, can be seen in the image to the right. I&rsquo;m hoping this bodge will last long enough for me to print an improved extruder, perhaps the latest modified Greg&rsquo;s but with mounting options for the 16mm diameter Cupcake hot end.</p>
-
-<p><img src="https://lh6.googleusercontent.com/-hkS4tbBHrCM/Ujx7-USM01I/AAAAAAAACoQ/pxermp3R9wQ/w582-h835-no/Gregs_Extruder_mounted_in_cupcake.png" title="'The Gregs extruder setup.'" ></p>
-
-<p>I&rsquo;d also like to alter my hot end, at the moment it consists of the MK4 hotend but instead of nichrome wire wrapped around the brass barrel/nozzle I&rsquo;ve added an aluminium heater block. This is a 20x20x10mm block of milled aluminium with a 5.6 ohm 2 Watt vitreous enamel resistor mounted inside. The thermistor is trapped on the outside with a small M3 washer screw. I&rsquo;d love to reduce the amount of metal on my hot end and just use a nozzle mounted directly into the PTFE heat barrier and go back to using nichrome wire. This would let it heat up much faster but it would mean that it would need to be carefully controlled whilst extruding as it would lose heat much more easily. However I could use a <a href="http://reprap.org/wiki/J_Head_Nozzle">J-Head Nozzle</a> hot end, these are popular due to their high reliability, unfortunately they can cost up to &pound;50 which is a lot for something so small.</p>
-
-<h2>The Future</h2>
-
-<p>I&rsquo;d like to add a few more upgrades to this &ldquo;Cupcake-o-Matic&rdquo; in the future namely:</p>
-
-<ul>
-<li>Add an LED ring around the hot end so as to easily see what is happening.</li>
-<li>Replace the hot end thermistor for a thermocouple to allow for a better control system.</li>
-<li>Add a webcam mount for videos or remote printing.</li>
-<li>Affix end stops to allow for automated homing.</li>
-<li>Exchange the Z axis drive with a lead screw instead of M8 rod (possibly TR8x1.5).</li>
-<li>Tune the whole 3D printer for quieter printing.</li>
-</ul>
-
-
-<p>At the moment I view 3D printing akin to Linux. In order to be working on the cool parts you MUST have a rock solid back up machine so that you can rescue the cutting edge machine when needs be. I want my Cupcake-o-Matic to be my back-up machine.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/09/16/speed-controllers/">Speed Controllers</a></h1>
-    
-    
-      <p class="meta">
-        
 
 
 
@@ -819,339 +564,56 @@ I&rsquo;ve started to implement the code to read the number of counts per interv
   
 
 
-<time datetime="2013-09-16T17:19:00+01:00" pubdate data-updated="true">Sep 16<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/09/16/speed-controllers/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>The Unnamed will be powered by 2 Gimson GR02s which drive a wheel and a pulley each, which turn another wheel and pulley combo. This gives me four wheeled drive which helps with acceleration and manoeuvrability. However I need something to take the servo signals (a period of 20 milliseconds with a high pulse between 1 millisecond to 2 milliseconds to determine speed and direction) and convert them into motor signals.</p>
-
-<p>A GR02 will, when stalled, pull approximately 61.6 Amps according to the manufacturer. This means I need to find something that can withstand that much current for short moments of time. The best way to do this is to do some research and build up a table of options.</p>
-
-<table>
-<thead>
-<tr>
-<th></th>
-<th>&nbsp;</th>
-<th><a href="http://e0designs.com/products/ragebridge/">RageBridge</a>&emsp;</th>
-<th><a href="http://www.botbitz.com/index.php?route=product/product&amp;path=59&amp;product_id=59">BB TZ-85A</a>&emsp;</th>
-<th><a href="http://www.hobbyking.com/hobbyking/store/__29644__Turnigy_Brushless_ESC_85A_w_5A_SBEC_UK_Warehouse_.html">TZ-85A</a>&emsp;</th>
-<th><a href="http://www.dimensionengineering.com/products/sabertooth2x25">Sabertooth 2x25A</a>&emsp;</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td></td>
-<td>Channels&emsp;</td>
-<td> 2 </td>
-<td> 1 </td>
-<td> 1 </td>
-<td> 2</td>
-</tr>
-<tr>
-<td></td>
-<td>Continuous Current&emsp;</td>
-<td> 30 Amps </td>
-<td> 85 Amps </td>
-<td> 85 Amps </td>
-<td> 25 Amps</td>
-</tr>
-<tr>
-<td></td>
-<td>Peak Current&emsp;</td>
-<td> 90 Amps </td>
-<td> 100 Amps </td>
-<td> 100 Amps </td>
-<td> 50 Amps</td>
-</tr>
-<tr>
-<td></td>
-<td>Min Voltage&emsp;</td>
-<td> 12 Volts </td>
-<td> 7.4 Volts </td>
-<td> 7.4 Volts </td>
-<td> 6 Volts</td>
-</tr>
-<tr>
-<td></td>
-<td>Max Voltage&emsp;</td>
-<td> 36 Volts </td>
-<td> 25.2 Volts </td>
-<td> 25.2 Volts </td>
-<td> 30 Volts</td>
-</tr>
-<tr>
-<td></td>
-<td>Dimensions&emsp;</td>
-<td> ? </td>
-<td> ? </td>
-<td> ? </td>
-<td> ? </td>
-</tr>
-<tr>
-<td></td>
-<td>Weight&emsp;</td>
-<td> 99.2 Grams </td>
-<td> 89 Grams </td>
-<td> 89 Grams </td>
-<td> 90 Grams</td>
-</tr>
-<tr>
-<td></td>
-<td>Price&emsp;</td>
-<td> &pound;116.16 </td>
-<td> &pound;43.94 </td>
-<td> &pound;28.22 </td>
-<td> &pound;78.48|</td>
-</tr>
-</tbody>
-</table>
-
-
-<br />
-
-
-<p>One thing to note about this comparison is that the TZ-85As are only single channel, I will need two to drive both my motors. I&rsquo;m also not confident that they will withstand 85 Amps continuously. However there have been widely used without complaints in the Australian robot combat leagues. I&rsquo;ve included the pre-programmed ones sold by BotBitz as well as un-programmed ones directly from HobbyKing.</p>
-
-<p><img src="https://lh5.googleusercontent.com/-W_1vNbxzFk0/VMlULs7o7eI/AAAAAAAAC4Y/rOeGUtbUxaY/w510-h398-no/Tz85A.jpg"></p>
-
-<p>Looking at that table the TZ-85As seem to be the best for current handling capabilities and their maximum voltage is greater than the motor can handle. They are also quite compact and if I buy them from HobbyKing and re-program them myself they work out to be much cheaper. The lower cost also means that I feel alot better about modifying them as having spares around will not be expensive.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
+<time datetime="2013-09-22T14:39:00+01:00" pubdate data-updated="true">Sep 22<span>nd</span>, 2013</time>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/09/15/unnamed-design-revisions/">Unnamed Design Revisions</a></h1>
-    
-    
-      <p class="meta">
-        
 
-
-
-
-
-
-
-
+<span class="categories">
   
+    <a class='category' href='/blog/categories/claymore/'>Claymore</a>
+  
+</span>
 
 
-<time datetime="2013-09-15T17:40:00+01:00" pubdate data-updated="true">Sep 15<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/09/15/unnamed-design-revisions/#disqus_thread">Comments</a>
-        
-      </p>
+    </p>
     
-  </header>
-
-
-  <div class="entry-content"><p>After coming up with the first design I posted it on the Fighting Robot Association (<a href="http://www.fightingrobots.co.uk/">FRA</a>) forums to get some comments and suggestions. One of the worries was that it wouldn&rsquo;t be armoured enough to survive the spinners. Another concern raised was the need for a solid drive-train as the robot would need to be agile and fast to out manoeuvre opponents.</p>
-
-<p>You can visit the forum post <a href="http://www.fightingrobots.co.uk/threads/11705-the-unnamed-(fw)">here</a>.</p>
-
-<h2>What&rsquo;s Changed ?</h2>
-
-<p>All the internal UHMWPE support/structure is being replaced with 2&#8221;x1&#8221;x0.125&#8221; aluminium (6063 T3) channel. I&rsquo;ll be buying it from Aluminium Warehouse and they offer a cutting service which I&rsquo;ll use to get the lengths into ~500mm sections. This massively simplifies the mounting of the motors not to mention improving the rigidity of the robot. I&rsquo;m going to keep the 20mm &amp; 0.5mm tool steel composite armour for the moment however it can be changed out later.</p>
-
-<ul>
-<li>I&rsquo;ll make nut strip using 12mmx12mm aluminium bar with M6 threads and use that to connect the aluminium channel together.</li>
-<li>The front and rear armour has been upgraded to 4mm-6mm Hardox however this will need to be machined by someone with the tools.</li>
-<li>The top and bottom armour/covers will also be upgraded to 5mm polycarbonate however I&rsquo;m not too sure how to mount these.</li>
-<li>The lifter will now be powered by 2 linear actuators from Gimson but the overall design &amp; calculations are still in progress.</li>
-<li>The wheels will be Banebots 2-7/8&#8221; Shure 50 tires with &frac34;&#8221; hex mounting, I&rsquo;ll then use the &frac12;&#8221; to &frac34;&#8221; key way mount to affix these to the shafts. The gears will hopefully be attached to the wheels but I may get HPC to put a &frac12;&#8221; key way mount on them too.</li>
-</ul>
-
-
-<p>The revised total weight is 8.3kg minus lifting arm and revised total cost is &pound;414.06.</p>
-
-<p><img src="https://lh3.googleusercontent.com/-cdFqAYJzpj4/Ujx7-zmH_iI/AAAAAAAACoE/Yds_11oxjC8/w800/The_Unnamed_Featherweight_Iso_28-08-2013.png" title="The Unnamed after revisions" alt="The Unnamed from a front isometric view"></p>
-
-<p><img src="https://lh6.googleusercontent.com/-wEIegLXU6GE/Ujx8AJJ_XII/AAAAAAAACoU/2GDiBjVDc3c/w800/The_Unnamed_Featherweight_Rear_Iso_28-08-2013.png" title="The Unnamed after revisions" alt="The Unnamed from a rear isometric view"></p>
+      <div class="sharing">
+  
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://wiresandbits.co.uk/blog/2013/09/22/mini-sumo-claymore/" data-via="pinski1_" data-counturl="http://wiresandbits.co.uk/blog/2013/09/22/mini-sumo-claymore/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
 </div>
-  
-  
 
-
-    </article>
-  
-  
-    <article>
+    
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/09/14/the-unnamed/">The Unnamed</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-09-14T09:51:00+01:00" pubdate data-updated="true">Sep 14<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/09/14/the-unnamed/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I&rsquo;ve been a great fan of Robot Wars since 1998 leading to running a robot club in secondary school. None of the feather weight robots that were being built really got anywhere, and considering they were largely built out of MDF they weren&rsquo;t going to be very robust. However this did plant a seed in my mind which has been constantly growing and nagging. The MDF robots hit the painful snag of not having a decent way to mount wheels to the windscreen wiper motors and attempts to use the Rex&rsquo;s Robot Challenge method of washers and wood never worked well enough.</p>
-
-<p>Now I&rsquo;ve moved on a little bit and got a proper job I think it&rsquo;s time to have another go with 15 years of added experience.</p>
-
-<h2>Scope</h2>
-
-<p>I&rsquo;ve got an electronic engineering degree and if that and my work experience have taught me one thing, requirements are king. With that in mind here I go:</p>
-
-<ul>
-<li>To design, build and compete with a 12-13.6kg robot</li>
-<li>To spend less than &pound;500 on parts</li>
-<li>To increase my mechanical knowledge</li>
-<li>To enjoy the fact my 100s of hours of work may well be destroyed in seconds by a full body spinner.</li>
-</ul>
-
-
-<h2>Description</h2>
-
-<p>Now in order to fulfil the compete part of that specification I want something that is reasonably simple and robust, no esoteric weapons. Cutting and impact weapons always seemed to lack any visible damage element (heavy weight Razor aside). This leaves spinners and flippers and I much prefer Chaos 2 to Hypnodisk&hellip;</p>
-
-<p>I&rsquo;ve been a great fan of Charles Guan&rsquo;s <a href="http://www.etotheipiplusone.net/">blog</a> and I&rsquo;m going to heavily plagiarise from his designs, after all he is a mechanical engineer from MIT who builds successful featherweights. Unfortunately I do not have access to quite his wealth of machine tools, I have access to a friend&rsquo;s combination lathe &amp; mill, a few mechanical engineers to run ideas by and that&rsquo;s about it. I personally own a hacksaw, a 14V drill and 1 working 3D printer.</p>
-
-<p>Pneumatics are something I&rsquo;m totally unfamiliar with and so I feel for safety I will leave them well alone, instead I shall use a 4 bar lifter. Four bar lifters seem to be complicated to design but straightforward to construct which certainly fits my limitations. I&rsquo;ll couple that with some high power, high speed drill motors with gear boxes in an attempt to mix &ldquo;Test Bot 4 SP1&rdquo; and &ldquo;Null Hypothesis&rdquo; from Charles Guan.</p>
-
-<h2>The Ingredients</h2>
-
-<ul>
-<li>20mm thick Ultra High Molecular Weight PolyEthylene (UHMWPE) for the chassis frame held together with M8 bolts and threaded inserts</li>
-<li>0.5mm tool steel (or better) side armour</li>
-<li>3mm steel (or better) armour for front and rear</li>
-<li>3mm polycarbonate for the top &amp; bottom armour held with M5 bolts and threaded inserts</li>
-<li>2 off Gimson GR02 18V 24:1 motors for drive</li>
-<li>4 off ~75mmx20mm wheels, either 3&#8221; no names or Banebots 2-7/8&#8221;</li>
-<li>4 off 5mm pitch, 9mm HTD belt &amp; pulleys to drive 2 wheels per motor</li>
-<li>1 off 6S1P 22.2V 5000mAh 35-70C Turnigy Nano-tech LiPoly battery pack</li>
-<li>1 off custom motor &amp; weapon controller with magic</li>
-<li>1 off 2.4GHz RC set (suggestions welcome)</li>
-<li>1 off weapon, 4 bar lifter, tending towards a linear actuator from Gimson.</li>
-</ul>
-
-
-<h2>The Result</h2>
-
-<p>This is the work of a few nights of playing around in SketchUp:
-<img src="https://lh4.googleusercontent.com/-ehveM2fI6oc/Ujx79WnwE0I/AAAAAAAACn8/FV2EaW4s4H8/w1357-h762-no/The_Unnamed_Featherweight_20-08-2013.png" title="The Unnamed" alt="The first render of The Unnamed"></p>
-
-<p>The side armour will consist of 0.5mm of tool steel mounted to a 20mm thick panel of UHMWPE. I&rsquo;m hoping that this composite armour should be capable of surviving spinner attacks because the tool steel should stop the teeth from biting very well and the UHMWPE will flex absorbing some of the spinners impact. Of course it&rsquo;s fairly replaceable and I may redesign it in future as I finalise it.</p>
-
-<p>I&rsquo;ve chosen polycarbonate for the top and bottom as I think featureless steel boxes are pretty boring to look at even if they are painted amazingly. I may have to thicken up the polycarbonate in a later redesign but it should be both strong and transparent enough for this robot.</p>
-
-<p>The <a href="http://www.gimsonrobotics.co.uk/">Gimson</a> GR02 motors will be the 18 Volt version with a 24:1 gear ratio output. I chose this rather than the 36:1 as while a ratio of 36:1 gave me a faster top speed, it had slower acceleration, the 24:1 gives me a faster acceleration which I feel will be better suited to arena combat. With 75mm wheels I&rsquo;m estimating a top speed of around 3.2 metres per second, the number will go down due to the motors being loaded, but at the same time I&rsquo;ll be overvolting them from 18 Volts to 22 Volts.</p>
-
-<p>Hopefully once I get an idea of how I&rsquo;m going to mount the wheels and the dimensions of the lifter I should be able to push forward and order the parts. The current running cost is an estimated &pound;350 minus the cost of steel armour, the lifter and the electronics. The current running weight is 9.7kg all included however I expect that to creep up as the wheels and lifter arrangements are finalised.</p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
+        <a class="basic-alignment left" href="/blog/2013/09/20/Cupcake-o-Matic/" title="Previous Post: Cupcake-o-Matic">&laquo; Cupcake-o-Matic</a>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/09/11/star-tock-tock-star-is-this-thing-on/">*tock Tock* Is This Thing On?</a></h1>
-    
-    
-      <p class="meta">
-        
+      
+        <a class="basic-alignment right" href="/blog/2013/09/25/rules-of-thumb-for-designing-4-bar-lifters/" title="Next Post: Rules of Thumb for Designing 4-bar Lifters">Rules of Thumb for Designing 4-bar Lifters &raquo;</a>
+      
+    </p>
+  </footer>
+</article>
 
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-09-11T20:26:00+01:00" pubdate data-updated="true">Sep 11<span>th</span>, 2013</time>
-        
-         | <a href="/blog/2013/09/11/star-tock-tock-star-is-this-thing-on/#disqus_thread">Comments</a>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>I&rsquo;ve decided to start a blog. I have lots of creative ideas and keep starting projects but never quite finish them. I&rsquo;m hoping that by writing about them I&rsquo;ll end up finishing more of them, or at least getting them to a finished-ish state. So with out further ado&hellip;</p>
-
-<h2>Active projects</h2>
-
-<h3>Makerbot Cupcake-o-Matic</h3>
-
-<p>This is my fairly successful attempt to convert my non-working <a href="http://www.makerbot.com/">Makerbot</a> <a href="http://www.makerbot.com/support/cupcake/">Cupcake</a> into a working reliable 3D printer. I&rsquo;ve largely finished this, it just needs the wires hiding to neaten the external appearance, of course it&rsquo;s not quite as simple as that but I&rsquo;ll save that for a subsequent post.</p>
-
-<h3>Prusa i3</h3>
-
-<p>Whilst the Cupcake-o-Matic works, and fairly reliable at that it does only have a 100mm x 100mm x 100mm build volume with a single extruder it&rsquo;s not very expandable. I do want to print large objects in multiple materials and so I began to construct a single sheet style <a href="http://reprap.org/wiki/Prusa_i3">Prusa i3</a>. I have nearly all of the parts but I still need to print some and design some.</p>
-
-<h3>The Unnamed featherweight</h3>
-
-<p>I&rsquo;ve been interested in combat robots since Robot Wars came out in 1998. I tried my hand at building a featherweight (12Kg max) class robot whilst at secondary school but it didn&rsquo;t work out at all. After reading Charles Guan&rsquo;s <a href="http://www.etotheipiplusone.net/">blog</a> I&rsquo;ve decided to have another go.</p>
-
-<h3>Powerbridge</h3>
-
-<p>Of course a 12kg combat robot will need some motor controllers, so I resurrected some designs I&rsquo;ve been playing around and started to update them for the featherweight class of robots, it has the preliminary specs of 2x 20Amp 50Volt motor controller with easy firmware updates.</p>
-
-<h3>Claymore MiniSumo</h3>
-
-<p>Another combat robot I&rsquo;ve been designing is a small autonomous 500gram sumo bot, I like the idea of robots that control themselves, the start of Skynet as it were.</p>
-
-<h2>That is it</h2>
-
-<p>I&rsquo;m going to concentrate on these 4 projects until I complete as many of them as possible. My ideas for other projects like: a gokart, a home server, home automation, an updated <a href="http://www.ladyada.net/make/wavebubble/">Wave Bubble</a> are all going on hiatus.</p>
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
-  
-  
+  </section>
 
-
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
 </div>
+
 <aside class="sidebar">
   
     <section>
 	<h1>About Me</h1>
-	<p>I am an Electronic Engineer working in the south of England. I enjoy trying to build the random ideas that occur to me, some don&#8217;t work out, but some do and I try to document them here.</p>
-	<p>I&#8217;ve been into electronics since I was 14 and into building random things well before that.</p>
+	<p>I am an Electronic Engineer working in the south of England. I enjoy trying to build the random ideas that occur to me, some don't work out, but some do and I try to document them here.</p>
+	<p>I've been into electronics since I was 14 and into building random things well before that.</p>
 </section>
 
 
@@ -1203,7 +665,7 @@ I&rsquo;ve started to implement the code to read the number of counts per interv
 <section>
   <h1>GitHub Repos</h1>
   <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   
   <a href="https://github.com/Pinski1">@Pinski1</a> on GitHub
@@ -1241,6 +703,7 @@ I&rsquo;ve started to implement the code to read the number of counts per interv
   
 </aside>
 
+
     </div>
   </div>
   <footer role="contentinfo"><p>
@@ -1255,7 +718,10 @@ I&rsquo;ve started to implement the code to read the number of counts per interv
       var disqus_shortname = 'wiresandbits';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://wiresandbits.co.uk/blog/2013/09/22/mini-sumo-claymore/';
+        var disqus_url = 'http://wiresandbits.co.uk/blog/2013/09/22/mini-sumo-claymore/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
