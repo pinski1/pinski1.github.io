@@ -1,0 +1,68 @@
+---
+layout: post
+title: "A Chassis for Claymore"
+comments: true
+published: false
+categories: [Claymore] 
+---
+It's been a long time since I last updated this blog. In that time the designs for Claymore have changed quite a bit. I've settled on a sensor layout as well as discarding the whole idea of a lasercut chassis. The biggest driver in the decision to discard the laser cut chassis was me finally accepting that the Faulhaber motor gearboxes were unworkable in their current state. They were in a prime position to be the main mounting point but due to their thin all-plastic design there was no way to mount to them satisfactorily.
+
+##Chassis
+Since becoming a member of [Cambridge Makespace](http://www.makespace.org) one of the more amazing tools I've had access to is the [Metal Mill](http://wiki.makespace.org/Equipment/WarcoMill). This tool cuts through aluminium and steel like a dream and is the main driver behind my decision to build the chassis out of milled aluminium. As the electronics is designed to fit inside the chassis this then requires a redesign of the electronics too.
+
+###Motor Mounts
+The first thing to re-design was the motor mounts, the dimension are largely copied from the plastic originals however I added more thickness to the base to allow me to drill and tap these for mounting. Unlike the laser cut chassis the motors will mount to the base of the chassis rather than the top. This allows the electronics to drop in from the top and the battery to be held in with gravity.
+
+<!-- CAD image -->
+
+Rather than to screw directly into the aluminium which is quite soft and will strip after a few remove/replace cycles I will use [Helicoils](http://www.repairengineering.com/helicoil.html). These spring-like stainless steel inserts screw into an over size tapped hole and have an internal thread which is the sized to fit your bolts, in my case M3. This allows me to remove/replace parts repeatedly with no loss of strength.
+
+<!-- picture of helicoils? -->
+
+###Base Plate
+The base of the chassis is made out of 1.6mm thick aluminium sheet that is cut and bent into an "L" shape. This reduces the need for an awkward mounting system in the rear of the chassis where the motors will mount and also stiffens the chassis a bit. To mount the sides to the chassis base I made up some small aluminium blocks that had 5 helicoiled threaded holes. These mount to the chassis with 2 bolts, to the sides with 2 bolts and attach to the PCB with 1 nylon standoff.
+
+<!-- image of semi-populated chassis -->
+
+###Chassis Front
+The front of the chassis is one large aluminium block to ensure that the front of the robot is kept down during high acceleration as well as to provide a ridgid mounting point for the sensors. Before I re-designed this block I bought some of the sensors I will use (Sharp GP2Y0D340K [Datasheet](http://sharp-world.com/products/device/lineup/data/pdf/datasheet/gp2y0d340k_e.pdf)) and measured their range and detection pattern. I found that by spacing 3 sensors ~15&deg; apart I could cover a 90&deg; arc in front of the robot out to ~300mm.
+
+<!-- image of front block -->
+
+###Skid and Sensors
+To keep the front of the robot from damaging the dohyo surface I machined a block out of an engineering plastic called Delrin. This plastic is tough yet slippy so should be ideal for this. To detect the edge of the dohyo I added 2 edge sensors right on the front most edges of my robot. These should detect the transition from the black of the main dohyo surface to the white of the 25mm thick edge strip.
+
+<!-- image of underside of front block, inc. edge sensors & skid -->
+
+###Ascetics
+As plain aluminium is very shiny which will reflect infra-red light very well I will need to darken the exposed aluminium surfaces. Ideally I'd anodize the aluminium however I don't think I'll get a great finish and it would be tricky to do myself. Instead I'm planning to use a matt black vinyl wrap to cover the aluminium surfaces. This should be a simple process but should give a good finish.
+
+As the electronics will be mounted on top of the motors & aluminium blocks I need a top cover to protect them. I've decided that I will laser cut a 3mm translucent acrylic top with holes for buttons. This should looks good and provide enough protections from falls to the electronics.
+
+<!-- image of top -->
+
+##Electronics
+The main change has been the pcb shape, in order to fit the battery the PCB is now a "U" shape with angled cutouts for the sensors.
+
+* still a work in progress
+
+<!-- picture of EAGLE output -->
+
+<!-- picture of paper cutout -->
+
+###Sensors
+
+* 3 sensors now, mounted directly to PCB
+* 2 floor sensors on pig tails, tiny connectors
+
+###Power handing
+
+* battery choice - Venom 10C 11.1V
+* seperate motor drivers due to pcb shape
+
+###Interfacing
+
+* power part
+* 3 buttons
+* OLED display
+* front mount USB connector
