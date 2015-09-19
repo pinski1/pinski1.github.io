@@ -4,7 +4,7 @@
   <title><![CDATA[Wires and Bits]]></title>
   <link href="http://wiresandbits.co.uk/atom.xml" rel="self"/>
   <link href="http://wiresandbits.co.uk/"/>
-  <updated>2015-09-19T11:27:48+01:00</updated>
+  <updated>2015-09-19T11:44:10+01:00</updated>
   <id>http://wiresandbits.co.uk/</id>
   <author>
     <name><![CDATA[Pinski1]]></name>
@@ -94,6 +94,146 @@ Rather than to screw directly into the aluminium which is quite soft and will st
 
 
 <p>To provide detailed status information I&rsquo;ve added a monochrome 128px x 32px I<sup>2</sup>C <a href="http://www.adafruit.com/products/931">OLED screen</a> to the PCB. This currently shows battery and build information on boot up and then motor and sensor status during the match.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The Unnamed Electronic Systems]]></title>
+    <link href="http://wiresandbits.co.uk/blog/2013/10/04/The-Unnamed-electronic-systems/"/>
+    <updated>2013-10-04T14:57:00+01:00</updated>
+    <id>http://wiresandbits.co.uk/blog/2013/10/04/The-Unnamed-electronic-systems</id>
+    <content type="html"><![CDATA[<p>While I&rsquo;m working on mechanical structure of The Unnamed I also need to consider how I will control the final robot. The <a href="http://www.fightingrobots.co.uk/content/23-rules-and-safety_1">rules</a> state that there need to be 2 elements before my robot is allowed to enter:</p>
+
+<ul>
+<li>Removable link</li>
+<li>Powered indicator</li>
+</ul>
+
+
+<p>Of course the robot will need other items to operate such as:</p>
+
+<ul>
+<li>Battery</li>
+<li>Motor Drivers</li>
+<li>Radio Control Receiver</li>
+</ul>
+
+
+<h3>Removable Link</h3>
+
+<p>The idea behind requiring a removable link is simple, it provides a guaranteed way of cutting of the power in case of emergency. It must be located in an accessible place and may only be covered by a clearly marked, and easily moved cover. In many robots the removable link also does double duty as the master power switch.</p>
+
+<p>They are commonly made out of a high power collector that has the male plug pins shorted together and the female receptacle pins in line with the battery power leads. The female connector is used in line with the main power wiring to reduce the chances of a short circuit activating the robot unexpectedly.</p>
+
+<h3>Powered Indicator</h3>
+
+<p>The powered indicator must be a steady indicator that is lit when the robot is powered, it cannot be a filament bulb. This gives a clear indication if the robot is powered.</p>
+
+<p>As it cannot be a filament bulb LEDs are often used. It will need to be connected into the removable link side of the robot so that it will only light if the link is in place and the robot is active.</p>
+
+<h3>Motor Drivers</h3>
+
+<p>I&rsquo;m planning to have 3 motors in my robot, 2 for drive and 1 for the weapon, in all 3 cases I will need to control the motors in both directions. As the motors I shall be using are powerful I will need motor drivers that can withstand high voltages and currents continuously as well as far higher peak currents. Of course despite these requirements they need to be compact but affordable as I don&rsquo;t want to spend all my money on awesome motor controller only to not have enough money for a weapon, or worse, no money for a chassis. One other important feature is reliability, often many robots lose a bout simply because their motor controller suffered a fault, burnt out or became disconnected, I do not want that to be the case for my robot.</p>
+
+<p>For the moment I&rsquo;m planning to use modified TZ-85A brushless speed controllers.</p>
+
+<h4>Movement</h4>
+
+<p>I will be using two Gimson GR02 18 Volt 1:24 motors to drive two wheels each via a High Torque Drive (HTD) belt. The motors will pull approximately 8 Amps under load but will pull up to 62 Amps when stalled which means I will ideally want a motor controller that can take 10 Amps continuously and withstand short spikes of up to 65 Amps.</p>
+
+<p>As I shall be using differential steering to control my robot I will need some way of mixing a remote control channel with left and right signals with a remote control channel with forward and backwards signals. This can be done either with a suitably intelligent dual channel motor controller or by using a V-Tail mixer to combine the signals.</p>
+
+<h4>Weapon</h4>
+
+<p>My current plans for a weapon call for an electrically powered actuator as part of a four-bar-lifter. I&rsquo;m expecting the actuator to be a <a href="http://www.gimsonrobotics.co.uk/GLA-S_linear_actuator.html">Gimson GLA-S</a> 100mm linear actuator. Gimson state that the expected stall current is 62 Amps and the expected load current is 23 Amps, this means ideally I want a motor controller than can survive 62 Amps peak but I&rsquo;ll definitely want to be able to manage 30 Amps continuously. This actuator should reach full extension (205mm to 305mm) in approximately 5 seconds under load which could be too slow however this will require further work before I am certain.</p>
+
+<p>Linear actuators do not spin continuously and will reach a limit where they cannot travel any further without damaging the motor or the actuator, to signal when the actuator has hit these points limit switches are installed. While limit switches are built into the SLA-S actuator they are not connected to the motor directly as they would not be able to handle the current, this requires me to add a circuit to detect inputs from these switches and control the motor accordingly.</p>
+
+<h3>Battery</h3>
+
+<p>To power the motors in the robot a battery is needed, its characteristics such as voltage and capacity are defined by what I need it to power. The Unnamed has:</p>
+
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Qty&emsp;</th>
+<th>Description&emsp;</th>
+<th>Load Current (Amps)&nbsp;</th>
+<th>Sub-Total (Amps)&nbsp;</th>
+<th>Stall Current (Amps)&nbsp;</th>
+<th>Sub-Total (Amps)&nbsp;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td>2</td>
+<td>Gimson GR02</td>
+<td>8</td>
+<td>16</td>
+<td>62</td>
+<td>124</td>
+</tr>
+<tr>
+<td></td>
+<td>1</td>
+<td>Gimson GLA-S</td>
+<td>23</td>
+<td>23</td>
+<td>62</td>
+<td>62</td>
+</tr>
+<tr>
+<td></td>
+<td>1</td>
+<td>Misc Electronics&emsp;</td>
+<td>0.2</td>
+<td>0.2</td>
+<td>0.2</td>
+<td>0.2</td>
+</tr>
+<tr>
+<td></td>
+<td>Totals:</td>
+<td></td>
+<td></td>
+<td>39.2</td>
+<td></td>
+<td>186.2</td>
+</tr>
+</tbody>
+</table>
+
+
+<br />
+
+
+<p>Assuming a bout lasts 10 minutes then I will need a battery capacity of 6.6 Amp hours (Ah) if all the motors are constantly operating, the absolute worst case suggests I&rsquo;d need a 31 Ah battery if the motors were continuously stalled. Neither of these estimates are particularly realistic as I will not be driving at top speed for all of a bout, and nor will the lifter be constantly extending and retracting.</p>
+
+<p>The 6.6 Ah figures is closer to being realistic so I will aim to have a battery that is close to this. Another consideration is the voltage of the battery, the GR02s and the GLA-S are both rated at 18 Volts however I&rsquo;m planning to overvolt them by using a 5 cell Li-Poly battery at 18.5 Volt nominal.</p>
+
+<h3>Radio Control Receiver</h3>
+
+<p>To control the robot I am planning to use a DSM2 compatible transmitter and receiver set, DSM2 is a 2.4GHz standard that allows different receivers and transmitter from different manufacturers to work together. My robot will require a minimum of 3 channels, one for each drive motor and one for the weapon. I could use a further 4th channel to enable inverted control for when my robot is flipped over or to enable other functions remotely.</p>
+
+<h2>My Solution</h2>
+
+<p>With these considerations in mind I came up with the following circuit:</p>
+
+<p><img src="https://lh3.googleusercontent.com/-AO9cxGub2X8/UnT7i4gSR2I/AAAAAAAACt8/3wYcZNjn4qU/w1358-h681-no/The+Unnamed.png"></p>
+
+<p>I&rsquo;ve chosen a 5 cell 4.7AmpHour 30C Lithium Polymer battery from <a href="http://www.optipower.co.uk/">OptiPower</a>, this should provide enough power for long enough to last a bout. It will be capable of sourcing 141Amps (30C &times; 4.7AHr) continuously with peaks of 376Amps (80C &times; 4.7AHr).</p>
+
+<p>To protect the motor drivers and RC electronics I&rsquo;ve put a 100Amp automotive <a href="http://en.wikipedia.org/wiki/Fuse_%28automotive%29">Maxi Fuse</a>. As it is a cartridge fuse it&rsquo;s easy to replace if it gets blown but is also robust enough to act as a removable link. By choosing an automotive fuse cartridge it should be easy to buy spares and even replacement fuses with smaller ratings.</p>
+
+<p>I&rsquo;m going to use a high power red LED to indicate that the robot is powered, this will be connected after the fuse such that if the fuse blows the LED will not light.</p>
+
+<p>The terminal block is ideal for the central connection node of my electronics system. The screw clamps will allow me to easily make and remove connections whilst securely grabbing any cable and holding it tight. It should also allow me to keep the wiring neat and tidy which will help me in maintaining the robot.</p>
+
+<p><img src="https://lh4.googleusercontent.com/-bXl4wB7CVoE/VMkv8_GFWbI/AAAAAAAAC3g/hCPnhk3cbhM/w1278-h474-no/xt%2Bconnectors.jpg"></p>
+
+<p>I&rsquo;ve omitted the connectors from this diagram to keep it simple, however I&rsquo;m planning to use XT60 connectors like the ones above left to join the motors to the speed controllers. The battery will connect to the wire link with an XT90 connector, show above right, which is a the bigger brother of the XT60. By connectorising these key parts of the system it enables me to quickly re-configure the robot for maintenance or debugging. They&rsquo;re polarised so I cannot plug things in backwards as well as gendered so I can ensure that the parts of the system that supply power have female plugs to reduce the chances of shorts.</p>
 ]]></content>
   </entry>
   
