@@ -5,7 +5,7 @@ comments: false
 sharing: true
 footer: true
 ---
-Please email me at ????? to order products. I prefer to use PayPal.
+Please email me to order products. I prefer to use PayPal.
 <!-- not so good at this, oh well -->
 ##PocketQube parts
 
